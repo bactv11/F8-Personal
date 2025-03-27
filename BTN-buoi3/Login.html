@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container"
+     style="position: absolute;
+     align-items: center;
+     height: 400px;
+     padding: 10px;
+    ;background: bisque;
+    border-radius: 10px;
+    margin-top:100px;
+    margin-left:40%;">
+    <h1 style="text-align: center">Login</h1>
+    <form method="POST" action="https://api-gateway.fullstack.edu.vn/action_page.php">
+        <table>
+            <tr>
+                <td align="left">
+                    <label for="username" >Username:</label>
+                </td>
+                <td align="left">
+                    <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                </td>
+            </tr>
+<!--            -->
+            <tr>
+                <td align="left">
+                    <label for="pass">Password:</label>
+                </td>
+                <td align="left">
+                    <input type="password" id="pass" name="passWord" placeholder="Enter Password" required>
+                </td>
+            </tr>
+<!--            -->
+            <tr>
+                <td align="left">
+                    <label for="city">City of<br>Employment:</label>
+                </td>
+                <td align="left">
+                    <input type="text" id="city" name="cityEmployment" placeholder="Enter City of Employment" required>
+                </td>
+            </tr>
+<!--            -->
+            <tr>
+                <td align="left">
+                    <label for="web">Web server:</label>
+                </td>
+                <td align="left">
+                    <select id="web" name="webServer">
+                        <option>- Choose a server -</option>
+                        <option  value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">Javascript</option>
+                    </select>
+                </td>
+            </tr>
+<!--            -->
+            <tr>
+                <td align="left">
+                    <label >Please specify <br>your role: </label>
+                </td>
+                <td align="left">
+                    <input type="radio" id="admin" name="role" value="admin">
+                    <label for="admin" >Admin</label> <br>
+                    <input type="radio" id="engineer" name="role" value="engineer">
+                    <label for="engineer">Engineer</label> <br>
+                    <input type="radio" id="manager" name="role"value="manager" >
+                    <label for="manager">Manager</label><br>
+                    <input type="radio" id="guest" name="role" value="guest" >
+                    <label for="guest">Guest</label>
+                </td>
+            </tr>
+<!--            -->
+            <tr>
+                <td align="left">
+                    <label>Single Sign -on <br> to the fllowing:</label>
+                </td>
+                <td align="left">
+                    <input type="checkbox" id="mail" name="fllowing[]" value="mail" >
+                    <label for="mail">Mail</label> <br>
+                    <input type="checkbox" id="paryoll" name="fllowing[]" value="paryoll" >
+                    <label for="paryoll">Payroll</label> <br>
+                    <input type="checkbox" id="seff" name=" fllowing[]" value="seff" >
+                    <label for="seff">Seff-sevice</label>
+                </td>
+            </tr>
+<!--            -->
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <button style="text-align: center;background: blue;color: aliceblue;width: 100px;height: 30px" type="submit">Login</button>
+                    <button style="text-align: center;background: red;color: aliceblue;width: 100px;height: 30px" type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
