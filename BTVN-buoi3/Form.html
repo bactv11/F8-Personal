@@ -18,32 +18,35 @@
          padding: 10px;
          margin-left: 500px;
          margin-top: 100px;">
-        <form>
+        <form action="https://api-gateway.fullstack.edu.vn/action_page.php" method="post">
             <h1 style="font-size: 20px">Get in touch with us by filling contact form below</h1>
             <table cellpadding="10px">
                 <tr>
                     <td >
-                        <input style="border-radius: 5px"  type="text" name="name" placeholder="*Enter your full name" required="required">
-                        <input style="margin-left: 30px;border-radius: 5px"  type="text" name="name" placeholder="*Enter your full name" required="required">
+                        <label for="name1"></label>
+                        <input style="border-radius: 5px"  id="name1"  type="text" name="name1" placeholder="*Enter your full name" required="required">
+                        <label for="name2"></label>
+                        <input  style="margin-left: 30px;border-radius: 5px" id="name2" type="text" name="name2" placeholder="*Enter your full name" required="required">
                     </td>
 <!--                    -->
                 </tr>
                 <tr>
                     <td align="left">
-                        <label for="name"></label>
-                        <input style="border-radius: 5px" id="name" type="text" name="name" placeholder="*Enter your full name" required="required">
+                        <label for="name3"></label>
+                        <input style="border-radius: 5px" id="name3" type="text" name="name3" placeholder="*Enter your full name" required="required">
                     </td>
                 </tr>
 <!--                -->
                 <tr>
                     <td>
-                        <textarea style="width: 400px ;height: 150px;border-radius: 5px" name="name" placeholder="*Enter message here" required="required"></textarea>
+                        <label for="texta"></label>
+                        <textarea id= "texta" style="width: 400px ;height: 150px;border-radius: 5px" name="texta" placeholder="*Enter message here" required="required"></textarea>
                     </td>
                 </tr>
                 <!--            -->
                 <tr>
                     <td>
-                        <button style="border: 1px solid black ;width: 130px ;height: 30px;border-radius: 10px;background: darkgrey;">Send message</button>
+                        <button style="border: 1px solid black ;width: 130px ;height: 30px;border-radius: 10px;background: darkgrey;" type="submit">Send message</button>
                         <label>*Please fill all require form filed, thanks!</label>
                     </td>
                 </tr>
