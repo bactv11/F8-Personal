@@ -12,7 +12,7 @@ img{
     display: flex;
     justify-content: center;
 }
-.content{
+.product-item{
     width: 300px;
     position: relative;
     border: 1px solid #ffffff;
@@ -21,16 +21,41 @@ img{
     background: #eae2e2;
     text-align: center;
 }
-.content h2{
+.product-item h2{
      margin-top: 10px;
  }
-.content_title{
+.product-item > p{
+    margin-top: 10px;
+}
+.product-item > p > strong{
+    color: red;
+}
+.product-item :hover{
+    cursor: pointer;
+}
+.product-item ul li{
+    list-style: none;
+    margin: 5px;
+}
+/**/
+.product-item-title{
     text-align: center;
 }
-.content_pay{
+/*header*/
+#header b{
+    color: red;
+}
+#header2 b{
+    color: green;
+}
+#header3 b{
+    color: blue;
+}
+/*id*/
+.product-item-pay{
     margin: 20px ;
 }
-.content_pay button{
+.product-item-pay button{
     background: #234ca8;
     color: #fff;
     width: 100px;
@@ -39,22 +64,20 @@ img{
     border-radius: 4px;
     border: 1px solid #23a889;
 }
-.content_pay button:hover{
+.product-item-pay button:hover{
     background: #ff00ae;
 }
-.content p{
-    margin-top: 10px;
-}
-.content p strong{
+.product-item-pay #header-pay{
     color: red;
 }
-.content :hover{
-    cursor: pointer;
+.product-item-pay #header-pay2{
+    color: red;
 }
-.content_title ul li{
-    list-style: none;
-    margin: 5px;
+.product-item-pay #header-pay3{
+    color: red;
 }
+
+
 
 
 
