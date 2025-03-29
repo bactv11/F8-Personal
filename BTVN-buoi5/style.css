@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.content{
+    width: 300px;
+    position: relative;
+    border: 1px solid #ffffff;
+    margin: 20px ;
+    border-radius: 10px;
+    background: #eae2e2;
+    text-align: center;
+}
+.content h2{
+     margin-top: 10px;
+ }
+.content_title{
+    text-align: center;
+}
+.content_pay{
+    margin: 20px ;
+}
+.content_pay button{
+    background: #234ca8;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #23a889;
+}
+.content_pay button:hover{
+    background: #ff00ae;
+}
+.content p{
+    margin-top: 10px;
+}
+.content p strong{
+    color: red;
+}
+.content :hover{
+    cursor: pointer;
+}
+.content_title ul li{
+    list-style: none;
+    margin: 5px;
+}
+
+
+
