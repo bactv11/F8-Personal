@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 700px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: gray;
+    cursor: pointer;
+}
+.form_subscribe{
+    margin: 20px;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background: #716985;
+}
+.input {
+    margin-top: 20px;
+}
+.input #email{
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.input #email:hover{
+    background: #ddd;
+}
+.input:hover #email::placeholder{
+    color: orange;
+}
+.input #submit{
+    margin-left: 10px;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: blue;
+}
+.input #submit:hover{
+    background: orange;
+    color: #fff;
+}
+
+
+/*custom list*/
+.custom_list{
+    margin: 20px;
+    list-style: none;
+}
+ul li {
+    list-style: none;
+}
+ul li::before {
+    content: "😊";
+}
+/* htmlt*/
+.html{
+     margin: 20px;
+ }
+.text{
+    margin-top: 20px;
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+.text a::after{
+    content: "→";
+    font-size: 20px;
+}
