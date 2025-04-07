@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            padding: 20px 60px;
+            cursor: pointer;
+        }
+        header {
+            position: relative;
+            display: flex;
+        }
+        img {
+            display: block;
+        }
+        .category {
+            background: #f5f5f5;
+            display: inline-block;
+            padding: 13px 25px 13px;
+            border-radius: 999px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 185px;
+            font-weight: 600;
+        }
+        .menu {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 350px;
+        }
+        .menu > li {
+            display: inline-block;
+            padding: 0px 25px;
+        }
+        .menu > li:hover {
+            padding: 30px 25px;
+        }
+        .menu > li:hover .menu-icon::after {
+            content: "^";
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .menu li:hover > .sub-menu{
+            display: block;
+        }
+        .menu li {
+            list-style: none;
+            position: relative;
+        }
+        .menu li a {
+            color: #192335;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .menu li .menu-icon::after {
+            content: "v";
+            padding-left: 9px;
+        }
+        .sub-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        .sub-menu li {
+            width: 150px;
+            padding: 10px;
+        }
+        .sub-menu li:hover  {
+            background: gray;
+        }
+        .sub-menu .sub-menu {
+            position: absolute;
+            top: 0;
+            left: 100%;
+        }
+        .join {
+            background: #5e86da;
+            padding: 8px;
+            right: 0;
+            border: 1px solid #5e86da;
+            border-radius: 5px;
+            position: absolute;
+            font-weight: bold;
+            font-size: 16px;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <img src="https://rainbowit.net/html/histudy/assets/images/logo/logo.png" alt="hi study" width="100px">
+    <div class="category">Category</div>
+    <ul class="menu">
+        <li>
+            <a href="#!" class="menu-icon">Home</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#!"> Item Home </a>
+                </li>
+                <li>
+                    <a href="#!"> Item Home </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#!" class="menu-icon">Courses</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#!"> Item Courses </a>
+                </li>
+                <li>
+                    <a href="#!"> Item Courses </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#!" class="menu-icon">Dashboard</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#!"> Item Dashboard </a>
+                </li>
+                <li>
+                    <a href="#!"> Item Dashboard </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#!" class="menu-icon">Pages</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#!"> Item Pages </a>
+                </li>
+                <li>
+                    <a href="#!"> Item Pages </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#!" class="menu-icon">Elements</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#!"> Item Elements </a>
+                </li>
+                <li>
+                    <a href="#!"> Item Elements </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#!" class="menu-icon">Blog</a>
+            <ul class="sub-menu">
+                <li>
+                    <a href="#!"> Item Blog </a>
+                </li>
+                <li>
+                    <a href="#!"> Item Blog </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <button class="join">Join Now</button>
+</header>
+</body>
+</html>

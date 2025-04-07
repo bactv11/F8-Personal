@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            margin: 10px auto;
+        }
+        .click_item{
+            display: block;
+            height: 50px;
+            background-color: #d95925;
+            color: white;
+            margin: 10px ;
+            position: relative;
+        }
+        .click_item span{
+            position: absolute;
+            top: 50%;
+            left: 40px;
+            transform: translateY(-50%);
+        }
+        .click_item::before{
+            content: "+";
+            font-weight: bold;
+            font-size: 20px;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+        }
+        .content_item{
+            display: none;
+            min-height: 200px;
+            padding: 15px;
+        }
+        ol {
+            margin-left: 20px;
+            padding: 20px;
+        }
+        span, ol, p {
+            padding: 5px;
+        }
+        #item1:checked ~ .content_item {
+            display: block;
+        }
+
+        #item2:checked ~ .content_item {
+            display: block;
+        }
+
+        #item3:checked ~ .content_item {
+            display: block;
+        }
+        #item1:checked ~ .click_item::before {
+            content: "-";
+            font-weight: bold;
+            font-size: 30px;
+            top: 10px;
+            left: 15px;
+        }
+        #item2:checked ~ .click_item::before {
+            content: "-";
+            font-weight: bold;
+            font-size: 30px;
+            top: 10px;
+            left: 15px;
+        }
+        #item3:checked ~ .click_item::before {
+            content: "-";
+            font-weight: bold;
+            font-size: 30px;
+            top: 10px;
+            left: 15px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="item">
+        <input type="checkbox" name="item1" id="item1" hidden  >
+        <label class="click_item" for="item1" >
+            <span>How to set random colors?</span>
+        </label>
+        <div class="content_item">
+            <span>To set random colors:</span>
+            <ol>
+                <li>Add <b>jag-fag-random-colors</b> class.</li>
+                <li>To change color, open theme{num}.css, find "jag-faq-random-colors".</li>
+                <li>You can change color from here.</li>
+            </ol>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis doloremque eius eligendi esse fugiat incidunt laboriosam laudantium minus natus nemo nobis recusandae ullam unde velit, voluptas voluptate! Ad adipisci ipsam iure odit? Consequuntur ducimus eaque exercitationem facere facilis nam nesciunt quas quibusdam tenetur velit. Cupiditate delectus, deserunt distinctio eaque eos fugiat molestias necessitatibus non nulla officia omnis quia saepe sit soluta temporibus ullam vel veniam veritatis voluptate voluptatem. Delectus dolorum sint vel! Consectetur magni numquam obcaecati placeat possimus suscipit.</p>
+        </div>
+    </div>
+<!--    -->
+    <div class="item">
+        <input type="checkbox" name="item2" id="item2" hidden  >
+        <label class="click_item" for="item2" >
+            <span>How to set random colors?</span>
+        </label>
+        <div class="content_item">
+            <span>To set random colors:</span>
+            <ol>
+                <li>Add <b>jag-fag-random-colors</b> class.</li>
+                <li>To change color, open theme{num}.css, find "jag-faq-random-colors".</li>
+                <li>You can change color from here.</li>
+            </ol>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis doloremque eius eligendi esse fugiat incidunt laboriosam laudantium minus natus nemo nobis recusandae ullam unde velit, voluptas voluptate! Ad adipisci ipsam iure odit? Consequuntur ducimus eaque exercitationem facere facilis nam nesciunt quas quibusdam tenetur velit. Cupiditate delectus, deserunt distinctio eaque eos fugiat molestias necessitatibus non nulla officia omnis quia saepe sit soluta temporibus ullam vel veniam veritatis voluptate voluptatem. Delectus dolorum sint vel! Consectetur magni numquam obcaecati placeat possimus suscipit.</p>
+        </div>
+    </div>
+<!--    -->
+    <div class="item">
+        <input type="checkbox" name="item3" id="item3" hidden  >
+        <label class="click_item" for="item3" >
+            <span>How to set random colors?</span>
+        </label>
+        <div class="content_item">
+            <span>To set random colors:</span>
+            <ol>
+                <li>Add <b>jag-fag-random-colors</b> class.</li>
+                <li>To change color, open theme{num}.css, find "jag-faq-random-colors".</li>
+                <li>You can change color from here.</li>
+            </ol>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corporis doloremque eius eligendi esse fugiat incidunt laboriosam laudantium minus natus nemo nobis recusandae ullam unde velit, voluptas voluptate! Ad adipisci ipsam iure odit? Consequuntur ducimus eaque exercitationem facere facilis nam nesciunt quas quibusdam tenetur velit. Cupiditate delectus, deserunt distinctio eaque eos fugiat molestias necessitatibus non nulla officia omnis quia saepe sit soluta temporibus ullam vel veniam veritatis voluptate voluptatem. Delectus dolorum sint vel! Consectetur magni numquam obcaecati placeat possimus suscipit.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
