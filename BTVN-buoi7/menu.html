@@ -5,6 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
         * {
@@ -24,6 +28,7 @@
             display: block;
         }
         .category {
+            content: "f198";
             background: #f5f5f5;
             display: inline-block;
             padding: 13px 25px 13px;
@@ -48,8 +53,8 @@
             padding: 30px 25px;
         }
         .menu > li:hover .menu-icon::after {
-            content: "^";
-            font-weight: bold;
+            content: "\f107";
+            font-family: "Font Awesome 6 Free";
             font-size: 16px;
         }
         .menu li:hover > .sub-menu{
@@ -65,7 +70,8 @@
             font-weight: 600;
         }
         .menu li .menu-icon::after {
-            content: "v";
+            content: "\f106";
+            font-family: "Font Awesome 6 Free";
             padding-left: 9px;
         }
         .sub-menu {
@@ -105,16 +111,27 @@
 <body>
 <header>
     <img src="https://rainbowit.net/html/histudy/assets/images/logo/logo.png" alt="hi study" width="100px">
-    <div class="category">Category</div>
+    <div class="category">
+        <i class="fa-brands fa-slack"></i>
+        Category
+    </div>
     <ul class="menu">
         <li>
             <a href="#!" class="menu-icon">Home</a>
             <ul class="sub-menu">
                 <li>
                     <a href="#!"> Item Home </a>
+                    <ul class="sub-menu">
+                        <li>Item Home 1</li>
+                        <li>Item Home 2</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#!"> Item Home </a>
+                    <ul class="sub-menu">
+                        <li>Item Home 3</li>
+                        <li>Item Home 1</li>
+                    </ul>
                 </li>
             </ul>
         </li>
@@ -124,9 +141,17 @@
             <ul class="sub-menu">
                 <li>
                     <a href="#!"> Item Courses </a>
+                    <ul class="sub-menu">
+                        <li>Item Courses 1</li>
+                        <li>Item Courses 2</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#!"> Item Courses </a>
+                    <ul class="sub-menu">
+                        <li>Item Courses 3</li>
+                        <li>Item Courses 4</li>
+                    </ul>
                 </li>
             </ul>
         </li>
@@ -136,9 +161,17 @@
             <ul class="sub-menu">
                 <li>
                     <a href="#!"> Item Dashboard </a>
+                    <ul class="sub-menu">
+                        <li>Item Dashboard 1</li>
+                        <li>Item Dashboard 2</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#!"> Item Dashboard </a>
+                    <ul class="sub-menu">
+                        <li>Item Dashboard 3</li>
+                        <li>Item Dashboard 4</li>
+                    </ul>
                 </li>
             </ul>
         </li>
@@ -148,9 +181,17 @@
             <ul class="sub-menu">
                 <li>
                     <a href="#!"> Item Pages </a>
+                    <ul class="sub-menu">
+                        <li>Item Pages 1</li>
+                        <li>Item Pages 2</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#!"> Item Pages </a>
+                    <ul class="sub-menu">
+                        <li>Item Pages 3</li>
+                        <li>Item Pages 4</li>
+                    </ul>
                 </li>
             </ul>
         </li>
@@ -160,9 +201,17 @@
             <ul class="sub-menu">
                 <li>
                     <a href="#!"> Item Elements </a>
+                    <ul class="sub-menu">
+                        <li>Item Elements 1</li>
+                        <li>Item Elements 2</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#!"> Item Elements </a>
+                    <ul class="sub-menu">
+                        <li>Item Elements 3</li>
+                        <li>Item Elements 4</li>
+                    </ul>
                 </li>
             </ul>
         </li>
@@ -172,9 +221,17 @@
             <ul class="sub-menu">
                 <li>
                     <a href="#!"> Item Blog </a>
+                    <ul class="sub-menu">
+                        <li>Item Blog 1</li>
+                        <li>Item Blog 2</li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#!"> Item Blog </a>
+                    <ul class="sub-menu">
+                        <li>Item Blog 3</li>
+                        <li>Item Blog 4</li>
+                    </ul>
                 </li>
             </ul>
         </li>
