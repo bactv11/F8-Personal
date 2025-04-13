@@ -88,6 +88,10 @@ table tr td{
     text-align: center;
     font-size: 20px;
  }
+.head{
+     background-color: red;
+     width: 400px;
+ }
 #edit{
     position: absolute;
     top: 20px;
@@ -105,6 +109,9 @@ table tr td{
     height: 30px;
     border-radius: 5px;
 }
+.btn-edt:hover{
+    color: white;
+}
 .mdi-delete{
     background: red;
     font-size: 16px;
@@ -112,12 +119,8 @@ table tr td{
     height: 30px;
     border-radius: 5px;
 }
-.mdi-account-edit:hover{
-    background: blue;
-    color: white;
-}
+
 .mdi-delete:hover{
-    background: gray;
     color: white;
 }
 
@@ -168,6 +171,7 @@ table tr td{
     padding: 10px;
     color: gray;
 }
+
 .dialog-btn #close{
     background: red;
     border: none;
