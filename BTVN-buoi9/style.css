@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Times New Roman", sans-serif;
+}
+.container {
+    width: 976px;
+    display: flex;
+    position: relative;
+}
+.nav{
+    position: absolute;
+    width: 300px;
+    height: 700px;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    padding: 10px;
+    background: gray;
+}
+.logo{
+    color: white;
+    margin: 10px;
+}
+.menu {
+    color: white;
+}
+.menu ul{
+    list-style: none;
+    padding: 10px;
+}
+.menu ul li{
+    padding: 10px;
+}
+.menu ul li:hover{
+    background-color: #716985;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.main{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+}
+.main h2{
+    text-align: center;
+    padding: 10px;
+}
+.foot-nav{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+}
+.foot-account p{
+    padding: 5px;
+}
+.foot-account a{
+    text-decoration: none;
+}
+.foot-account .mdi{
+    font-size: 20px;
+}
+
+.foot{
+    display: flex;
+}
+.foot .mdi{
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 40%;
+    margin: 10px;
+    box-shadow: 2px 2px 4px #716985;
+}
+.foot .mdi:hover{
+    background-color: #716985;
+}
+/*table{*/
+/*    filter: blur(5px);*/
+/*}*/
+table tr td{
+    padding: 10px;
+    text-align: center;
+}table tr th{
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+ }
+#edit{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    display: none;
+}
+#exit{
+    position: absolute;
+    display: none;
+}
+.btn-edt{
+    background: green;
+    font-size: 16px;
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+}
+.mdi-delete{
+    background: red;
+    font-size: 16px;
+    width: 90px;
+    height: 30px;
+    border-radius: 5px;
+}
+.mdi-account-edit:hover{
+    background: blue;
+    color: white;
+}
+.mdi-delete:hover{
+    background: gray;
+    color: white;
+}
+
+/*dialog*/
+.dialog{
+    width: 350px;
+    height: 250px;
+    border: 1px solid black;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    left: 10%;
+    border-radius: 5px;
+    background: white;
+}
+/**/
+.top-dialog {
+    padding: 10px;
+    background: #716985;
+    color: white;
+}
+.dialog input{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    width: 95%;
+}
+.mdi-close-circle{
+    background: #716985;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+/**/
+.dialog-btn{
+    display: flex;
+}
+.dialog #skill{
+    width: 330px;
+    height: 40px;
+    left: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#skill{
+    padding: 10px;
+    color: gray;
+}
+.dialog-btn #close{
+    background: red;
+    border: none;
+    color: white;
+}
+.dialog-btn #close:hover{
+    background: #e66868;
+}
+.dialog-btn #save{
+    background: green;
+    border: none;
+    color: white;
+}
+.dialog-btn #save:hover{
+    background: darkgreen;
+}
+/*open dialog*/
+#edit:checked ~ .dialog{
+    display: block;
+}
+/*close dialog*/
+#exit:checked ~ .dialog{
+    display: none;
+}
+
+
+
+
+

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <title>BTVN buổi 9 </title>
+</head>
+<body>
+<div class="container">
+  <div class="nav">
+    <div class="logo">
+      <h1 class="mdi mdi-cards-spade"> F8 Admin</h1>
+    </div>
+    <div class="menu">
+      <p>Menu</p>
+      <ul>
+        <li class="mdi mdi-account"> Quản Lí Đơn Hàng</li>
+        <li class="mdi mdi-account"> Quản Lí Xe</li>
+        <li class="mdi mdi-account"> Quản Lí Dịch Vụ</li>
+        <li class="mdi mdi-account"> Cài Đặt Khác</li>
+      </ul>
+    </div>
+
+    <div class="foot-nav">
+      <hr>
+      <div class="foot-account">
+        <p> Liên Hệ Với Chúng Tôi</p>
+        <p class="mdi mdi-gmail"> Gmail : <a href="#1"> abc@gmail.com</a></p>
+        <p class="mdi mdi-phone"> SĐT : <a href="#1" > 0987654321</a></p>
+      </div>
+      <div class="foot">
+        <div class="mdi mdi-facebook"></div>
+        <div class="mdi mdi-instagram"></div>
+        <div class="mdi mdi-twitter"></div>
+        <div class="mdi mdi-youtube"></div>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+  <h2>Members</h2>
+  <table cellpadding="10px" cellspacing="0" border="1px solid black">
+    <input type="checkbox" name="" id="exit">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Mail</th>
+      <th>Acction</th>
+    </tr>
+    </thead>
+    <input type="checkbox" name="" id="edit">
+    <tbody>
+    <tr>
+      <td>1</td>
+      <td>Tran Van A</td>
+      <td>123@gmail.com</td>
+      <td>
+        <button class="btn-edt">
+          <label for="edit">
+            <span class="mdi mdi-account-edit"></span>
+            <span>edit</span>
+          </label>
+        </button>
+        <button class="mdi mdi-delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Tran Van B</td>
+      <td>123@gmail.com</td>
+      <td>
+        <button class="btn-edt">
+          <label for="edit">
+            <span class="mdi mdi-account-edit"></span>
+            <span>edit</span>
+          </label>
+        </button>
+        <button class="mdi mdi-delete">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Tran Van C</td>
+      <td>123@gmail.com</td>
+      <td>
+        <button class="btn-edt">
+          <label for="edit">
+            <span class="mdi mdi-account-edit"></span>
+            <span>edit</span>
+          </label>
+        </button>
+        <button class="mdi mdi-delete">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+    <div class="dialog">
+      <div class="dialog-input">
+        <div class="top-dialog">
+          <span class="p">New member</span>
+          <label for="exit">
+            <span class="mdi mdi-close-circle"></span>
+          </label>
+        </div>
+        <label for="skill"></label>
+        <select name="" id="skill">
+          <option value="">--Select Skill--</option>
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JavaScript">JavaScript</option>
+        </select>
+        <label for="name"></label>
+        <input type="text" placeholder="Name" name="" id="name" required>
+        <label for="mail"></label>
+        <input type="text" placeholder="Mail" name="" id="mail" required>
+      </div>
+        <div class="dialog-btn">
+        <input type="button" id="close" value="Close">
+        <input type="button" id="save" value="Save">
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
