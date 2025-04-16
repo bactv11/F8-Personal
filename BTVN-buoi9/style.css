@@ -4,200 +4,164 @@
     box-sizing: border-box;
 }
 body{
-    font-family: "Times New Roman", sans-serif;
+    font-family: sans-serif;
 }
-.container {
-    width: 976px;
+.color-white{
+    color: white;
+}
+.color-gray{
+    color: gray;
+}
+.font-size-32{
+    font-size: 32px;
+}
+.font-size-16{
+    font-size: 16px;
+}
+.margin-2{
+    margin: 4px;
+}
+.margin-4{
+    margin: 8px;
+}
+.margin-top-5{
+    margin-top: 10px;
+}
+.padding-2{
+    padding: 4px;
+}
+.padding-4{
+    padding: 8px;
+}
+.text-center{
+    text-align: center;
+}
+.container{
     display: flex;
     position: relative;
 }
 .nav{
-    position: absolute;
-    width: 300px;
-    height: 700px;
-    top: 0;
-    left: 0;
-    border-radius: 5px;
-    padding: 10px;
+    display: block;
+    height: 100vh;
+    width: 20%;
     background: gray;
+    border-radius:5px ;
 }
-.logo{
-    color: white;
-    margin: 10px;
+.logo {
+    font-weight: 600;
+    line-height: 2;
 }
-.menu {
-    color: white;
+.menu{
+    line-height: 2;
 }
-.menu ul{
-    list-style: none;
-    padding: 10px;
+.menu li{
+    position: relative;
 }
-.menu ul li{
-    padding: 10px;
-}
-.menu ul li:hover{
-    background-color: #716985;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.main{
-    position: absolute;
-    top: 50px;
-    left: 50%;
-}
-.main h2{
-    text-align: center;
-    padding: 10px;
-}
-.foot-nav{
-    display: block;
-    position: absolute;
-    bottom: 20px;
-}
-.foot-account p{
-    padding: 5px;
-}
-.foot-account a{
-    text-decoration: none;
-}
-.foot-account .mdi{
-    font-size: 20px;
-}
-
-.foot{
-    display: flex;
-}
-.foot .mdi{
-    font-size: 30px;
-    padding: 10px;
-    border-radius: 40%;
-    margin: 10px;
-    box-shadow: 2px 2px 4px #716985;
-}
-.foot .mdi:hover{
-    background-color: #716985;
-}
-/*table{*/
-/*    filter: blur(5px);*/
-/*}*/
-table tr td{
-    padding: 10px;
-    text-align: center;
-}table tr th{
-    padding: 10px;
-    text-align: center;
-    font-size: 20px;
- }
-.head{
-     background-color: red;
-     width: 400px;
- }
-#edit{
-    position: absolute;
-    top: 20px;
-    left: 50px;
-    display: none;
-}
-#exit{
-    position: absolute;
-    display: none;
-}
-.btn-edt{
-    background: green;
-    font-size: 16px;
-    width: 90px;
-    height: 30px;
-    border-radius: 5px;
-}
-.btn-edt:hover{
-    color: white;
-}
-.mdi-delete{
-    background: red;
-    font-size: 16px;
-    width: 90px;
-    height: 30px;
-    border-radius: 5px;
-}
-
-.mdi-delete:hover{
-    color: white;
-}
-
-/*dialog*/
-.dialog{
-    width: 350px;
-    height: 250px;
-    border: 1px solid black;
-    display: none;
-    position: absolute;
-    z-index: 1;
-    top: 150px;
-    left: 10%;
-    border-radius: 5px;
-    background: white;
-}
-/**/
-.top-dialog {
-    padding: 10px;
-    background: #716985;
-    color: white;
-}
-.dialog input{
-    display: block;
-    padding: 10px;
-    margin: 10px;
-    width: 95%;
-}
-.mdi-close-circle{
-    background: #716985;
-    cursor: pointer;
+.mdi-menu-down{
     position: absolute;
     right: 10px;
+    align-items: center;
 }
-
-/**/
-.dialog-btn{
-    display: flex;
-}
-.dialog #skill{
-    width: 330px;
-    height: 40px;
-    left: 10px;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-#skill{
-    padding: 10px;
-    color: gray;
-}
-
-.dialog-btn #close{
-    background: red;
-    border: none;
+.menu li:hover{
     color: white;
+    cursor: pointer;
+    background: #777070;
+    border-radius: 5px;
 }
-.dialog-btn #close:hover{
-    background: #e66868;
+/**/
+.content{
+    margin: 0 auto;
+    height: 250px;
+    line-height: 2;
 }
-.dialog-btn #save{
+.table-list{
+    line-height: 3;
+    border-collapse: collapse;
+}
+.table-list td, .table-list th {
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+.btn-edit{
     background: green;
     border: none;
+    border-radius: 5px;
+}
+.btn-delete{
+    background: red;
+    border: none;
+    border-radius: 5px;
+}
+.btn-edit:hover{
+    opacity: 0.8;
     color: white;
+
+    cursor: pointer;
 }
-.dialog-btn #save:hover{
-    background: darkgreen;
+.btn-delete:hover{
+    opacity: 0.8;
+    color: white;
+    cursor: pointer;
 }
-/*open dialog*/
+/**/
+.dialog{
+    margin: 0 auto;
+    width: 400px;
+    height: 250px;
+    border: 1px solid black;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    align-items: center;
+    display: none;
+}
+.dialog-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #280b39;
+}
+.dialog-form{
+    display: block;
+}
+.dialog-form .dialog-select{
+    width: 380px;
+    margin: 4px;
+    height: 40px;
+}
+.dialog-form input{
+    width: 380px;
+    margin: 4px;
+    height: 40px;
+}
+.dialog-button .button-close{
+    background: red;
+    border: none;
+    width: 183px;
+    height: 40px;
+    margin: 4px;
+    cursor: pointer;
+
+}
+.dialog-button .button-close:hover{
+    opacity: 0.8;
+}
+.dialog-button .button-save{
+    background: green;
+    border: none;
+    width: 183px;
+    height: 40px;
+    margin: 4px;
+    cursor: pointer;
+}
+.dialog-button .button-save:hover{
+    opacity: 0.8;
+}
+#edit{
+    display: none;
+}
 #edit:checked ~ .dialog{
     display: block;
 }
-/*close dialog*/
-#exit:checked ~ .dialog{
-    display: none;
-}
-
-
-
 
 
