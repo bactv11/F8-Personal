@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.font-heading {
+    font-family: "Space Grotesk", sans-serif;
+}
+.font-family {
+    font-family: "Inter", sans-serif;
+}
+.font-weight-bold {
+    font-weight:600;
+}
+.font-weight{
+    font-weight:400;
+}
+.font-size-64{
+    font-size: 64px;
+}
+
+.container {
+    width: 1547px;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+}
+
+.timeline {
+    width: 39.43%;
+}
+
+.image-content {
+    width: 38.72%;
+    max-width: 100%;
+}
+
+.together-we-build,
+.completed-1000-cases,
+.we-are-number-one,
+.intellectual-property  {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.together-we-build:hover,
+.completed-1000-cases:hover,
+.we-are-number-one:hover,
+.intellectual-property:hover {
+    flex-direction: row-reverse;
+}
+
+.together-we-build:hover .timeline-content,
+.completed-1000-cases:hover .timeline-content,
+.we-are-number-one:hover .timeline-content,
+.intellectual-property:hover .timeline-content{
+    text-align: left;
+}
+
+.together-we-build:hover > p,
+.completed-1000-cases:hover > p,
+.we-are-number-one:hover > p,
+.intellectual-property:hover > p{
+    text-align: right;
+}
+
+.together-we-build:hover .tag,
+.completed-1000-cases:hover .tag,
+.we-are-number-one:hover .tag,
+.intellectual-property:hover .tag{
+    color: #fff;
+    background-color: #a26f5a;
+}
+
+
+.timeline-content {
+    width: 261px;
+    text-align: right;
+}
+
+
+.timeline-content .timeline-title {
+    color: #27283b;
+    font-size: 2rem;
+    line-height: 25px;
+}
+
+.timeline-content .timeline-desc {
+    margin-top: 10px;
+    color:#7a7a7e;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+.timeline-content .tag {
+    display: inline-block;
+    min-width: 84px;
+    padding: 5px 15px;
+    margin-top: 18px;
+    background: #f2f2f2;
+    border-radius: 999px;
+    color: #7a7a7e;
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+
+/* Timeline Content */
+.pattern {
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+}
+
+.pattern .icon {
+    width: 25px;
+    height: 25px;
+    background: #ecf5f3;
+    border-radius: 50%;
+    display: flex;
+}
+
+.pattern .small-icon {
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    background: darkseagreen;
+    background: linear-gradient(180deg, rgba(90, 187, 171, 1) 0%, rgba(60, 135, 123, 1) 89%);
+    border-radius: 50%;
+}
+
+.pattern .separate {
+    width: 1px;
+    height: 141px;
+    background: #f2f2f2;
+}
+
+.timeline-number {
+    width: 261px;
+    color: #27283b;
+    font-size: 1.6rem;
+    line-height: 25px;
+}
+/**/
+.image-content {
+    position: relative;
+}
+
+.image-content .image {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.box-content {
+    width: 280px;
+    height: 379px;
+    background-image: url("https://nads.1cdn.vn/2024/11/22/74da3f39-759b-4f08-8850-4c8f2937e81a-1_mangeshdes.png");
+    background-size: cover;
+    position: absolute;
+    top: 18%;
+    left: 0;
+    padding: 10px
+}
+
+.box-content .rectangle {
+    background: #596297;
+    width: 200px;
+    height: 100px;
+    position: relative;
+}
+
+.box-content .number {
+    color: white;
+    background-image: url("https://tse3.mm.bing.net/th?id=OIP.io3fzXKtOwbmxZzksm2A6gHaE8&pid=Api&P=0&h=180");
+    background-size: cover;
+    position: absolute;
+    inset: 0;
+    width: 280px;
+    height: 379px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 30px 30px 60px 30px;
+}
+
+.number span {
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+}
+
+
+.box-content .desc {
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+}

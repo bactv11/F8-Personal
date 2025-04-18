@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.color-orange{
+    color: orange;
+}
+.color-gray{
+    color: gray;
+}
+.color-white{
+    color: white;
+}
+.ma-top{
+    margin-top: 10px;
+}
+
+
+.list-content{
+    display: flex;
+}
+.content{
+    margin: 10px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 40px;
+    position: relative;
+    line-height: 1.3;
+    overflow: hidden;
+}
+.sub-content{
+    position: absolute;
+    bottom: -100%;
+    left: 5%;
+    width: 90%;
+    height: 270px;
+    padding: 20px;
+    border: 1px solid gray;
+    transition: bottom 0.1s ease; /* Hiệu ứng mượt */
+}
+.content:hover{
+    background-image: url("https://tse2.mm.bing.net/th?id=OIP.x0V7Z_8UzO-tWPbDuGy-FwHaE8&pid=Api&P=0&h=180");
+    background-size: cover;
+    opacity: 0.9;
+    cursor: pointer;
+
+}
+.content:hover .item{
+    display: none;
+}
+.content:hover .sub-content{
+    display: block;
+    bottom: 10px;
+}
+.list-content i{
+    font-size: 50px;
+}
+.sub-content .strong {
+    position: absolute;
+    bottom: 25px;
+    font-weight: 600;
+    left: 15px;
+}
+
+.mdi-arrow-right{
+    border-radius: 50%;
+    color: black;
+    background: white;
+    cursor: pointer;
+    padding: 5px;
+}
+.mdi-arrow-right:hover{
+    background: black;
+    color: white;
+}
+
+
+/**/
