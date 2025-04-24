@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1>Try a free sample</h1>
+<p>Sign up to get you can redeem at your neareset. Dancing Goat cafe for a sample ò the Colombia Calombia</p>
+<form action="https://api-gateway.fullstack.edu.vn/action_page.php" method="post" enctype="multipart/form-data">
+<!--    grid layout-->
+    <table>
+        <tr>
+            <td>
+                <label for="firtname"><b>Firt Name</b></label> <br>
+                <input type="text" name="firtName" id="firtname" placeholder="Enter First Name" required="điền vao đay">
+            </td>
+            <td>
+                <label for="lastname"><b>Last Name</b></label> <br>
+                <input type="text" name="lastName" id="lastname" placeholder="Enter Last Name" required>
+            </td>
+        </tr>
+<!--        //-->
+        <tr>
+            <td>
+                <label for="mail"><b>Email Address</b></label> <br>
+                <input type="text" name="mailAdress" id="mail" placeholder="Enter Email Address" required>
+            </td>
+            <td>
+                <label for="adress"><b>Skiil St</b> </label> <br>
+                <input type="text" name="adress" id="adress" placeholder="Enter Skiil St " required>
+            </td>
+        </tr>
+<!--        //-->
+        <tr>
+            <td>
+                <label for="city"><b>City</b></label> <br>
+                <input type="text" name="city" id="city" placeholder="Enter City" required>
+            </td>
+            <td>
+                <label for="state"><b>State</b></label> <br>
+                <input type="text" name="state" id="state" placeholder="Enter State" required>
+            </td>
+        </tr>
+<!--        //-->
+        <tr>
+            <td>
+                <label for="zip"> <b>ZIP code</b></label> <br>
+                <input type="text" name="zipCode" id="zip" placeholder="Enter Zip Code" required>
+            </td>
+            <td>
+                <label><b>CounTry</b></label> <br>
+                <select name="country" required>
+                    <option value="vietnam"> Việt Nam</option>
+                    <option value="anh"> Anh</option>
+                    <option value="my"> My</option>
+                </select>
+
+            </td>
+        </tr>
+<!--        //-->
+            <tr>
+                <td  colspan="2" rowspan="2" style="text-align: center; ">
+                    <button type="submit" style="margin-top: 10px;background: blue;color: aliceblue;width: 100%;height: 40px">SEND ME COFFEE</button>
+                    <br>
+                </td>
+            </tr>
+
+        <tr>
+            <td><label for="file">upload file</label>
+                <input type="file" name="file[]" id="file" multiple accept="image/*" hidden>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
