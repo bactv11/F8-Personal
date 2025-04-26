@@ -1,0 +1,13 @@
+
+ul > span + li, .footer ul li{
+    color: green;
+}
+.footer ul li {
+    font-weight: bold ;
+}
+
+/* 
+'khoảng trăng': chọn các thẻ con và cháu
+'>' con trực tiếp
+Dấu '~' dùng để tim con cùng cấp với con trực tiếp 
+',' tất cả các thuộc tính cùng có chung thành phần*/

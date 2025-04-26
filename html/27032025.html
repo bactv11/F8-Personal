@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--Thuôc tính của input
+  "placegoler": text ẩn giúp người dùng thấy nội dung thẻ input cần nhap
+  "name":
+  "type"; kiểu
+  "id"
+  khi dùng radio hoặc checkbox thì nên đặt chung "name":-->
+    <form action="https://api-gateway.fullstack.edu.vn/action_page.php"
+          method="get" >
+        <label for="name">Nhập tên</label>
+          <input placeholder="Full Name" name="fullname" type="text" id="name" value="trần văn bắc"> <br>
+        <label for="age">Nhập password</label>
+          <input placeholder="Age" name="fullage" type="password" id="age" value="87654321" disabled > <br>
+<!--      text-->
+        <label for="dis">Nhập dis</label>
+          <input placeholder="Discription" name="discription" type="text" id="dis" required> <br>
+<!--      mail-->
+        <label for="mail">Email</label>
+          <input placeholder="Email" name="fullmail" type="email" id="mail" readonly value="bactvf8@fullstack.edu.vn" > <br>
+<!--      radio-->
+        <label>nhập gender: </label>
+          <label for="male">male</label>
+            <input name="gender" type="radio" id="male" value="male" checked="checked" >
+          <label for="female">female</label>
+            <input name="gender" type="radio" id="female" value="male" > <br>
+<!--      checkbox-->
+        <label> Nhập lang: </label>
+            <label for="vn">VietNam</label>
+             <input id="vn" name="lang[]" type="checkbox" value="vietnam" checked="checked">
+
+          <label for="thai">Thai Lan</label>
+          <input id="thai" name="lang[]" type="checkbox" value="thailan">
+
+          <label for="han">Han Quoc</label>
+          <input id="han" name="lang[]" type="checkbox" value="hanquoc"> <br>
+<!--     select -->
+          <label >Ban hay vay tiền ai?</label>
+              <select name="center">
+                <option value="f88">F88</option>
+                <option value="f888">F888</option>
+                <option value="f8888">F8888</option>
+              </select> <br>
+<!--range-->
+        <label>xxx.com</label>
+          <input type="range" min="1" max="10" step="1" name="salary"> <br>
+<!--    textarea  -->
+        <label>mo tả</label>
+        <textarea name="vayvon" placeholder="Nhập và số tiền mà m muốn vay" cols="50" rows="10"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

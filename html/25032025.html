@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ngày 25/03/2025</title>
+</head>
+<body>
+<div style="border: 1px solid red">
+    <h1 style="border: 1px solid red" > This is heading</h1>
+    <!--    ĐƯợc coi là thẻ block , các thẻ được coi là block tương tự : "p", "div" ...-->
+        <p style="border: 1px solid red">
+            Chủ nhân thiết bị cũng không được sử dụng sạc dự phòng trong suốt quá trình bay. Cụ thể, hãng cấm việc nạp điện cho sản phẩm bằng cổng USB của phi cơ. Tác vụ sạc cho thiết bị khác như máy tính, điện thoại bằng sạc dự phòng cũng không được phép.
+        </p>
+        <span style="border: 1px solid red">van</span>
+        <span style="border: 1px solid red">bac</span>
+<!--    "span" là 1 thẻ inline -->
+    <div style="border: 1px solid blue; width: 300px;margin: 10px">
+        <p >
+            Chủ nhân thiết bị cũng không được sử dụng sạc dự phòng trong suốt quá trình bay. Cụ thể, hãng cấm việc nạp điện cho sản phẩm bằng cổng USB của phi cơ. Tác vụ sạc cho thiết bị khác như máy tính, điện thoại bằng sạc dự phòng cũng không được phép.
+        </p>
+    </div>
+</div>
+<hr>
+<h2>Thẻ điều hướng "a" rederect/ thẻ điều hướng</h2>
+<!--    thẻ điều hướng "redirect" hay còn là thẻ "a" ,
+        để khi click vào thẻ điều hướng ngay lập tức mở thêm 1 thanh tab trên thanh gg ta dùng "_blank" -->
+    <p>
+        click vào <a href="../BTVN-buoi1/index.html">đây</a> để đi đến liên kết mới
+<!--        đây là đường dẫn tương đối khi đi qua file CHA bằng "/" để vào file CON-->
+    </p>
+    <p>
+        click vào <a href="/test.html">đây</a> để đi đến liên kết mới
+        <!--        đây là đường dẫn tuyệt đối dù file có đi vào folder nào cũng kh thay đổi đuờng dẫn vào file
+                    có "/" ở đầu đường dẫn là liên kết tuyệt đối-->
+    </p>
+<!-- thẻ image-->
+<h2>thẻ image</h2>
+    <img src="hdfghjdgsh" alt="đây là ảnh">
+<h2>Thẻ table</h2>
+<!-- Thẻ table có các thuộc tính :
+    "thead" : đầu bảng
+    "tbody": thân bảng
+    "tfoot": cuối bảng
+    "rowspan"; ghộp cột
+    "colspan" ghộp hàng
+    "tr":
+    "td":
+    "cellspacing" khoảng cách của các ô
+    -->
+    <table border="1"  cellspacing="0" cellpadding="10">
+        <thead >
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>date of birthday</th>
+                <th>position</th>
+                <th>salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">01</td>
+                <td align="center">bắc</td>
+                <td align="center">11/08/2003 </td>
+                <td align="center" rowspan="2">dev</td>
+                <td align="center">1$</td>
+            </tr>
+            <tr>
+                <td align="center">02</td>
+                <td align="center">bắc</td>
+                <td align="center">11/08/2003 </td>
+                <td align="center">1$</td>
+            </tr>
+            <tr>
+                <td align="center">02</td>
+                <td align="center">bắc</td>
+                <td colspan="3" align="center">1$</td>
+            </tr>
+        </tbody>
+    </table>
+<!-- Thẻ danh sách
+    "ul": hien thi danh sách dạng
+    "ol": hien thi danh sach dang so
+    "li": tên
+    "b" in đậm
+    "strong" ; in đậm, nhấn mạnh
+    "i" nghiêng
+    "em": nhấn mạnh, in nghiêng
+    "s" gạch chữ
+    "u" gạch chân
+    "q" dấu nháy ""
+    :address"; thẻ địa chỉ
+    "del" : xóa
+    "sub" làm nhỏ số vd k hiệu hóa học
+    "sup"
+    -->
+
+<h2>Thẻ danh sách ol/ul</h2>
+    <div>
+        <img src="" alt="xấu nên kh có ảnh">
+        <p> Name: Bắc vận triêu</p>
+        <p>Discription: <s>không</s> có gì để noi, như cái ghế vì khôngpharai bàn</p>
+        <ol type="1">
+            <li>
+                ô cê
+                <ol>
+                    <li>văn bắc</li>
+                    <li>
+                        mà
+                        <ul>
+                            <li>
+                                <a href="#!">bắc</a> <br>
+                                <a href="!">đây</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+            <li>ô dê</li>
+            <li> ô gô </li>
+        </ol>
+        <p>
+            Address
+            <address>
+
+            </address>
+        </p>
+    </div>
+</body>
+</html>

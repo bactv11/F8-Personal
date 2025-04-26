@@ -1,0 +1,58 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Oosis', sans-serif;
+}
+.container{
+    max-width: 1192px;
+    margin: 0 auto;
+}
+.primary-font-family{
+    font-family: 'Great Vibes', cursive;
+}
+.primary-font-color{
+    color:#9ec2bb;
+}
+.pa-2{
+    padding: 4px;
+}
+.pa-4{
+    padding: 8px;
+}
+.ma-2{
+    margin: 4px;
+}
+.ma-4{
+    margin: 8px;
+}
+.d-flex{
+    display: flex;
+}
+.d-block{
+    display: block;
+}
+.d-inline-block{
+    display: inline-block;
+}
+.align-items-center{
+    align-items: center;
+}
+.justify-content-space-between{
+    justify-content: space-between;
+}
+.font-size-24{
+    font-size: 24px;
+}
+.font-size-16{
+    font-size: 16px;
+}
+.text-center{
+    text-align: center;
+}
+.justify-content-center{
+    justify-content: center;
+}
+

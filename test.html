@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .item {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .content {
+            position: absolute;
+            bottom: -100%; /* bắt đầu ẩn bên dưới */
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            transition: bottom 0.3s ease;
+        }
+
+        .item:hover .content {
+            bottom: 0; /* di chuyển lên khi hover */
+        }
+
+    </style>
+</head>
+<body>
+<div class="item">
+    <div class="content">
+        Nội dung xuất hiện từ dưới lên
+    </div>
+</div>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
             ▼
 
     let numberNew = 6;     khai báo biến số cần chèn
-    let numberLocation = number.length  khai báo vị trí
+    let numberLocation = number.length      khai báo vị trí
              │
              ▼
     for(let i = 0; i,number.length;i++   dùng vòng lặp và check vị trí

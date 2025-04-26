@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="
+https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+" rel="stylesheet">
+  <title>Title</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    cursor: pointer;
+    font-family: "Source Sans Pro", sans-serif;
+  }
+  header {
+    border-bottom: 1px solid #ccc;
+  }
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-bottom: 5px solid #ccc;
+  }
+  img {
+    flex-shrink: 0;
+    flex-basis: 50px;
+  }
+  .menu, .dropdown {
+    display: flex;
+    list-style: none;
+  }
+  .menu li {
+    padding: 16px;
+  }
+  .menu li:before {
+    display: none;
+  }
+  .dropdown {
+    display: none;
+  }
+  footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #234ca8;
+    align-items: center;
+    display: none;
+  }
+  footer span{
+    padding: 10px;
+  }
+  .menu-icon{
+    display: none;
+    font-size: 30px;
+    position: relative;
+  }
+  @media screen and (max-width: 600px) {
+    .menu{
+      position: absolute;
+      top: 55px;
+      left: 0;
+      height: 650px;
+      width: 30%;
+      background: #ff00ae;
+      color: #fff;
+      display: none;
+    }
+    ul li:hover{
+      cursor: pointer;
+      background: black;
+    }
+    .menu li:before{
+      padding: 8px;
+      display: inline-block;
+    }
+
+    .menu-icon{
+      display: none;
+    }
+    .menu-icon{
+      display: block;
+    }
+  }
+  footer{
+    display: none;
+    background: gray;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 10px 10px 0;
+  }
+  #toggle-menu:checked ~ .menu{
+    display: block;
+  }
+  footer span:hover{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 0 10px 0 rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<body>
+<header>
+  <div class="header-container">
+  <img
+          alt="logo f8"
+          width="50px"
+          src="https://fullstack-nodejs.fullstack.edu.vn/assets/f8_icon.png"
+  />
+    <input type="checkbox" name="" id="toggle-menu" hidden>
+  <ul class="menu">
+    <li class="mdi mdi-temple-buddhist">Home</li>
+    <li class="mdi mdi-temple-buddhist">
+      Products
+      <ul class="dropdown">
+        <li>Phone</li>
+        <li>Tab</li>
+        <li>Lap</li>
+      </ul>
+    </li>
+    <li class="mdi mdi-temple-buddhist">Customers</li>
+    <li class="mdi mdi-temple-buddhist">About</li>
+    <li class="mdi mdi-temple-buddhist">Phone</li>
+    <li class="mdi mdi-temple-buddhist">Tab</li>
+    <li class="mdi mdi-temple-buddhist">Lap</li>
+  </ul>
+    <label for="toggle-menu" class="menu-icon mdi mdi-menu"></label>
+    <footer>
+      <span class="menu-icon mdi mdi-facebook"></span>
+      <span class="menu-icon mdi mdi-twitter"></span>
+      <span class="menu-icon mdi mdi-instagram"></span>
+    </footer>
+    </div>
+  </div>
+</header>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header{
+      height: 50px;
+      border: 1px solid red;
+      position: relative;
+      background: #fff;
+    }
+    header > ul {
+      position: absolute;
+      right: 50px;
+      top: 0;
+    }
+    header > ul >li {
+      display: inline-block;
+      padding: 16px;
+    }
+    header > ul > li:nth-of-type(2):hover .sub-nav {
+      display: block;
+    }
+    .sub-nav{
+      display: none;
+      position: absolute;
+      top: 45px;
+      border: 1px solid red;
+    }
+    .sub-nav > ul > li {
+      list-style: none;
+      padding: 10px;
+      background: #7bb0c6;
+    }
+    .sub-nav > ul > li:hover {
+      background: #00b2ff;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img width="50px" src="https://tse3.mm.bing.net/th?id=OIP.wIQLBnnLkue6LGQuPPiknAHaHa&pid=Api&P=0&h=180" alt="">
+    <ul>
+      <li>Home</li>
+      <li>
+        Product
+        <div class="sub-nav">
+          <ul>
+            <li>Bim Bim</li>
+            <li>Kẹo mút</li>
+          </ul>
+        </div>
+      </li>
+      <li>Contact</li>
+      <li>About</li>
+    </ul>
+  </header>
+</body>
+</html>

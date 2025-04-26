@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 30px;
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+        .container > div {
+            display: inline-block;
+        }
+        .avt{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: red;
+            text-align: center;
+            position: relative;
+        }
+        .msg{
+            margin-left: 10px;
+            width: 150px;
+            height: 20px;
+            padding: 3px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            background: gray;
+        }
+        .me{
+            border-style: solid ;
+            border-width: 10px;
+            border-color: transparent gray transparent transparent;
+            position: absolute;
+            left: 50px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="avt">B</div>
+        <div class="msg">
+            <div class="me"></div>
+            <span>Họt để đi nhàm</span>
+        </div>
+    </div>
+</body>
+</html>

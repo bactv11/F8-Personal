@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            text-align: center;
+        }
+        .nav{
+            background: #ff00ae;
+        }
+        .nav ul li {
+            padding: 10px;
+            display: inline-block;
+        }
+        .nav ul li:hover{
+            background: #0015ff;
+        }
+        .nav ul li:hover  .sub_nav {
+             cursor: pointer;
+             background: #d5841d;
+             display: block;
+            position: absolute;
+         }
+        .sub_nav {
+            display: none;
+        }
+        .sub_nav ul li {
+            display: block;
+        }
+
+    </style>
+<!--    thẻ span không phải là thẻ block , nếu muốn biến nó thành thẻ block thì dùng thuộc tính
+        "display": block
+        -->
+</head>
+<body>
+    <h1>text 1</h1>
+<span> text span</span>
+<p> text p</p>
+    <div class="nav">
+        <ul >
+            <li>nội dung1</li>
+            <li>
+                nội dung2
+                <div class="sub_nav">
+                    <ul >
+                        <li>văn </li>
+                        <li>bắc</li>
+                    </ul>
+                </div>
+            </li>
+            <li>nội dung3</li>
+            <li>nội dung4</li>
+        </ul>
+    </div>
+
+</body>
+</html>

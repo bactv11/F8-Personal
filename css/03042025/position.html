@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 200px;
+      height: 200px;
+      background: red;
+      color: white;
+      margin: auto;
+      position: relative;
+    }
+    .item{
+      border: 1px solid #00b2ff;
+      width: 250px;
+      height: 250px;
+      margin: auto;
+    }
+    .item, .item1, .item2, .item3 {
+      padding: 10px;
+      border: 1px solid #11fab2;
+    }
+    .item2{
+      /*position: relative;*/
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background:gray;
+    }
+    .item3{
+      position: relative;
+      z-index: 1;
+      background: green;
+    }
+  </style>
+</head>
+<!--position: vị trí
+  -relative:
+  -absolute:
+  -->
+<body>
+<div class="item">
+  <div class="container">
+      <div class="item1">
+        item1
+      </div>
+      <div class="item2">
+        item2
+      </div>
+      <div class="item3">
+        item3
+      </div>
+  </div>
+
+</div>
+</body>
+</html>
