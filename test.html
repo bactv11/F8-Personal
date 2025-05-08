@@ -1,43 +1,979 @@
-<!doctype html>
-<html lang="en">
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<html lang="en">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<head>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <title>Quản lý sản phẩm mini</title>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    <style>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        body {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            font-family: Arial, sans-serif;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            margin: 40px;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        h1 {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            color: #333;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        ul {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            list-style: none;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            padding: 0;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        li {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            margin-bottom: 10px;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        button {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            margin-left: 5px;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            padding: 3px 8px;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        input {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            padding: 5px;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            margin-right: 10px;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    </style>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;</head>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<body>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<h1>Quản lý sản phẩm</h1>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<input type="text" id="productName" placeholder="Tên sản phẩm">&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<button onclick="addProduct()">Thêm sản phẩm</button>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<ul id="productList"></ul>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;<script>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    let products = [&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        { id: 1, name: 'iPhone' },&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        { id: 2, name: 'iPad' },&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        { id: 3, name: 'MacBook' }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    ];&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    function renderProducts() {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        const list = document.getElementById('productList');&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        list.innerHTML = '';&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        products.forEach(product => {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            const li = document.createElement('li');&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            li.innerHTML = `&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;          ${product.name}&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;          <button onclick="editProduct(${product.id})">Sửa</button>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;          <button onclick="deleteProduct(${product.id})">Xóa</button>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        `;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            list.appendChild(li);&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        });&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    function addProduct() {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        const nameInput = document.getElementById('productName');&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        const name = nameInput.value.trim();&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        if (name === '') {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            alert('Vui lòng nhập tên sản phẩm!');&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            return;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        const newProduct = {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            id: Date.now(), // id tạm bằng timestamp&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            name: name&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        };&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        products.push(newProduct);&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        nameInput.value = '';&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        renderProducts();&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    function editProduct(id) {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        const newName = prompt('Nhập tên mới cho sản phẩm:');&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        if (newName) {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            products = products.map(product => {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                if (product.id === id) {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                    return { ...product, name: newName };&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;                return product;&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            });&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            renderProducts();&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    function deleteProduct(id) {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        if (confirm('Bạn có chắc muốn xóa sản phẩm này không?')) {&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            products = products.filter(product => product.id !== id);&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;            renderProducts();&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    // Render lần đầu&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;    renderProducts();&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;</script>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;</body>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash;</html>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<html lang="en">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<head>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <title>Quản lý sản phẩm mini (Xịn)</title>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <style>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        body {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            font-family: Arial, sans-serif;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            margin: 40px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            background-color: #f9f9f9;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        h1 {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            color: #333;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        ul {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            list-style: none;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            padding: 0;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        li {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            background: white;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            margin-bottom: 10px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            padding: 10px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            border-radius: 8px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            box-shadow: 0 2px 5px rgba(0,0,0,0.1);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        button {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            margin-left: 5px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            padding: 5px 10px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            border: none;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            border-radius: 5px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            cursor: pointer;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        button.edit {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            background-color: #4CAF50;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            color: white;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        button.delete {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            background-color: #f44336;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            color: white;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        button.add {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            background-color: #2196F3;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            color: white;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            margin-left: 10px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        input {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            padding: 5px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            margin-top: 10px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        /* Modal */&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        .modal {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            display: none;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            position: fixed;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            top: 0; left: 0;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            width: 100%; height: 100%;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            background: rgba(0,0,0,0.5);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            justify-content: center;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            align-items: center;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        .modal-content {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            background: white;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            padding: 20px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            border-radius: 8px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            min-width: 300px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        .modal-content input {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            width: 100%;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            margin-top: 10px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            margin-bottom: 10px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            padding: 5px;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </style>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</head>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<body>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;<h1>Quản lý sản phẩm</h1>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;<input type="text" id="productName" placeholder="Tên sản phẩm">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<button class="add" onclick="addProduct()">Thêm sản phẩm</button>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;<ul id="productList"></ul>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;&lt;!&ndash; Modal &ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<div id="editModal" class="modal">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    <div class="modal-content">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <h3>Sửa sản phẩm</h3>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <input type="text" id="editProductName">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <button class="edit" onclick="saveEdit()">Lưu</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <button class="delete" onclick="closeModal()">Hủy</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </div>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;<script>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    let products = JSON.parse(localStorage.getItem('products')) || [&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        { id: 1, name: 'iPhone' },&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        { id: 2, name: 'iPad' },&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        { id: 3, name: 'MacBook' }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    ];&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    let editId = null;&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    function renderProducts() {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        const list = document.getElementById('productList');&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        list.innerHTML = '';&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;        products.forEach(product => {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            const li = document.createElement('li');&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            li.innerHTML = `&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;          ${product.name}&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;          <button class="edit" onclick="openEditModal(${product.id})">Sửa</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;          <button class="delete" onclick="deleteProduct(${product.id})">Xóa</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        `;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            list.appendChild(li);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        });&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        saveToLocalStorage();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    function addProduct() {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        const nameInput = document.getElementById('productName');&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        const name = nameInput.value.trim();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        if (name === '') {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            alert('Vui lòng nhập tên sản phẩm!');&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            return;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        const newProduct = {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            id: Date.now(),&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            name: name&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        };&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        products.push(newProduct);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        nameInput.value = '';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        renderProducts();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    function deleteProduct(id) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        if (confirm('Bạn có chắc muốn xóa sản phẩm này không?')) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            products = products.filter(product => product.id !== id);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            renderProducts();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    function openEditModal(id) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        const product = products.find(p => p.id === id);&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        document.getElementById('editProductName').value = product.name;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        document.getElementById('editModal').style.display = 'flex';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        editId = id;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    function closeModal() {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        document.getElementById('editModal').style.display = 'none';&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        editId = null;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    function saveEdit() {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        const newName = document.getElementById('editProductName').value.trim();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        if (newName === '') {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            alert('Tên sản phẩm không được để trống!');&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            return;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        products = products.map(product => {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            if (product.id === editId) {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                return { ...product, name: newName };&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            }&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            return product;&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        });&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        closeModal();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        renderProducts();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    function saveToLocalStorage() {&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        localStorage.setItem('products', JSON.stringify(products));&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    }&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    // Render lần đầu&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    renderProducts();&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</script>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;</body>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</html>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;    <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;    <title>Quản lý sản phẩm mini (Xịn có thứ tự)</title>&ndash;&gt;-->
+<!--&lt;!&ndash;    <style>&ndash;&gt;-->
+<!--&lt;!&ndash;        body {&ndash;&gt;-->
+<!--&lt;!&ndash;            font-family: Arial, sans-serif;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin: 40px;&ndash;&gt;-->
+<!--&lt;!&ndash;            background-color: #f9f9f9;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        h1 {&ndash;&gt;-->
+<!--&lt;!&ndash;            color: #333;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        ul {&ndash;&gt;-->
+<!--&lt;!&ndash;            list-style: none;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        li {&ndash;&gt;-->
+<!--&lt;!&ndash;            background: white;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-bottom: 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;            border-radius: 8px;&ndash;&gt;-->
+<!--&lt;!&ndash;            box-shadow: 0 2px 5px rgba(0,0,0,0.1);&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        button {&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-left: 5px;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 5px 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;            border: none;&ndash;&gt;-->
+<!--&lt;!&ndash;            border-radius: 5px;&ndash;&gt;-->
+<!--&lt;!&ndash;            cursor: pointer;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        button.edit {&ndash;&gt;-->
+<!--&lt;!&ndash;            background-color: #4CAF50;&ndash;&gt;-->
+<!--&lt;!&ndash;            color: white;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        button.delete {&ndash;&gt;-->
+<!--&lt;!&ndash;            background-color: #f44336;&ndash;&gt;-->
+<!--&lt;!&ndash;            color: white;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        button.add {&ndash;&gt;-->
+<!--&lt;!&ndash;            background-color: #2196F3;&ndash;&gt;-->
+<!--&lt;!&ndash;            color: white;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-left: 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        input {&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 5px;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-top: 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        /* Modal */&ndash;&gt;-->
+<!--&lt;!&ndash;        .modal {&ndash;&gt;-->
+<!--&lt;!&ndash;            display: none;&ndash;&gt;-->
+<!--&lt;!&ndash;            position: fixed;&ndash;&gt;-->
+<!--&lt;!&ndash;            top: 0; left: 0;&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 100%; height: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            background: rgba(0,0,0,0.5);&ndash;&gt;-->
+<!--&lt;!&ndash;            justify-content: center;&ndash;&gt;-->
+<!--&lt;!&ndash;            align-items: center;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        .modal-content {&ndash;&gt;-->
+<!--&lt;!&ndash;            background: white;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 20px;&ndash;&gt;-->
+<!--&lt;!&ndash;            border-radius: 8px;&ndash;&gt;-->
+<!--&lt;!&ndash;            min-width: 300px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        .modal-content input {&ndash;&gt;-->
+<!--&lt;!&ndash;            width: 100%;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-top: 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;            margin-bottom: 10px;&ndash;&gt;-->
+<!--&lt;!&ndash;            padding: 5px;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    </style>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<h1>Quản lý sản phẩm</h1>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<input type="text" id="productName" placeholder="Tên sản phẩm">&ndash;&gt;-->
+<!--&lt;!&ndash;<button class="add" onclick="addProduct()">Thêm sản phẩm</button>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<ul id="productList"></ul>&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash; Modal &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<div id="editModal" class="modal">&ndash;&gt;-->
+<!--&lt;!&ndash;    <div class="modal-content">&ndash;&gt;-->
+<!--&lt;!&ndash;        <h3>Sửa sản phẩm</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" id="editProductName">&ndash;&gt;-->
+<!--&lt;!&ndash;        <button class="edit" onclick="saveEdit()">Lưu</button>&ndash;&gt;-->
+<!--&lt;!&ndash;        <button class="delete" onclick="closeModal()">Hủy</button>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;<script>&ndash;&gt;-->
+<!--&lt;!&ndash;    let products = JSON.parse(localStorage.getItem('products')) || [&ndash;&gt;-->
+<!--&lt;!&ndash;        { id: 1, name: 'iPhone' },&ndash;&gt;-->
+<!--&lt;!&ndash;        { id: 2, name: 'iPad' },&ndash;&gt;-->
+<!--&lt;!&ndash;        { id: 3, name: 'MacBook' }&ndash;&gt;-->
+<!--&lt;!&ndash;    ];&ndash;&gt;-->
+<!--&lt;!&ndash;    let editId = null;&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function renderProducts() {&ndash;&gt;-->
+<!--&lt;!&ndash;        const list = document.getElementById('productList');&ndash;&gt;-->
+<!--&lt;!&ndash;        list.innerHTML = '';&ndash;&gt;-->
+
+<!--&lt;!&ndash;        products.forEach((product, index) => {&ndash;&gt;-->
+<!--&lt;!&ndash;            const li = document.createElement('li');&ndash;&gt;-->
+<!--&lt;!&ndash;            li.innerHTML = `&ndash;&gt;-->
+<!--&lt;!&ndash;          ${index + 1}. ${product.name}&ndash;&gt;-->
+<!--&lt;!&ndash;          <button class="edit" onclick="openEditModal(${product.id})">Sửa</button>&ndash;&gt;-->
+<!--&lt;!&ndash;          <button class="delete" onclick="deleteProduct(${product.id})">Xóa</button>&ndash;&gt;-->
+<!--&lt;!&ndash;        `;&ndash;&gt;-->
+<!--&lt;!&ndash;            list.appendChild(li);&ndash;&gt;-->
+<!--&lt;!&ndash;        });&ndash;&gt;-->
+<!--&lt;!&ndash;        saveToLocalStorage();&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function addProduct() {&ndash;&gt;-->
+<!--&lt;!&ndash;        const nameInput = document.getElementById('productName');&ndash;&gt;-->
+<!--&lt;!&ndash;        const name = nameInput.value.trim();&ndash;&gt;-->
+<!--&lt;!&ndash;        if (name === '') {&ndash;&gt;-->
+<!--&lt;!&ndash;            alert('Vui lòng nhập tên sản phẩm!');&ndash;&gt;-->
+<!--&lt;!&ndash;            return;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        const newProduct = {&ndash;&gt;-->
+<!--&lt;!&ndash;            id: Date.now(),&ndash;&gt;-->
+<!--&lt;!&ndash;            name: name&ndash;&gt;-->
+<!--&lt;!&ndash;        };&ndash;&gt;-->
+<!--&lt;!&ndash;        products.push(newProduct);&ndash;&gt;-->
+<!--&lt;!&ndash;        nameInput.value = '';&ndash;&gt;-->
+<!--&lt;!&ndash;        renderProducts();&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function deleteProduct(id) {&ndash;&gt;-->
+<!--&lt;!&ndash;        if (confirm('Bạn có chắc muốn xóa sản phẩm này không?')) {&ndash;&gt;-->
+<!--&lt;!&ndash;            products = products.filter(product => product.id !== id);&ndash;&gt;-->
+<!--&lt;!&ndash;            renderProducts();&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function openEditModal(id) {&ndash;&gt;-->
+<!--&lt;!&ndash;        const product = products.find(p => p.id === id);&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById('editProductName').value = product.name;&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById('editModal').style.display = 'flex';&ndash;&gt;-->
+<!--&lt;!&ndash;        editId = id;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function closeModal() {&ndash;&gt;-->
+<!--&lt;!&ndash;        document.getElementById('editModal').style.display = 'none';&ndash;&gt;-->
+<!--&lt;!&ndash;        editId = null;&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function saveEdit() {&ndash;&gt;-->
+<!--&lt;!&ndash;        const newName = document.getElementById('editProductName').value.trim();&ndash;&gt;-->
+<!--&lt;!&ndash;        if (newName === '') {&ndash;&gt;-->
+<!--&lt;!&ndash;            alert('Tên sản phẩm không được để trống!');&ndash;&gt;-->
+<!--&lt;!&ndash;            return;&ndash;&gt;-->
+<!--&lt;!&ndash;        }&ndash;&gt;-->
+<!--&lt;!&ndash;        products = products.map(product => {&ndash;&gt;-->
+<!--&lt;!&ndash;            if (product.id === editId) {&ndash;&gt;-->
+<!--&lt;!&ndash;                return { ...product, name: newName };&ndash;&gt;-->
+<!--&lt;!&ndash;            }&ndash;&gt;-->
+<!--&lt;!&ndash;            return product;&ndash;&gt;-->
+<!--&lt;!&ndash;        });&ndash;&gt;-->
+<!--&lt;!&ndash;        closeModal();&ndash;&gt;-->
+<!--&lt;!&ndash;        renderProducts();&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    function saveToLocalStorage() {&ndash;&gt;-->
+<!--&lt;!&ndash;        localStorage.setItem('products', JSON.stringify(products));&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+
+<!--&lt;!&ndash;    // Render lần đầu&ndash;&gt;-->
+<!--&lt;!&ndash;    renderProducts();&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Quản lý sản phẩm mini (Có Tìm kiếm)</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 40px;-->
+<!--            background-color: #f9f9f9;-->
+<!--        }-->
+<!--        h1 {-->
+<!--            color: #333;-->
+<!--        }-->
+<!--        ul {-->
+<!--            list-style: none;-->
+<!--            padding: 0;-->
+<!--        }-->
+<!--        li {-->
+<!--            background: white;-->
+<!--            margin-bottom: 10px;-->
+<!--            padding: 10px;-->
+<!--            border-radius: 8px;-->
+<!--            box-shadow: 0 2px 5px rgba(0,0,0,0.1);-->
+<!--        }-->
+<!--        button {-->
+<!--            margin-left: 5px;-->
+<!--            padding: 5px 10px;-->
+<!--            border: none;-->
+<!--            border-radius: 5px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        button.edit {-->
+<!--            background-color: #4CAF50;-->
+<!--            color: white;-->
+<!--        }-->
+<!--        button.delete {-->
+<!--            background-color: #f44336;-->
+<!--            color: white;-->
+<!--        }-->
+<!--        button.add {-->
+<!--            background-color: #2196F3;-->
+<!--            color: white;-->
+<!--            margin-left: 10px;-->
+<!--        }-->
+<!--        input {-->
+<!--            padding: 5px;-->
+<!--            margin-top: 10px;-->
+<!--            margin-right: 5px;-->
+<!--        }-->
+<!--        /* Modal */-->
+<!--        .modal {-->
+<!--            display: none;-->
+<!--            position: fixed;-->
+<!--            top: 0; left: 0;-->
+<!--            width: 100%; height: 100%;-->
+<!--            background: rgba(0,0,0,0.5);-->
+<!--            justify-content: center;-->
+<!--            align-items: center;-->
+<!--        }-->
+<!--        .modal-content {-->
+<!--            background: white;-->
+<!--            padding: 20px;-->
+<!--            border-radius: 8px;-->
+<!--            min-width: 300px;-->
+<!--        }-->
+<!--        .modal-content input {-->
+<!--            width: 100%;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--            padding: 5px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h1>Quản lý sản phẩm</h1>-->
+
+<!--<input type="text" id="productName" placeholder="Tên sản phẩm">-->
+<!--<button class="add" onclick="addProduct()">Thêm sản phẩm</button>-->
+
+<!--<br><br>-->
+
+<!--<input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." oninput="renderProducts()">-->
+
+<!--<ul id="productList"></ul>-->
+
+<!--&lt;!&ndash; Modal &ndash;&gt;-->
+<!--<div id="editModal" class="modal">-->
+<!--    <div class="modal-content">-->
+<!--        <h3>Sửa sản phẩm</h3>-->
+<!--        <input type="text" id="editProductName">-->
+<!--        <button class="edit" onclick="saveEdit()">Lưu</button>-->
+<!--        <button class="delete" onclick="closeModal()">Hủy</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    let products = JSON.parse(localStorage.getItem('products')) || [-->
+<!--        { id: 1, name: 'iPhone' },-->
+<!--        { id: 2, name: 'iPad' },-->
+<!--        { id: 3, name: 'MacBook' }-->
+<!--    ];-->
+<!--    let editId = null;-->
+
+<!--    function renderProducts() {-->
+<!--        const list = document.getElementById('productList');-->
+<!--        const searchValue = document.getElementById('searchInput').value.toLowerCase();-->
+<!--        list.innerHTML = '';-->
+
+<!--        const filteredProducts = products.filter(product =>-->
+<!--            product.name.toLowerCase().includes(searchValue)-->
+<!--        );-->
+
+<!--        filteredProducts.forEach((product, index) => {-->
+<!--            const li = document.createElement('li');-->
+<!--            li.innerHTML = `-->
+<!--          ${index + 1}. ${product.name}-->
+<!--          <button class="edit" onclick="openEditModal(${product.id})">Sửa</button>-->
+<!--          <button class="delete" onclick="deleteProduct(${product.id})">Xóa</button>-->
+<!--        `;-->
+<!--            list.appendChild(li);-->
+<!--        });-->
+<!--        saveToLocalStorage();-->
+<!--    }-->
+
+<!--    function addProduct() {-->
+<!--        const nameInput = document.getElementById('productName');-->
+<!--        const name = nameInput.value.trim();-->
+<!--        if (name === '') {-->
+<!--            alert('Vui lòng nhập tên sản phẩm!');-->
+<!--            return;-->
+<!--        }-->
+<!--        const newProduct = {-->
+<!--            id: Date.now(),-->
+<!--            name: name-->
+<!--        };-->
+<!--        products.push(newProduct);-->
+<!--        nameInput.value = '';-->
+<!--        renderProducts();-->
+<!--    }-->
+
+<!--    function deleteProduct(id) {-->
+<!--        if (confirm('Bạn có chắc muốn xóa sản phẩm này không?')) {-->
+<!--            products = products.filter(product => product.id !== id);-->
+<!--            renderProducts();-->
+<!--        }-->
+<!--    }-->
+
+<!--    function openEditModal(id) {-->
+<!--        const product = products.find(p => p.id === id);-->
+<!--        document.getElementById('editProductName').value = product.name;-->
+<!--        document.getElementById('editModal').style.display = 'flex';-->
+<!--        editId = id;-->
+<!--    }-->
+
+<!--    function closeModal() {-->
+<!--        document.getElementById('editModal').style.display = 'none';-->
+<!--        editId = null;-->
+<!--    }-->
+
+<!--    function saveEdit() {-->
+<!--        const newName = document.getElementById('editProductName').value.trim();-->
+<!--        if (newName === '') {-->
+<!--            alert('Tên sản phẩm không được để trống!');-->
+<!--            return;-->
+<!--        }-->
+<!--        products = products.map(product => {-->
+<!--            if (product.id === editId) {-->
+<!--                return { ...product, name: newName };-->
+<!--            }-->
+<!--            return product;-->
+<!--        });-->
+<!--        closeModal();-->
+<!--        renderProducts();-->
+<!--    }-->
+
+<!--    function saveToLocalStorage() {-->
+<!--        localStorage.setItem('products', JSON.stringify(products));-->
+<!--    }-->
+
+<!--    // Render lần đầu-->
+<!--    renderProducts();-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản lý sản phẩm mini</title>
     <style>
-        .item {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            background-color: #eee;
-            overflow: hidden;
+        /* --- RESET CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        .content {
-            position: absolute;
-            bottom: -100%; /* bắt đầu ẩn bên dưới */
-            left: 0;
-            width: 100%;
-            padding: 10px;
-            background-color: rgba(0,0,0,0.7);
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #4a90e2;
             color: white;
-            transition: bottom 0.3s ease;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
         }
-
-        .item:hover .content {
-            bottom: 0; /* di chuyển lên khi hover */
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .add-btn {
+            background-color: #28a745;
+            color: white;
+        }
+        .add-btn:hover {
+            background-color: #218838;
+        }
+        .search-input {
+            flex: 2;
+        }
+        ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+        li {
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .product-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+        }
+        .product-actions button {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+        .edit-btn {
+            background-color: #ffc107;
+            color: black;
+        }
+        .edit-btn:hover {
+            background-color: #e0a800;
+        }
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+        footer {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .modal-content h3 {
+            margin-bottom: 15px;
+        }
+        .modal-content input {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .modal-content .modal-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
     </style>
 </head>
+
 <body>
-<div class="item">
-    <div class="content">
-        Nội dung xuất hiện từ dưới lên
+
+<header>
+    Quản lý sản phẩm mini
+</header>
+
+<main>
+    <div class="actions">
+        <input type="text" id="productName" placeholder="Nhập tên sản phẩm mới...">
+        <button class="add-btn" onclick="addProduct()">Thêm</button>
+    </div>
+
+    <div class="actions">
+        <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm sản phẩm..." oninput="renderProducts()">
+    </div>
+
+    <ul id="productList"></ul>
+</main>
+
+<footer>
+    &copy; 2025 Quản lý sản phẩm mini - Bản đẹp chuẩn UX/UI
+</footer>
+
+<!-- Modal chỉnh sửa -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <h3>Chỉnh sửa sản phẩm</h3>
+        <input type="text" id="editProductName">
+        <div class="modal-actions">
+            <button class="add-btn" onclick="saveEdit()">Lưu</button>
+            <button class="delete-btn" onclick="closeModal()">Hủy</button>
+        </div>
     </div>
 </div>
+
+<script>
+    let products = JSON.parse(localStorage.getItem('products')) || [];
+    let editId = null;
+
+    function renderProducts() {
+        const list = document.getElementById('productList');
+        const searchValue = document.getElementById('searchInput').value.toLowerCase();
+        list.innerHTML = '';
+
+        const filteredProducts = products.filter(product =>
+            product.name.toLowerCase().includes(searchValue)
+        );
+
+        filteredProducts.forEach((product, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `
+          <div class="product-info">
+            <strong>${index + 1}.</strong> ${product.name}
+          </div>
+          <div class="product-actions">
+            <button class="edit-btn" onclick="openEditModal(${product.id})">Sửa</button>
+            <button class="delete-btn" onclick="deleteProduct(${product.id})">Xóa</button>
+          </div>
+        `;
+            list.appendChild(li);
+        });
+
+        saveToLocalStorage();
+    }
+
+    function addProduct() {
+        const nameInput = document.getElementById('productName');
+        const name = nameInput.value.trim();
+        if (name === '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Vui lòng nhập tên sản phẩm!',
+                confirmButtonColor: '#dc3545'
+            });
+            return;
+        }
+
+        // Kiểm tra trùng
+        const isDuplicate = products.some(product => product.name.toLowerCase() === name.toLowerCase());
+        if (isDuplicate) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Sản phẩm đã tồn tại!',
+                text: 'Vui lòng chọn tên khác.',
+                confirmButtonColor: '#dc3545'
+            });
+            return;
+        }
+
+        const newProduct = {
+            id: Date.now(),
+            name: name
+        };
+        products.push(newProduct);
+        nameInput.value = '';
+        renderProducts();
+
+        // Thông báo thành công
+        Swal.fire({
+            icon: 'success',
+            title: 'Sản phẩm đã được thêm!',
+            text: `${name} đã được thêm vào danh sách.`,
+            confirmButtonColor: '#28a745'
+        });
+    }
+
+    function saveEdit() {
+        const newName = document.getElementById('editProductName').value.trim();
+        if (newName === '') {
+            Swal.fire({
+                icon: 'error',
+                title: 'Tên sản phẩm không được để trống!',
+                confirmButtonColor: '#dc3545'
+            });
+            return;
+        }
+
+        // Kiểm tra trùng (trừ sản phẩm đang sửa)
+        const isDuplicate = products.some(product =>
+            product.name.toLowerCase() === newName.toLowerCase() && product.id !== editId
+        );
+        if (isDuplicate) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Tên sản phẩm đã tồn tại!',
+                text: 'Vui lòng chọn tên khác.',
+                confirmButtonColor: '#dc3545'
+            });
+            return;
+        }
+
+        products = products.map(product => {
+            if (product.id === editId) {
+                return { ...product, name: newName };
+            }
+            return product;
+        });
+
+        closeModal();
+        renderProducts();
+
+        // Thông báo thành công
+        Swal.fire({
+            icon: 'success',
+            title: 'Sản phẩm đã được cập nhật!',
+            text: `${newName} đã được lưu thành công.`,
+            confirmButtonColor: '#28a745'
+        });
+    }
+
+    function deleteProduct(id) {
+        const product = products.find(p => p.id === id);
+        Swal.fire({
+            title: `Bạn có chắc muốn xóa sản phẩm: ${product.name}?`,
+            text: "Hành động này không thể khôi phục!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#dc3545',
+            cancelButtonColor: '#6c757d',
+            confirmButtonText: 'Xóa',
+            cancelButtonText: 'Hủy'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                products = products.filter(product => product.id !== id);
+                renderProducts();
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sản phẩm đã bị xóa!',
+                    text: `Sản phẩm đã được xóa khỏi danh sách.`,
+                    confirmButtonColor: '#28a745'
+                });
+            }
+        });
+    }
+
+
+    function saveToLocalStorage() {
+        localStorage.setItem('products', JSON.stringify(products));
+    }
+
+    // Render danh sách lần đầu
+    renderProducts();
+</script>
 
 </body>
 </html>
