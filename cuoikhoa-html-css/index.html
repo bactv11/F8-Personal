@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NFT Marketplace</title>
+    <link  rel="icon" href="assets/img/logo-icon.png" sizes="16x16" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,27 +18,29 @@
     <link rel="stylesheet" href="./assets/css/responsive.css" />
 </head>
 <body>
-<header class="header container">
-    <a href="#!">
+<header class="header">
+    <a href="#">
         <img class="logo" src="assets/img/logo.png" alt="NFT Marketplace" />
     </a>
     <div class="nav">
         <ul>
             <li>
-                <a class="nav-menu" href="#!">Marketplace</a>
+                <a class="nav-menu" href="#trending">Marketplace</a>
             </li>
             <li>
-                <a class="nav-menu" href="#!">Rankings</a>
+                <a class="nav-menu" href="#topCreate">Rankings</a>
             </li>
             <li>
-                <a class="nav-menu" href="#!">Connect a wallet</a>
+                <a class="nav-menu" href="#categories">Connect a wallet</a>
             </li>
             <a class="nav-btn" href="#!">
                 <img src="./assets/icon/User.png" alt="user" />
                 <span>Sign Up</span>
             </a>
         </ul>
-
+    </div>
+    <div class="menu-mobile font-size-16">
+        <img src="./assets/icon/List.png" alt="List menu">
     </div>
 </header>
 <main>
@@ -51,6 +54,16 @@
                         NFT artists.
                     </p>
                 </div>
+                <div class="image-placeholder-mobile margin-top-10">
+                    <img class="hero-img" src="./assets/img/hero-thumb.png" alt="" />
+                    <div class="hero-infor color-white">
+                        <b class="hero-infor-title font-size-22" >Space Walking</b>
+                        <p class="hero-infor-author ">
+                            <img class="hero-infor-author-avatar" src="./assets/img/hero-avartar.png" alt="hero-avartar" />
+                            <span class="hero-infor-author-name  ">Animakid</span>
+                        </p>
+                    </div>
+                </div>
                 <div class="btn margin-top-30 bgr-btn">
                     <a href="#!" class="btn-hero height-btn color-white btn">
                         <img src="./assets/icon/RocketLaunch.png" alt="rocket" />
@@ -63,7 +76,7 @@
                         <p class="add-infor-item-lable">Total Sale</p>
                     </div>
                     <div class="add-infor-item ">
-                        <b class="add-infor-item-value">240k+</b>
+                        <b class="add-infor-item-value">100k+</b>
                         <p class="add-infor-item-lable">Auctions</p>
                     </div>
                     <div class="add-infor-item ">
@@ -72,10 +85,10 @@
                     </div>
                 </div>
             </div>
-            <div class="image-placeholder">
+            <div class="image-placeholder margin-top-10">
                 <img class="hero-img" src="./assets/img/hero-thumb.png" alt="" />
                 <div class="hero-infor color-white">
-                    <b class="hero-infor-title" style="font-size: 22px">Space Walking</b>
+                    <b class="hero-infor-title font-size-22" >Space Walking</b>
                     <p class="hero-infor-author ">
                         <img class="hero-infor-author-avatar" src="./assets/img/hero-avartar.png" alt="hero-avartar" />
                         <span class="hero-infor-author-name  ">Animakid</span>
@@ -85,9 +98,9 @@
         </div>
     </section>
 
-    <section class="trending container">
-        <h2 class="trending-title color-white text-head2 font-size-38 ">Trending Collection</h2>
-        <p class="trending-desc text-body color-white">Checkout our weekly updated trending collection.</p>
+    <section id="trending" class="trending container">
+        <h2 class="trending-title color-white text-head2 font-size-38 padding-20 ">Trending Collection</h2>
+        <p class="trending-desc text-body padding-20 color-white">Checkout our weekly updated trending collection.</p>
         <div class="card-list-item color-white ">
             <div class="card-item">
                 <div class="card-item-img-1-0">
@@ -97,7 +110,7 @@
                     <img class="card-item-img-1-1" src="./assets/img/trending-1-1.png" alt="trending-1-1" />
                     <img class="card-item-img-1-2" src="./assets/img/trending-1-2.png" alt="trending-1-2" />
                     <div class="card-item-img-1-3">
-                        <span class="card-item-img-1-3 font-size-22">1025+</span>
+                        <span class="card-item-img-1-3 text-head font-size-22">1025+</span>
                     </div>
 
                 </div>
@@ -119,7 +132,7 @@
                     <img class="card-item-img-1-1" src="./assets/img/trending-2-1.png" alt="trending-1-1" />
                     <img class="card-item-img-1-2" src="./assets/img/trending-2-2.png" alt="trending-1-2" />
                     <div class="card-item-img-1-3">
-                        <span class="card-item-img-1-3 font-size-22">1025+</span>
+                        <span class="card-item-img-1-3 text-head font-size-22">1025+</span>
                     </div>
 
                 </div>
@@ -141,13 +154,13 @@
                     <img class="card-item-img-1-1" src="./assets/img/trending-3-1.png" alt="trending-1-1" />
                     <img class="card-item-img-1-2" src="./assets/img/trending-3-2.png" alt="trending-1-2" />
                     <div class="card-item-img-1-3">
-                        <span class="card-item-img-1-3 font-size-22">1025+</span>
+                        <span class="card-item-img-1-3 text-head font-size-22">1025+</span>
                     </div>
 
                 </div>
                 <div class="trending-info">
                     <a href="#!">
-                        <h3 class="trending-info-name font-size-22 text-head">DSGN Animals</h3>
+                        <h3 class="trending-info-name font-size-22 text-head">Disco Machines</h3>
                     </a>
                     <p class="trending-author ">
                         <img class="trending-author-vartar" src="./assets/img/trending-avartar-3.png" alt=""/>
@@ -158,10 +171,10 @@
         </div>
     </section>
 
-    <section class="top-rated-artists container ">
+    <section id="topCreate" class="top-rated-artists container ">
         <div class="header-top-rated">
-            <div class="text-head">
-                <h2 class="title text-head2 color-white font-size-38">Top creators</h2>
+            <div class=" padding-20">
+                <h2 class="title text-head2 color-white font-size-38 ">Top creators</h2>
                 <p class="desc text-body color-white">Checkout Top Rated Creators on the NFT Marketplace</p>
             </div>
             <div class="btn-head">
@@ -170,8 +183,111 @@
                     <span>View Rankings</span>
                 </a>
             </div>
+
         </div>
         <div class="container-top-rated">
+<!--            tablet-->
+            <div class="top-rated-list-item-tablet margin-top-30 ">
+                <div class="top-item">
+                    <div class="item-top">
+                        <p class="item-number">1</p>
+                        <img class="item-avartar" src="./assets/img/creator-1.png" alt="" />
+                    </div>
+                    <div class="item-info color-white ">
+                        <a href="#!">
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">Keepitreal</h3>
+                        </a>
+                        <div class="item-sales margin-top-10">
+                            <span class="item-sales-total font-size-16 text-style color-gray">Total Sales:</span>
+                            <span class="item-sales-number font-size-16 ">34.53 ETH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-item">
+                    <div class="item-top">
+                        <p class="item-number">2</p>
+                        <img class="item-avartar" src="./assets/img/creator-2.png" alt="" />
+                    </div>
+                    <div class="item-info color-white ">
+                        <a href="#!">
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">DigiLab</h3>
+                        </a>
+                        <div class="item-sales margin-top-10">
+                            <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                            <span class="font-size-16 ">34.53 ETH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-rated-list-item-tablet margin-top-30">
+            <div class="top-item">
+                <div class="item-top">
+                    <p class="item-number">3</p>
+                    <img class="item-avartar" src="./assets/img/creator-3.png" alt="" />
+                </div>
+                <div class="item-info color-white ">
+                    <a href="#!">
+                        <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">GravityOne</h3>
+                    </a>
+                    <div class="item-sales margin-top-10">
+                        <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                        <span class="font-size-16 ">34.53 ETH</span>
+                    </div>
+                </div>
+            </div>
+            <div class="top-item">
+                <div class="item-top">
+                    <p class="item-number">4</p>
+                    <img class="item-avartar" src="./assets/img/creator-4.png" alt="" />
+                </div>
+                <div class="item-info color-white ">
+                    <a href="#!">
+                        <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">Juanie</h3>
+                    </a>
+                    <div class="item-sales margin-top-10">
+                        <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                        <span class="font-size-16 ">34.53 ETH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-rated-list-item-tablet margin-top-30">
+            <div class="top-item">
+                <div class="item-top">
+                    <p class="item-number">5</p>
+                    <img class="item-avartar" src="./assets/img/creator-5.png" alt="" />
+                </div>
+                <div class="item-info color-white ">
+                    <a href="#!">
+                        <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">BlueWhale</h3>
+                    </a>
+                    <div class="item-sales margin-top-10">
+                        <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                        <span class="font-size-16 ">34.53 ETH</span>
+                    </div>
+                </div>
+            </div>
+            <div class="top-item">
+                <div class="item-top">
+                    <p class="item-number">6</p>
+                    <img class="item-avartar" src="./assets/img/creator-6.png" alt="" />
+                </div>
+                <div class="item-info color-white ">
+                    <a href="#!">
+                        <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">Mr Fox</h3>
+                    </a>
+                    <div class="item-sales margin-top-10">
+                        <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                        <span class="font-size-16 ">34.53 ETH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--     --tablet--       -->
+
+
+
+<!--            pc-------->
             <div class="top-rated-list-item margin-top-60 ">
                 <div class="top-item">
                     <div class="item-top">
@@ -235,7 +351,7 @@
                 </div>
             </div>
             <div class="top-rated-list-item margin-top-20">
-                <div class="top-item">
+                <div  class="top-item">
                     <div class="item-top">
                         <p class="item-number">5</p>
                         <img class="item-avartar" src="./assets/img/creator-5.png" alt="" />
@@ -250,14 +366,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="top-item">
+                <div  class="top-item">
                     <div class="item-top">
                         <p class="item-number">6</p>
                         <img class="item-avartar" src="./assets/img/creator-6.png" alt="" />
                     </div>
                     <div class="item-info color-white ">
                         <a href="#!">
-                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">Mr Fox</h3>
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">mr fox</h3>
                         </a>
                         <div class="item-sales margin-top-10">
                             <span class=" font-size-16 text-style color-gray">Total Sales:</span>
@@ -287,7 +403,7 @@
                     </div>
                     <div class="item-info color-white ">
                         <a href="#!">
-                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">Robotica</h3>
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">robotica</h3>
                         </a>
                         <div class="item-sales margin-top-10">
                             <span class=" font-size-16 text-style color-gray">Total Sales:</span>
@@ -358,11 +474,106 @@
                     </div>
                 </div>
             </div>
+
+
+
+<!--            mobile-->
+            <div class="top-rated-list-item-mobile margin-top-20">
+                <div class="top-item">
+                    <div class="item-top">
+                        <p class="item-number">1</p>
+                        <img class="item-avartar" src="./assets/img/creator-1.png" alt="" />
+                    </div>
+                    <div class="item-info color-white ">
+                        <a href="#!">
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">Keepitreal</h3>
+                        </a>
+                        <div class="item-sales margin-top-10">
+                            <span class="item-sales-total font-size-16 text-style color-gray">Total Sales:</span>
+                            <span class="item-sales-number font-size-16 ">34.53 ETH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-item">
+                    <div class="item-top">
+                        <p class="item-number">2</p>
+                        <img class="item-avartar" src="./assets/img/creator-2.png" alt="" />
+                    </div>
+                    <div class="item-info color-white ">
+                        <a href="#!">
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">DigiLab</h3>
+                        </a>
+                        <div class="item-sales margin-top-10">
+                            <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                            <span class="font-size-16 ">34.53 ETH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-item">
+                    <div class="item-top">
+                        <p class="item-number">3</p>
+                        <img class="item-avartar" src="./assets/img/creator-3.png" alt="" />
+                    </div>
+                    <div class="item-info color-white ">
+                        <a href="#!">
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">GravityOne</h3>
+                        </a>
+                        <div class="item-sales margin-top-10">
+                            <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                            <span class="font-size-16 ">34.53 ETH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-item">
+                    <div class="item-top">
+                        <p class="item-number">4</p>
+                        <img class="item-avartar" src="./assets/img/creator-4.png" alt="" />
+                    </div>
+                    <div class="item-info color-white ">
+                        <a href="#!">
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">Juanie</h3>
+                        </a>
+                        <div class="item-sales margin-top-10">
+                            <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                            <span class="font-size-16 ">34.53 ETH</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-item">
+                    <div class="item-top">
+                        <p class="item-number">5</p>
+                        <img class="item-avartar" src="./assets/img/creator-5.png" alt="" />
+                    </div>
+                    <div class="item-info color-white ">
+                        <a href="#!">
+                            <h3 class="item-name text-head2 font-size-22 text-center margin-top-20">BlueWhale</h3>
+                        </a>
+                        <div class="item-sales margin-top-10">
+                            <span class=" font-size-16 text-style color-gray">Total Sales:</span>
+                            <span class="font-size-16 ">34.53 ETH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--            btn mobile-->
+            <div class="btn-head-mobile margin-top-30">
+                <a href="#!" class="btn height-btn">
+                    <img src="./assets/icon/RocketLaunch.png" alt="rocket" />
+                    <span>View Rankings</span>
+                </a>
+            </div>
+
+
+            <!--            btn mobile-->
+<!--            mobile-->
+
         </div>
     </section>
     <!--    -->
-    <section class="browse-categories container">
-        <h2 class="text-head2 color-white font-size-38 ">Browse Categories</h2>
+    <section id="categories" class="browse-categories  container">
+        <h2 class="text-head2 color-white font-size-38 padding-20 ">Browse Categories</h2>
         <div class="container-browse margin-top-60">
             <div class="list-browse-categories">
                 <div class="list-browse-item">
@@ -448,22 +659,207 @@
                     </div>
                 </div>
             </div>
+            <div class="list-browse-categories-tablet">
+                <div class="list-browse-item-tablet">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-1.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/PaintBrush.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Art</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item-tablet">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-2.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/Swatches.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Collectibles</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item-tablet">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-3.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/MusicNotes.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Music</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item-tablet">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-4.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/Camera.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Photography</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="list-browse-categories-tablet ">
+                <div class="list-browse-item-tablet">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-5.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/VideoCamera.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Video</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item-tablet">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-6.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/MagicWand.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Utility</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item-tablet">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-7.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/Basketball.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Sport</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item-tablet">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-8.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/Planet.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Virtual Worlds</h3>
+                    </div>
+                </div>
+            </div>
+<!--            tablet-->
+
+
+
+
+<!--          mobile  -->
+            <div class="browse-categories-mobile">
+            <div class="list-browse-categories-mobile">
+                <div class="list-browse-item">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-1.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/PaintBrush.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Art</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-3.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/MusicNotes.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Music</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-5.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/VideoCamera.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Video</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-7.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/Basketball.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Sport</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="list-browse-categories-mobile">
+                <div class="list-browse-item">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-2.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/Swatches.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Collectibles</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-4.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/Camera.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Collectibles</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-6.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/MagicWand.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Utility</h3>
+                    </div>
+                </div>
+                <div class="list-browse-item">
+                    <div class="item-browse-categories">
+                        <img class="item-browse-categories-img" src="./assets/img/categorie-8.png" alt="Art" />
+                        <div class="item-browse-categories-blur"></div>
+                        <img class="item-browse-categories-icon" src="./assets/icon/Planet.png" alt="Art" />
+                    </div>
+                    <div class="item-browse-categories-text">
+                        <h3 class="item-browse-categories-text-title color-white">Virtual Worlds</h3>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+
+
+
+
+
+
+<!--            -->
         </div>
     </section>
     <!--    -->
     <section class="discover-more container">
         <div class="discover-more-header">
-            <div class="discover-more-header-text">
+            <div class="discover-more-header-text padding-20">
                 <h2 class="discover-more-header-text-title font-size-38 color-white text-head2">Discover More NFTs</h2>
                 <p class="discover-more-header-text-desc text-body font-size-22 color-white">Explore new trending NFTs</p>
             </div>
-            <a href="#!" class="btn height-btn">
-                <img src="./assets/icon/Eye.png" alt="rocket" />
+            <a href="#!" class="btn height-btn btn-discover">
+                <img src="./assets/icon/eye-white.png" alt="rocket" />
                 <span>See All</span>
             </a>
         </div>
         <div class="discover-more-list">
-            <div class="discover-more-item margin-top-60">
+            <div class="discover-more-item">
                 <img class="discover-more-item-img" src="./assets/img/discover-1.png" alt="NFT Name" />
                 <div class="discover-more-item-body">
                     <div class="discover-more-item-body-info">
@@ -485,7 +881,7 @@
                     </div>
                 </div>
             </div>
-            <div class="discover-more-item margin-top-60">
+            <div class="discover-more-item ">
                 <img class="discover-more-item-img" src="./assets/img/discover-2.png" alt="NFT Name" />
                 <div class="discover-more-item-body">
                     <div class="discover-more-item-body-info">
@@ -507,7 +903,7 @@
                     </div>
                 </div>
             </div>
-            <div class="discover-more-item margin-top-60">
+            <div class="discover-more-item ">
                 <img class="discover-more-item-img" src="./assets/img/discover-3.png" alt="NFT Name" />
                 <div class="discover-more-item-body">
                     <div class="discover-more-item-body-info">
@@ -529,20 +925,24 @@
                     </div>
                 </div>
             </div>
+            <a href="#!" class="btn height-btn btn-discover-mobile">
+                <img src="./assets/icon/eye-white.png" alt="rocket" />
+                <span>See All</span>
+            </a>
         </div>
 
     </section>
     <!--    -->
     <section class="nft">
-        <div class="nft-container container">
+        <div class="nft-container ">
             <div class="nft-content">
                 <div class="nft-content-creator">
                     <img class="nft-content-creator-avartar" src="./assets/img/creator-7.png" alt="Shroomie" />
-                    <span>Shroomie</span>
+                    <span class="color-white">Shroomie</span>
                 </div>
-                <h2 class="nft-content-title color-white">Magic Mashrooms</h2>
+                <h2 class="nft-content-title">Magic Mashrooms</h2>
                 <a class="nft-content-btn height-btn btn " href="#!">
-                    <img  src="./assets/icon/Eye.png" alt="eye" />
+                    <img src="./assets/icon/eye.png" alt="eye" />
                     <span>See NFT</span>
                 </a>
             </div>
@@ -558,49 +958,102 @@
                     <span class="nft-auction-value">59</span>
                     <span class="nft-auction-label">Minutes</span>
                 </div>
-                <span class="nft-auction-timer">:</span>
-                <div class="highlight__timer">
+                <span class="nft-auction-separator">:</span>
+                <div class="nft-auction-timer">
                     <span class="nft-auction-value">59</span>
                     <span class="nft-auction-label">Seconds</span>
                 </div>
             </div>
-
+            <a class="nft-content-btn-mobile height-btn btn " href="#!">
+                <img src="./assets/icon/eye.png" alt="eye" />
+                <span>See NFT</span>
+            </a>
         </div>
     </section>
     <!--    -->
     <section class="card-row container">
-        <h2 class="card-row-title text-head2 font-size-38 color-white">How it works</h2>
-        <p class="card-row-desc font-size-22 color-white text-body">Find out how to get started</p>
-        <div class="card-row-list-item">
+        <h2 class="card-row-title text-head2 font-size-38 padding-20 color-white">How it works</h2>
+        <p class="card-row-desc font-size-22 color-white padding-20 text-body">Find out how to get started</p>
+        <div class="card-row-list-item text-center">
             <div class="card-row-list">
-                <img class="card-row-img" src="./assets/img/works-1.png" alt="Setup Your wallet" />
-                <div class="card-details color-white text-center margin-top-20 ">
-                    <h3 class="card-details-title font-size-22">Setup Your wallet</h3>
-                    <p class="card-details-desc font-size-16 margin-top-10 ">
+                <div class="card-row-list-img">
+                    <img class="card-row-img " src="./assets/img/works-1.png" alt="Setup Your wallet" />
+                </div>
+                <div class="card-details color-white text-center  ">
+                    <h3 class="card-details-title margin-top-20 text-head2 font-size-22">Setup Your wallet</h3>
+                    <p class="card-details-desc  font-size-16 margin-top-20 ">
                         Set up your wallet of choice. Connect it to the Animarket by clicking the wallet icon in
                         the top right corner.
                     </p>
                 </div>
             </div>
-            <div class="card-row-list">
-                <img class="card-row-img" src="./assets/img/works-1.png" alt="Setup Your wallet" />
-                <div class="card-details color-white text-center margin-top-20 ">
-                    <h3 class="card-details-title font-size-22">Create Collection</h3>
-                    <p class="card-details-desc font-size-16 margin-top-10 ">
+            <div class="card-row-list text-center">
+                <div class="card-row-list-img">
+                    <img class="card-row-img " src="./assets/img/works-2.png" alt="Setup Your wallet" />
+                </div>
+                <div class="card-details color-white text-center  ">
+                    <h3 class="card-details-title text-head2 margin-top-20 font-size-22">Create Collection</h3>
+                    <p class="card-details-desc font-size-16 margin-top-20 ">
                         Upload your work and setup your collection. Add a description, social links and floor price
                     </p>
                 </div>
             </div>
-            <div class="card-row-list">
-                <img class="card-row-img" src="./assets/img/works-1.png" alt="Setup Your wallet" />
-                <div class="card-details color-white text-center margin-top-20 ">
-                    <h3 class="card-details-title font-size-22">Start Earning</h3>
-                    <p class="card-details-desc font-size-16 margin-top-10 ">
+            <div class="card-row-list text-center">
+                <div class="card-row-list-img">
+                    <img class="card-row-img " src="./assets/img/works-3.png" alt="Setup Your wallet" />
+                </div>
+                <div class="card-details color-white text-center  ">
+                    <h3 class="card-details-title text-head2 margin-top-20 font-size-22">Start Earning</h3>
+                    <p class="card-details-desc font-size-16 margin-top-20 ">
                         Choose between auctions and fixed-price listings. Start earning by selling your NFTs or trading others.
                     </p>
                 </div>
             </div>
         </div>
+
+
+<!--        mobile-->
+        <div class="card-row-list-item-mobile">
+            <div class="card-row-list-mobile">
+                <div class="card-row-list-img">
+                    <img class="card-row-img " src="./assets/img/works-1.png" alt="Setup Your wallet" />
+                </div>
+                <div class="card-details color-white text-center  ">
+                    <h3 class="card-details-title margin-top-20 text-head2 font-size-22">Setup Your wallet</h3>
+                    <p class="card-details-desc  font-size-16 margin-top-20 ">
+                        Set up your wallet of choice. Connect it to the Animarket by clicking the wallet icon in
+                        the top right corner.
+                    </p>
+                </div>
+            </div>
+            <div class="card-row-list-mobile">
+                <div class="card-row-list-img">
+                    <img class="card-row-img " src="./assets/img/works-2.png" alt="Setup Your wallet" />
+                </div>
+                <div class="card-details color-white text-center  ">
+                    <h3 class="card-details-title text-head2 margin-top-20 font-size-22">Create Collection</h3>
+                    <p class="card-details-desc font-size-16 margin-top-20 ">
+                        Upload your work and setup your collection. Add a description, social links and floor price
+                    </p>
+                </div>
+            </div>
+            <div class="card-row-list-mobile">
+                <div class="card-row-list-img">
+                    <img class="card-row-img " src="./assets/img/works-3.png" alt="Setup Your wallet" />
+                </div>
+                <div class="card-details color-white text-center  ">
+                    <h3 class="card-details-title text-head2 margin-top-20 font-size-22">Start Earning</h3>
+                    <p class="card-details-desc font-size-16 margin-top-20 ">
+                        Choose between auctions and fixed-price listings. Start earning by selling your NFTs or trading others.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+<!--        mobile-->
     </section>
     <!--    -->
     <section class="subscribe container">
@@ -613,7 +1066,7 @@
                 </p>
                 <form class="form-subscribe">
                     <div class="body-form">
-                        <input name="email" type="email" placeholder="Enter your email here" />
+                        <input required name="email" type="email" placeholder="Enter your email here" />
                         <button class="btn-sub bgr-btn height-btn btn " type="submit">
                             <img src="./assets/icon/EnvelopeSimple.png" alt="email" />
                             <span>Subscribe</span>
@@ -622,42 +1075,104 @@
                 </form>
             </div>
         </div>
+            <!--                form tablet-->
+            <div class="container-sub-tablet">
+                <img class="sub-img-tablet" src="./assets/img/subscribe.png" alt="" />
+                <div class="form-sub-tablet">
+                    <h2 class="form-sub-title-tablet text-head2 font-size-38 color-white">Join our weekly digest</h2>
+                    <p class="form-sub-desc-tablet color-white font-size-22 margin-top-10">
+                        Get exclusive promotions & updates straight to your inbox.
+                    </p>
+                    <form class="form-subscribe-tablet">
+                        <div class="body-form-tablet">
+                            <input required name="email" type="email" placeholder="Enter your email here" />
+                            <button class="btn-sub-tablet bgr-btn height-btn btn " type="submit">
+                                <img src="./assets/icon/EnvelopeSimple.png" alt="email" />
+                                <span>Subscribe</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!--                form tablet-->
+
+<!--        mobile-->
+
+
+        <div class="container-sub-mobile">
+            <img class="sub-img-mobile" src="./assets/img/subscribe.png" alt="" />
+            <div class="form-sub-mobile">
+                <h2 class="form-sub-title-mobile text-head2 font-size-38 color-white">Join our weekly digest</h2>
+                <p class="form-sub-desc-mobile color-white font-size-22 margin-top-10">
+                    Get exclusive promotions & updates straight to your inbox.
+                </p>
+                <form class="form-subscribe-mobile">
+                    <div class="body-form-mobile">
+                        <input required name="email" type="email" placeholder="Enter your email here" />
+                        <button class="btn-sub-mobile bgr-btn height-btn btn " type="submit">
+                            <img src="./assets/icon/EnvelopeSimple.png" alt="email" />
+                            <span>Subscribe</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+<!--        mobile-->
     </section>
 </main>
 <footer class="footer">
     <div class="foot-container container">
         <div class="foot-content">
             <div class="foot-content-logo">
-                <a href="#!">
-                    <img class="logo-foot" src="./assets/img/logo.png" alt="NFT Marketplace" />
-                </a>
+                <div class="foot-content-logo-text">
+                    <a href="#">
+                        <img class="logo-foot" src="./assets/img/logo-icon.png" alt="NFT Marketplace" />
+                        <span class=" font-size-22 text-style text-head2 color-white">NFT marketplace</span>
+                    </a>
+                </div>
                 <p class="footer-logo-desc font-size-16 ">NFT marketplace UI created with Anima for Figma.</p>
                 <p class="footer-logo-community  font-size-16">Join our community</p>
                 <div class="foot-content-socials">
-                    <a href="#!"><img src="./assets/icon/DiscordLogo.png" alt="discord" /></a>
-                    <a href="#!"><img src="./assets/icon/YoutubeLogo.png" alt="youtube" /></a>
-                    <a href="#!"><img src="./assets/icon/TwitterLogo.png" alt="twitter" /></a>
-                    <a href="#!"><img src="./assets/icon/InstagramLogo.png" alt="instagram" /></a>
+                    <a class="icon-foot" href="#!"><img src="./assets/icon/DiscordLogo.png" alt="discord" /></a>
+                    <a class="icon-foot" href="#!"><img src="./assets/icon/YoutubeLogo.png" alt="youtube" /></a>
+                    <a class="icon-foot" href="#!"><img src="./assets/icon/TwitterLogo.png" alt="twitter" /></a>
+                    <a class="icon-foot" href="#!"><img src="./assets/icon/InstagramLogo.png" alt="instagram" /></a>
                 </div>
             </div>
             <div class="foot-nav">
                 <h2 class="foot-nav-title font-size-22">Explore</h2>
-                <a class="foot-nav-link font-size-16 margin-top-30" href="#!">Marketplace</a>
-                <a class="foot-nav-link font-size-16 margin-top-20" href="#!">Rankings</a>
-                <a class="foot-nav-link font-size-16 margin-top-20" href="#!">Connect a wallet</a>
+                <a class="foot-nav-link font-size-16 margin-top-30" href="#trending">Marketplace</a>
+                <a class="foot-nav-link font-size-16 margin-top-20" href="#topCreate">Rankings</a>
+                <a class="foot-nav-link font-size-16 margin-top-20" href="#categories">Connect a wallet</a>
             </div>
             <div class="foot-sub">
                 <h2 class="foot-sub-title font-size-22  text-style">Join our weekly digest</h2>
                 <p class="foot-sub-desc margin-top-20 font-size-16">
                     Get exclusive promotions & updates straight to your inbox.
                 </p>
-                <form class="body-form margin-top-30 ">
-                    <input class="input" name="email" type="email" placeholder="Enter your email here" />
-                    <button class="btn bgr-btn height-btn" type="submit">
-                        <img src="./assets/icon/EnvelopeSimple.png" alt="email" />
-                        <span>Subscribe</span>
-                    </button>
+                <form class="form-subscribe margin-top-30 ">
+                    <div class="body-form-footer">
+                        <input required name="email" type="email" placeholder="Enter your email here" />
+                        <button class="btn-sub bgr-btn height-btn btn " type="submit">
+                            <img src="./assets/icon/EnvelopeSimple.png" alt="email" />
+                            <span>Subscribe</span>
+                        </button>
+                    </div>
                 </form>
+<!--                -->
+
+                <form class="form-subscribe-mobile">
+                    <div class="body-form-mobile">
+                        <input required name="email" type="email" placeholder="Enter your email here" />
+                        <button class="btn-sub-mobile bgr-btn height-btn btn " type="submit">
+                            <img src="./assets/icon/EnvelopeSimple.png" alt="email" />
+                            <span>Subscribe</span>
+                        </button>
+                    </div>
+                </form>
+
+<!--                -->
             </div>
         </div>
         <p class="footer__copyright">Ⓒ NFT Market. Use this template freely.</p>
