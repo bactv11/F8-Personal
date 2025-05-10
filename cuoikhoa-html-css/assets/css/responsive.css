@@ -482,7 +482,8 @@
     }
 /*    hero*/
     .container-hero{
-        width: 375px;
+        padding: 40px 20px;
+        width: 355px;
         height: 690px;
         position: relative;
     }
@@ -569,7 +570,7 @@
 /*    trending*/
     .trending {
         padding: 40px 20px;
-        width: 375px;
+        width: 355px;
     }
     .trending-title{
         font-size: 28px;
@@ -585,7 +586,7 @@
         line-height: 140%;
     }
     .card-list-item{
-        width: 375px;
+        width: 355px;
     }
     .card-item{
         width: 335px;
@@ -615,7 +616,7 @@
     }
 
     .top-rated-artists-mobile{
-        width: 375px;
+        width: 355px;
     }
     .title{
         font-size: 28px;
@@ -673,12 +674,12 @@
     }
 /*categories*/
     .browse-categories{
-        width: 375px;
+        width: 355px;
         padding: 40px 20px;
     }
     .top-rated-artists{
         padding: 40px 20px;
-        width: 375px;
+        width: 355px;
     }
     .list-browse-categories-tablet{
         display: none;
@@ -718,7 +719,7 @@
 
 /*    -------------------------------------------------------------*/
     .discover-more{
-        width: 375px;
+        width: 355px;
         padding: 40px 20px;
     }
     .discover-more-header-text-title{
@@ -833,7 +834,7 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 40px 20px;
-        width: 375px;
+        width: 355px;
     }
     .nft-content-btn{
         display: none;
@@ -857,7 +858,7 @@
     }
     .container-sub-mobile{
         display: block;
-        width: 335px;
+        width: 355px;
         gap: 30px;
         padding: 40px 20px;
     }
@@ -908,7 +909,7 @@
         display: block;
         line-height: 140%;
         padding: 40px 20px;
-        width: 100%;
+        width: 355px;
     }
     .form-subscribe{
         display: none;
