@@ -494,7 +494,7 @@
     .heroSection{
         width: 375px;
         height: 786px;
-        padding: 40px 20px;
+        padding: 40px 10px;
     }
     .container-hero{
 
@@ -574,7 +574,7 @@
     }
 /*    trending--------------------*/
     .trending {
-        padding: 40px 20px;
+        padding: 40px 10px;
         width: 375px;
     }
     .card-list-item{
@@ -623,7 +623,7 @@
     /*--------------------------------*/
     .top-rated-artists{
         width: 375px;
-        padding: 40px 20px;
+        padding: 40px 10px;
         height: 893px;
     }
     .top-rated-list-item-mobile{
@@ -687,16 +687,16 @@
 /*categories-----------------------------------*/
     .browse-categories{
         width: 375px;
-        padding: 40px 20px;
+        padding: 40px 10px;
         height: 1077px;
     }
     .container-browse{
 
     }
-    .top-rated-artists{
-        padding: 40px 20px;
-        width: 375px;
-    }
+    /*.top-rated-artists{*/
+    /*    padding: 40px 20px;*/
+    /*    width: 375px;*/
+    /*}*/
     .list-browse-categories-tablet{
         display: none;
     }
@@ -736,7 +736,7 @@
 
 /*    -------------------------------------------------------------*/
     .discover-more{
-        padding: 40px 20px;
+        padding: 40px 10px;
         width: 375px;
         margin-top: 40px;
     }
@@ -797,7 +797,7 @@
     .card-row{
         margin-top: 40px;
         width: 375px;
-        padding: 40px 20px;
+        padding: 40px 10px;
         height: 685px;
     }
 
@@ -880,7 +880,7 @@
 
     /*  sub  ------------------------------------------------*/
     .subscribe{
-        padding: 40px 20px;
+        padding: 40px 10px;
         width: 375px;
         height: 645px;
     }
