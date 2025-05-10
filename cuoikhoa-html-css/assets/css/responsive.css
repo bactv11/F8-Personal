@@ -441,7 +441,7 @@
 }
 @media  (max-width: 767px) {
     .container{
-        padding: 40px;
+        padding: 20px 0;
     }
     .thead-mobile{
         font-size: 28px;
