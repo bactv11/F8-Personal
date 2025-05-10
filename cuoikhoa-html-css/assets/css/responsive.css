@@ -920,7 +920,7 @@
     }
     .body-form-mobile input {
         height: 60px;
-        width: 100%;
+        width: 335px;
         border-radius: 20px;
         padding: 20px;
         border: none;
@@ -929,7 +929,7 @@
     }
     .btn-sub-mobile{
         height: 60px;
-        width: 100%;
+        width: 335px;
         margin-top: 16px;
     }
     .btn-sub-mobile:hover{
@@ -970,20 +970,19 @@
     .body-form-mobile-footer{
         display: block;
         gap: 30px;
-        width: 300px;
     }
     .body-form-mobile-footer input {
         height: 60px;
-        width: 335px;
         border-radius: 20px;
         padding: 20px;
         border: none;
         outline: none;
         margin-top: 20px;
+        width: 300px;
     }
     .body-form-mobile-footer button{
         height: 60px;
-        width: 335px;
+        width: 300px;
         margin-top: 16px;
     }
 
