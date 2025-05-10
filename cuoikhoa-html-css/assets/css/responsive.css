@@ -482,6 +482,7 @@
     }
 /*    hero*/
     .container-hero{
+        width: 375px;
         height: 690px;
         position: relative;
     }
