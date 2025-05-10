@@ -1,4 +1,4 @@
-@media (min-width: 768px) and (max-width: 999px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .container {
         padding: 40px;
     }
@@ -118,6 +118,7 @@
         gap: 30px;
     }
     .trending-title{
+        margin-top: 40px;
         font-size: 28px;
         font-style: normal;
         font-weight: 600;
@@ -168,6 +169,7 @@
         width: 690px
     }
     .title{
+        margin-top: 40px;
         font-size: 28px;
         font-style: normal;
         font-weight: 600;
@@ -255,6 +257,7 @@
         margin-top: 40px;
     }
     .browse-categories h2{
+        margin-top: 40px;
         font-size: 28px;
         font-style: normal;
         font-weight: 600;
@@ -451,7 +454,6 @@
 @media  (max-width: 767px) {
     .container{
         padding: 40px 20px;
-
     }
     .thead-mobile{
         font-size: 28px;
@@ -476,15 +478,6 @@
 /*    header*/
     .header{
         width: 100%;
-    }
-    .nav{
-        display: none;
-    }
-/*    hero*/
-    .container-hero{
-        padding: 40px 20px;
-        width: 375px;
-        height: 690px;
         position: relative;
     }
     .menu-mobile{
@@ -494,6 +487,16 @@
         right: 20px;
         width: 30px;
         height: 30px;
+    }
+    .nav{
+        display: none;
+    }
+/*    hero*/
+
+    .heroSection{
+        width: 375px;
+        height: 786px;
+        padding: 40px 20px;
     }
     .text-body-title{
         font-size: 28px;
@@ -534,6 +537,7 @@
         background-color: var(--color-bg-2);
         border-radius:20px ;
         display: block;
+        margin-top: 20px;
     }
     .hero-img{
         width: 335px;
@@ -567,12 +571,13 @@
     .add-infor{
         gap: 30px;
     }
-/*    trending*/
+/*    trending--------------------*/
     .trending {
         padding: 40px 20px;
         width: 375px;
     }
     .trending-title{
+        margin-top: 40px;
         font-size: 28px;
         font-style: normal;
         font-weight: 600;
@@ -584,9 +589,6 @@
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
-    }
-    .card-list-item{
-        width: 375px;
     }
     .card-item{
         width: 335px;
@@ -614,11 +616,14 @@
     .card-item:nth-of-type(2), .card-item:nth-of-type(3) {
         display: none;
     }
-
-    .top-rated-artists-mobile{
+    /*--------------------------------*/
+    .top-rated-artists{
         width: 375px;
+        padding: 40px 20px;
+        height: 893px;
     }
     .title{
+        margin-top: 40px;
         font-size: 28px;
         font-style: normal;
         font-weight: 600;
@@ -672,10 +677,11 @@
     .btn-head-mobile a{
         width: 335px;
     }
-/*categories*/
+/*categories-----------------------------------*/
     .browse-categories{
         width: 375px;
         padding: 40px 20px;
+        height: 1077px;
     }
     .top-rated-artists{
         padding: 40px 20px;
@@ -710,6 +716,7 @@
         gap: 30px;
     }
     .browse-categories h2{
+        margin-top: 40px;
         font-size: 28px;
         font-style: normal;
         font-weight: 600;
@@ -719,8 +726,9 @@
 
 /*    -------------------------------------------------------------*/
     .discover-more{
-        width: 375px;
         padding: 40px 20px;
+        width: 375px;
+        margin-top: 40px;
     }
     .discover-more-header-text-title{
         font-size: 28px;
@@ -773,22 +781,24 @@
 /*   nft ---------------------------------------*/
 
 /*    ---------------------------------------------*/
-
+    .card-row{
+        margin-top: 40px;
+        width: 375px;
+        padding: 40px 20px;
+        height: 685px;
+    }
     .card-row-title{
         font-size: 28px;
         font-style: normal;
         font-weight: 600;
         line-height: 140%; /* 39.2px */
         text-transform: capitalize;
-        margin-left: 20px;
     }
-
     .card-row-desc{
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
-        margin-left: 20px;
     }
     .card-row-list-item{
         display: none;
@@ -797,7 +807,6 @@
         display: block;
         gap: 20px;
         width: 335px;
-        padding: 40px 20px;
     }
     .card-row-list-mobile{
         display: flex;
@@ -838,6 +847,7 @@
         align-items: flex-start;
         padding: 20px;
         width: 335px;
+        margin-left: 40px;
     }
     .nft-content-btn{
         display: none;
@@ -856,13 +866,17 @@
 
 
     /*  sub  ------------------------------------------------*/
+    .subscribe{
+        padding: 40px 20px;
+        width: 375px;
+        height: 645px;
+    }
     .container-sub{
         display: none;
     }
     .container-sub-mobile{
         display: block;
         width: 335px;
-        padding: 40px 20px;
         gap: 30px;
     }
     .sub-img-mobile{
@@ -908,10 +922,11 @@
         opacity: 0.8;
     }
 /*    ----------------------------------------*/
+
     .foot-content{
         display: block;
         line-height: 140%;
-        padding: 20px;
+        padding: 40px 20px;
     }
     .form-subscribe{
         display: none;
@@ -943,7 +958,7 @@
     }
     .body-form-mobile-footer input {
         height: 60px;
-        width: 375px;
+        width: 335px;
         border-radius: 20px;
         padding: 20px;
         border: none;
@@ -952,7 +967,7 @@
     }
     .body-form-mobile-footer button{
         height: 60px;
-        width: 375px;
+        width: 100%;
         margin-top: 16px;
     }
 
