@@ -827,4 +827,9 @@ button {
 .nft-content-btn-mobile{
     display: none;
 }
-
+.body-form-mobile-footer{
+    display: none;
+}
+.discover-more-list-mobile{
+    display: none;
+}
