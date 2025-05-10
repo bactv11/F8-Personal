@@ -450,7 +450,7 @@
 }
 @media  (max-width: 767px) {
     .container{
-        padding: 40px 20px;
+        padding: 40px 0 40px 0;
 
     }
     .thead-mobile{
@@ -482,7 +482,7 @@
     }
 /*    hero*/
     .container-hero{
-        padding: 40px 20px;
+        padding: 40px 0 40px 0;
         width: 375px;
         height: 690px;
         position: relative;
@@ -569,7 +569,7 @@
     }
 /*    trending*/
     .trending {
-        padding: 40px 20px;
+        padding: 40px 0 40px 0;
         width: 375px;
     }
     .trending-title{
@@ -675,11 +675,7 @@
 /*categories*/
     .browse-categories{
         width: 375px;
-        padding: 40px 20px;
-    }
-    .top-rated-artists{
-        padding: 40px 20px;
-        width: 375px;
+        padding: 40px 0 40px 0;
     }
     .list-browse-categories-tablet{
         display: none;
@@ -708,6 +704,7 @@
     .browse-categories-mobile{
         display: flex;
         gap: 30px;
+        width: 100%;
     }
     .browse-categories h2{
         font-size: 28px;
@@ -720,7 +717,7 @@
 /*    -------------------------------------------------------------*/
     .discover-more{
         width: 375px;
-        padding: 40px 20px;
+        padding: 40px 0 40px 0;
     }
     .discover-more-header-text-title{
         font-size: 28px;
@@ -775,7 +772,7 @@
 /*    ---------------------------------------------*/
     .card-row{
         width: 375px;
-        padding: 40px 20px;
+        padding: 40px 0 40px 0;
     }
     .card-row-title{
         font-size: 28px;
@@ -837,7 +834,7 @@
         align-items: flex-start;
         padding: 20px;
         width: 335px;
-        margin-left: 40px;
+        margin-left: 20px;
     }
     .nft-content-btn{
         display: none;
@@ -863,7 +860,7 @@
         display: block;
         width: 335px;
         gap: 30px;
-        padding: 40px 20px;
+        padding: 40px 0 40px 0;
     }
     .sub-img-mobile{
         width: 335px;
@@ -911,7 +908,7 @@
     .foot-content{
         display: block;
         line-height: 140%;
-        padding: 40px 20px;
+        padding: 40px 0 40px 0;
     }
     .form-subscribe{
         display: none;
