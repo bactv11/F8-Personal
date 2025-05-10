@@ -939,11 +939,8 @@
     .foot-content{
         display: block;
         line-height: 140%;
-        padding: 20px ;
     }
-    footer{
-        margin-top: 40px;
-    }
+
     .form-subscribe{
         display: none;
     }
