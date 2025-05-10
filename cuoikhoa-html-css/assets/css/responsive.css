@@ -451,6 +451,7 @@
 @media  (max-width: 767px) {
     .container{
         padding: 40px 20px;
+
     }
     .thead-mobile{
         font-size: 28px;
@@ -482,7 +483,7 @@
 /*    hero*/
     .container-hero{
         padding: 40px 20px;
-        width: 100%;
+        width: 375px;
         height: 690px;
         position: relative;
     }
@@ -519,7 +520,7 @@
         text-transform: capitalize;
     }
     .add-infor-item-lable{
-        font-size: 14px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
@@ -569,7 +570,7 @@
 /*    trending*/
     .trending {
         padding: 40px 20px;
-        width: 100%;
+        width: 375px;
     }
     .trending-title{
         font-size: 28px;
@@ -673,7 +674,7 @@
     }
 /*categories*/
     .browse-categories{
-        width: 100%;
+        width: 375px;
         padding: 40px 20px;
     }
     .top-rated-artists{
@@ -718,7 +719,7 @@
 
 /*    -------------------------------------------------------------*/
     .discover-more{
-        width: 100%;
+        width: 375px;
         padding: 40px 20px;
     }
     .discover-more-header-text-title{
@@ -772,10 +773,7 @@
 /*   nft ---------------------------------------*/
 
 /*    ---------------------------------------------*/
-    .card-row{
-        width: 100%;
-        padding: 40px 20px;
-    }
+    .card-row
     .card-row-title{
         font-size: 28px;
         font-style: normal;
@@ -796,6 +794,7 @@
         display: block;
         gap: 20px;
         width: 335px;
+        padding: 40px 20px;
     }
     .card-row-list-mobile{
         display: flex;
@@ -834,16 +833,16 @@
     .nft-container  {
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px;
-        width: 100%;
+        padding: 40px 20px;
+        width: 375px;
     }
     .nft-content-btn{
         display: none;
     }
     .nft-content-btn-mobile{
         display: flex;
-        width: 100%;
-        color: var(--color-bg-1);
+        width: 280px;
+        color: var(--color-gray);
         background: var(--color-white);
         border: none;
     }
@@ -859,7 +858,7 @@
     }
     .container-sub-mobile{
         display: block;
-        width: 100%;
+        width: 335px;
         gap: 30px;
         padding: 40px 20px;
     }
@@ -910,6 +909,7 @@
         display: block;
         line-height: 140%;
         padding: 40px 20px;
+        width: 100%;
     }
     .form-subscribe{
         display: none;
@@ -918,6 +918,7 @@
         display: block;
         width: 300px;
         gap: 30px;
+        margin-bottom: 20px;
     }
     .foot-nav-title{
         font-size: 22px;
