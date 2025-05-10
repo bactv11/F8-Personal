@@ -801,6 +801,7 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 20px;
+        width: 335px;
     }
     .nft-content-btn{
         display: none;
@@ -871,7 +872,7 @@
     }
 /*    ----------------------------------------*/
     .foot-content{
-        width: 315px;
+        width: 335px;
         display: block;
         line-height: 140%;
         padding: 0;
