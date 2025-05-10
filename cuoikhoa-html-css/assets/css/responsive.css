@@ -482,8 +482,6 @@
     }
 /*    hero*/
     .container-hero{
-        padding: 40px 10px;
-        width: 375px;
         height: 690px;
         position: relative;
     }
