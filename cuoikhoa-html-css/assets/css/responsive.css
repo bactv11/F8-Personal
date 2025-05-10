@@ -939,7 +939,7 @@
     .foot-content{
         display: block;
         line-height: 140%;
-        padding: 20px 40px ;
+        padding: 20px ;
     }
     footer{
         margin-top: 40px;
@@ -983,7 +983,7 @@
     }
     .body-form-mobile-footer button{
         height: 60px;
-        width: 100%;
+        width: 335px;
         margin-top: 16px;
     }
 
