@@ -920,7 +920,7 @@
     }
     .body-form-mobile input {
         height: 60px;
-        width: 335px;
+        width: 100%;
         border-radius: 20px;
         padding: 20px;
         border: none;
@@ -929,7 +929,7 @@
     }
     .btn-sub-mobile{
         height: 60px;
-        width: 335px;
+        width: 100%;
         margin-top: 16px;
     }
     .btn-sub-mobile:hover{
@@ -975,11 +975,11 @@
         border: none;
         outline: none;
         margin-top: 20px;
-        width: 300px;
+        width: 320px;
     }
     .body-form-mobile-footer button{
         height: 60px;
-        width: 300px;
+        width: 320px;
         margin-top: 16px;
     }
 
