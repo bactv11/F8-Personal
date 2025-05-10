@@ -451,7 +451,6 @@
 @media  (max-width: 767px) {
     .container{
         padding: 40px 20px;
-        width: 375px;
 
     }
     .thead-mobile{
@@ -483,6 +482,7 @@
     }
 /*    hero*/
     .container-hero{
+        padding: 40px 20px;
         width: 375px;
         height: 690px;
         position: relative;
@@ -520,7 +520,7 @@
         text-transform: capitalize;
     }
     .add-infor-item-lable{
-        font-size: 16px;
+        font-size: 14px;
         font-style: normal;
         font-weight: 400;
         line-height: 140%;
@@ -568,6 +568,10 @@
         gap: 30px;
     }
 /*    trending*/
+    .trending {
+        padding: 40px 20px;
+        width: 375px;
+    }
     .trending-title{
         font-size: 28px;
         font-style: normal;
@@ -610,10 +614,7 @@
     .card-item:nth-of-type(2), .card-item:nth-of-type(3) {
         display: none;
     }
-/*top create*/
-/*    .top-rated-artists{*/
-/*        width: 315px;*/
-/*    }*/
+
     .top-rated-artists-mobile{
         width: 375px;
     }
@@ -672,6 +673,14 @@
         width: 335px;
     }
 /*categories*/
+    .browse-categories{
+        width: 375px;
+        padding: 40px 20px;
+    }
+    .top-rated-artists{
+        padding: 40px 20px;
+        width: 375px;
+    }
     .list-browse-categories-tablet{
         display: none;
     }
@@ -709,6 +718,10 @@
     }
 
 /*    -------------------------------------------------------------*/
+    .discover-more{
+        width: 375px;
+        padding: 40px 20px;
+    }
     .discover-more-header-text-title{
         font-size: 28px;
         font-style: normal;
@@ -760,6 +773,10 @@
 /*   nft ---------------------------------------*/
 
 /*    ---------------------------------------------*/
+    .card-row{
+        width: 375px;
+        padding: 40px 20px;
+    }
     .card-row-title{
         font-size: 28px;
         font-style: normal;
@@ -827,8 +844,8 @@
     }
     .nft-content-btn-mobile{
         display: flex;
-        width: 280px;
-        color: var(--color-gray);
+        width: 100%;
+        color: var(--color-bg-1);
         background: var(--color-white);
         border: none;
     }
@@ -846,6 +863,7 @@
         display: block;
         width: 335px;
         gap: 30px;
+        padding: 40px 20px;
     }
     .sub-img-mobile{
         width: 335px;
@@ -893,7 +911,7 @@
     .foot-content{
         display: block;
         line-height: 140%;
-        padding: 0;
+        padding: 40px 20px;
     }
     .form-subscribe{
         display: none;
@@ -902,7 +920,6 @@
         display: block;
         width: 300px;
         gap: 30px;
-        margin-bottom: 20px;
     }
     .foot-nav-title{
         font-size: 22px;
