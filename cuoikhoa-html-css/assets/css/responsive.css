@@ -783,7 +783,6 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 20px;
-        margin-left: 40px;
     }
     .nft-content-btn{
         display: none;
@@ -837,7 +836,7 @@
     }
     .body-form-mobile input {
         height: 60px;
-        width: 315px;
+        width: 280px;
         border-radius: 20px;
         padding: 20px;
         border: none;
@@ -846,7 +845,7 @@
     }
     .btn-sub-mobile{
         height: 60px;
-        width: 315px;
+        width: 280px;
         margin-top: 16px;
     }
     .btn-sub-mobile:hover{
@@ -865,7 +864,7 @@
     }
     .form-subscribe-mobile{
         display: block;
-        width: 315px;
+        width: 300px;
         gap: 30px;
 
     }
