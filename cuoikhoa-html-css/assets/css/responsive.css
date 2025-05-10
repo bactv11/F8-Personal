@@ -452,9 +452,7 @@
     }
 }
 @media  (max-width: 767px) {
-    .container{
-        padding: 40px 20px;
-    }
+
     .thead-mobile{
         font-size: 28px;
         font-style: normal;
@@ -478,7 +476,7 @@
 /*    header*/
     .header{
         width: 100%;
-        position: relative;
+        position: sticky;
     }
     .menu-mobile{
         display: block;
@@ -497,6 +495,9 @@
         width: 375px;
         height: 786px;
         padding: 40px 20px;
+    }
+    .container-hero{
+
     }
     .text-body-title{
         font-size: 28px;
@@ -576,6 +577,9 @@
         padding: 40px 20px;
         width: 375px;
     }
+    .card-list-item{
+
+    }
     .trending-title{
         margin-top: 40px;
         font-size: 28px;
@@ -621,6 +625,9 @@
         width: 375px;
         padding: 40px 20px;
         height: 893px;
+    }
+    .top-rated-list-item-mobile{
+
     }
     .title{
         margin-top: 40px;
@@ -683,6 +690,9 @@
         padding: 40px 20px;
         height: 1077px;
     }
+    .container-browse{
+
+    }
     .top-rated-artists{
         padding: 40px 20px;
         width: 375px;
@@ -729,6 +739,9 @@
         padding: 40px 20px;
         width: 375px;
         margin-top: 40px;
+    }
+    .discover-more-list{
+
     }
     .discover-more-header-text-title{
         font-size: 28px;
@@ -787,6 +800,7 @@
         padding: 40px 20px;
         height: 685px;
     }
+
     .card-row-title{
         font-size: 28px;
         font-style: normal;
@@ -842,12 +856,11 @@
         line-height: 140%;
     }
 /*    nft*/
+
     .nft-container  {
         flex-direction: column;
         align-items: flex-start;
-        padding: 20px;
-        width: 335px;
-        margin-left: 40px;
+        padding: 40px;
     }
     .nft-content-btn{
         display: none;
@@ -871,6 +884,7 @@
         width: 375px;
         height: 645px;
     }
+
     .container-sub{
         display: none;
     }
@@ -919,14 +933,16 @@
         margin-top: 16px;
     }
     .btn-sub-mobile:hover{
-        opacity: 0.8;
+        opacity: 0.6;
     }
 /*    ----------------------------------------*/
-
     .foot-content{
         display: block;
         line-height: 140%;
-        padding: 40px 20px;
+        padding: 20px 40px ;
+    }
+    footer{
+        margin-top: 40px;
     }
     .form-subscribe{
         display: none;
