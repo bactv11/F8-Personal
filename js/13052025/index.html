@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!--    <script src="main.js"></script>-->
+    <title>DOM</title>
+</head>
+<body>
+  <h1 id="mylink">My header</h1>
+  <h2>My header2</h2>
+  <h2>My header3</h2>
+  <a href="#"> my link</a>
+
+  <div class="content">
+    <h2 id="header1" class="header2">My header2 delete</h2>
+    <h2 class="header2">My header3</h2>
+  </div>
+
+<script >
+  // console.log(document.querySelector('.content .header2'));
+  // console.log(document.getElementsByTagName('h2')) //lấy theo tag name
+  // console.log(document.getElementById('mylink'))//lấy theo ID
+  const headingE = document.querySelector('.content .header2:last-of-type')
+  //update attribute
+  headingE.setAttribute('name','test')
+  //get attribute
+  console.log(headingE.getAttribute('name'))
+  headingE.style.color = 'red'
+
+  const pE = document.createElement('b')
+  pE.innerText = 'test thoi'
+  document.body.querySelector('.content').appendChild(pE)
+
+  //delete element
+  const deleteHeader1= document.getElementById('header1')
+  deleteHeader1.remove()
+  //update element
+  // headingE.innerHTML = "test"
+  // headingE.outerHTML = "<span> test </span>"
+  let count=0
+  headingE.onclick= () =>{
+    count++
+    console.log(count)
+  }
+  headingE.addEventListener('click',()=>{
+    console.log('click vào đâyy')
+  })
+  headingE.addEventListener('click',()=>{
+    console.log('click vào đâyy nữa')
+  })
+
+</script>
+</body>
+</html>

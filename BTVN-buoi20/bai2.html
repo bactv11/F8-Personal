@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div>Div 1</div>
+<div>Div 2</div>
+<p>P 1</p>
+<section>
+    Section 1
+    <p>P 2</p>
+    <div>Div 3</div>
+</section>
+<script>
+
+/*
+*
+   tạo 1 hàm chung chuyền vào tất cả tagName
+                    │
+                    ▼
+       check != string => kh có dữ liệu
+                    ▼
+       dùng getElementsByTagName lấy ra
+              tất cả tagName và trả về        */
+
+    function countElementsByTag(tagName) {
+        // nếu tagName không phải là chuỗi => 0
+        if (typeof tagName !== "string") {
+            return 0;
+        }
+        //getElementsByTagName lấy các phần tử theo tagName
+        const elements = document.getElementsByTagName(tagName);
+        return elements.length;
+    }
+    console.log(countElementsByTag("div")); //3 thẻ div
+    console.log(countElementsByTag("p")); //2 thẻ p
+    console.log(countElementsByTag("section")); //1 section
+    console.log(countElementsByTag("header")); // không có header => giá trị trả về =0
+    console.log(countElementsByTag(123)); //number không phải string => 0
+</script>
+</body>
+</html>
+
+

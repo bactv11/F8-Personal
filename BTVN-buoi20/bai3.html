@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="changeTextBtn">Đổi nội dung tất cả P</button>
+<p>Đoạn 1</p>
+<p>Đoạn 2</p>
+<p>Đoạn 3</p>
+
+
+<script>
+  // Kết quả đầu ra
+  //<p>Đã đổi nội dung  1</p>
+ // <p>Đã đổi nội dung 2</p>
+ // <p>Đã đổi nội dung3</p>
+
+  //gọi đến id của btn
+  /*
+
+     dùng getElementById gọi đến btn
+                  ▼
+     tạo sự kiên click addEventListener
+                  ▼
+     getElementsByTagName ghi đè lê các thẻ p
+                  ▼
+     dùng for lặp theo p và đè giá trị
+
+                                                    */
+  const buttonE = document.getElementById("changeTextBtn");
+  //tạo sự kiện click cho btn
+  buttonE.addEventListener('click',()=>{
+    //lấy tagName theo p để đè nội dung
+    const pE= document.getElementsByTagName('p')
+    //lặp theo tagName và trả về giá trị
+    for (let i = 0; i < pE.length; i++) {
+      pE[i].textContent = "Đã đổi nội dung " + (i + 1);
+    }
+  })
+</script>
+</body>
+</html>

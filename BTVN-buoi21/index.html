@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BTVN 21</title>
+  <link href="
+    https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+    " rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+  .container {
+    width: 600px;
+    margin: auto;
+  }
+  table {
+    width: 100%;
+  }
+  td, th {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    font-size: 20px;
+  }
+  .edit-btn {
+    color: green;
+  }
+  .del-btn {
+    color: red;
+  }
+  .text-align-right {
+    text-align: right;
+  }
+  .text-align-center {
+    text-align: center;
+  }
+
+</style>
+
+<body>
+
+<div class="container">
+  <input placeholder="search employees" name="search" id="search" type="text"/>
+  <button id="open-dialog" class="btn-add" type="submit">Add</button>
+<!--  add-->
+  <div id="add" class="form-add">
+    <h2 style="text-align: center; color: white">Add Sinh Viên</h2>
+    <form action="">
+      <input type="text" name="name" placeholder="name" required>
+      <input type="text" name="address" placeholder="address" required>
+      <input type="text" name="age" placeholder="age"required>
+      <div class="form-btn">
+        <button id="btn-save" class="btn-add" type="submit">add</button>
+        <button id="btn-close" class="btn-cancel" type="submit">cancel</button>
+      </div>
+    </form>
+  </div>
+<!--  update-->
+  <div id="update" class="form-update">
+    <h2 style="text-align: center; color: white">Update Sinh Viên</h2>
+    <form action="">
+      <input type="text" name="name-up" placeholder="name" required>
+      <input type="text" name="address-up" placeholder="address" required>
+      <input type="text" name="age-up" placeholder="age"required>
+      <div class="form-btn">
+        <button class="btn-update" type="submit">Update</button>
+        <button class="btn-cancel" type="submit">cancel</button>
+      </div>
+    </form>
+  </div>
+<!--  delete-->
+  <div id="delete-user" class="form-delete">
+    <h2 style="text-align: center" >Xóa Sinh Viên</h2>
+    <p><span class="mdi mdi-account-remove " ></span>Bạn có chắc chắn muốn xóa sinh viên này không??</p>
+    <div class="form-del">
+      <button class="btn-del" type="submit">Delete</button>
+      <button class="btn-cancel" type="submit">cancel</button>
+    </div>
+  </div>
+  <table cellspacing="0">
+    <thead>
+    <tr>
+    </tr>
+    </thead>
+
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<script>
+  // const headers = [
+  //   'id', 'name', 'address', 'age'
+  // ]
+  const headers = [
+    { name: 'id', text: 'Id', align: 'center' },
+    { name: 'name', text: 'Ten' },
+    { name: 'address', text: 'Dia Chi' },
+    { name: 'age', text: 'Tuoi', align: 'right' },
+    { name: 'action', text: 'Action', align: 'center' },
+  ]
+  const employees = [
+    {id: 1, name: 'Pham Cong Tin', address: 'Hoai Duc - Ha Noi', age: 27},
+    {id: 2, name: 'Nguyen Nam Tao', address: 'Co Nhue - Ha Noi', age: 27},
+    {id: 3, name: 'Pham Xuan Bac', address: 'Soc Son - Ha Noi', age: 27},
+  ]
+  const renderTable = (employees) => {
+    const tableHeaderE= document.querySelector('table thead tr')
+    //tạo mới bảng
+    tableHeaderE.innerHTML = ''
+
+    headers.forEach(header => {
+      const cell = document.createElement('th')
+      cell.innerText = header.text
+      tableHeaderE.append(cell)
+    })
+
+    const tableBodyE = document.querySelector('table tbody')
+    // xóa bảng
+    tableBodyE.innerHTML = ''
+
+    employees.forEach(employee => {
+      const row = document.createElement('tr')
+      headers.forEach(header => {
+        const cell = document.createElement('td')
+        if (header.name === 'action') {
+          const editBtn = document.createElement('span')
+          const delBtn = document.createElement('span')
+          editBtn.setAttribute('class', 'mdi mdi-pencil-outline edit-btn')
+          delBtn.setAttribute('class', 'mdi mdi-trash-can-outline del-btn')
+          cell.appendChild(editBtn)
+          cell.appendChild(delBtn)
+        }
+        else {
+          cell.innerText = employee[header.name]
+        }
+
+        if (header.align) cell.setAttribute('class', `text-align-${header.align}`)
+        row.append(cell)
+      })
+      tableBodyE.append(row)
+    })
+  }
+
+  //get input element
+  const inputE = document.querySelector('.container input[name="search"]')
+  inputE.addEventListener('input', (e) => {
+    const fillterEmployees = employees.filter(
+            employee =>employee.name.toLowerCase().includes(e.target.value)
+    )
+    renderTable(fillterEmployees)
+  })
+  renderTable(employees)
+
+//get add user
+  const openBtn = document.getElementById("open-dialog");
+  const closeBtn = document.getElementById("btn-close");
+  const dialog = document.getElementById("dialog-add");
+  openBtn.addEventListener("click", () =>{
+    dialog.showModal();
+  });
+
+  closeBtn.addEventListener("click", function() {
+    dialog.close();
+  });
+
+
+</script>
+
+</body>
+</html>

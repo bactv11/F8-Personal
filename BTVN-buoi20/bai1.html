@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #aaa;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<table id="employeeTable">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Họ tên</th>
+        <th>Tuổi</th>
+        <th>Email</th>
+        <th>Chức vụ</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+    </tbody>
+</table>
+
+<script>
+    const data = [
+        { id: 1, name: 'Nguyễn Văn A', age: 22, email: 'a@example.com' },
+        { id: 2, name: 'Trần Thị B', age: 21, email: 'b@example.com' },
+        { id: 3, name: 'Lê Văn C', age: 23, email: 'c@example.com' }
+    ];
+
+    const positions = [
+        { id: 1, position: 'Giám đốc' },
+        { id: 2, position: 'Nhân viên' },
+        { id: 3, position: 'Quản lý' }
+    ];
+
+    const tbody = document.querySelector('#employeeTable tbody');
+
+    data.forEach(person => {
+        // Tìm chức vụ theo id
+        const positionE = positions.find(p => p.id === person.id);
+        const row = document.createElement('tr');
+
+        row.innerHTML = `
+      <td>${person.id}</td>
+      <td>${person.name}</td>
+      <td>${person.age}</td>
+      <td>${person.email}</td>
+      <td>${positionE ? pos.position : 'Không rõ'}</td>
+    `;
+
+        tbody.appendChild(row);
+    });
+</script>
+
+</body>
+</html>
