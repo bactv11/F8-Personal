@@ -10,90 +10,129 @@
     https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
     " rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      width: 600px;
+      margin: auto;
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+    }
+    table thead tr th {
+      border-top: 1px solid #ccc;
+    }
+    td, th {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      font-size: 20px;
+    }
+    .edit-btn {
+      color: green;
+    }
+    .del-btn {
+      color: red;
+    }
+    .text-align-right {
+      text-align: right;
+    }
+    .text-align-center {
+      text-align: center;
+    }
+    button {
+      cursor: pointer;
+    }
+    .container input {
+      padding: 12px;
+      width: 100%;
+      font-size: 24px;
+    }
+    .formSeach{
+      display: flex;
+      gap: 10px;
+    }
+    .btn-add{
+      background: green;
+      color: white;
+      width: 100px;
+      border: none;
+      border-radius: 5px;
+    }
+    .btn-add:hover{
+      opacity: 0.5;
+    }
+
+  </style>
 </head>
-
-<style>
-  .container {
-    width: 600px;
-    margin: auto;
-  }
-  table {
-    width: 100%;
-  }
-  td, th {
-    padding: 12px;
-    border-bottom: 1px solid #ccc;
-    font-size: 20px;
-  }
-  .edit-btn {
-    color: green;
-  }
-  .del-btn {
-    color: red;
-  }
-  .text-align-right {
-    text-align: right;
-  }
-  .text-align-center {
-    text-align: center;
-  }
-
-</style>
-
 <body>
 
 <div class="container">
-  <input placeholder="search employees" name="search" id="search" type="text"/>
-  <button id="open-dialog" class="btn-add" type="submit">Add</button>
-<!--  add-->
-  <div id="add" class="form-add">
-    <h2 style="text-align: center; color: white">Add Sinh Viên</h2>
-    <form action="">
-      <input type="text" name="name" placeholder="name" required>
-      <input type="text" name="address" placeholder="address" required>
-      <input type="text" name="age" placeholder="age"required>
-      <div class="form-btn">
-        <button id="btn-save" class="btn-add" type="submit">add</button>
-        <button id="btn-close" class="btn-cancel" type="submit">cancel</button>
-      </div>
-    </form>
+  <div class="table">
+  <div class="formSeach">
+    <input placeholder="search employees" name="search" id="search" type="text"/>
+    <button onclick="onOpenDialog()" class="btn-add" type="submit">Add</button>
   </div>
-<!--  update-->
-  <div id="update" class="form-update">
-    <h2 style="text-align: center; color: white">Update Sinh Viên</h2>
-    <form action="">
-      <input type="text" name="name-up" placeholder="name" required>
-      <input type="text" name="address-up" placeholder="address" required>
-      <input type="text" name="age-up" placeholder="age"required>
-      <div class="form-btn">
-        <button class="btn-update" type="submit">Update</button>
-        <button class="btn-cancel" type="submit">cancel</button>
-      </div>
-    </form>
-  </div>
-<!--  delete-->
-  <div id="delete-user" class="form-delete">
-    <h2 style="text-align: center" >Xóa Sinh Viên</h2>
-    <p><span class="mdi mdi-account-remove " ></span>Bạn có chắc chắn muốn xóa sinh viên này không??</p>
-    <div class="form-del">
-      <button class="btn-del" type="submit">Delete</button>
-      <button class="btn-cancel" type="submit">cancel</button>
-    </div>
-  </div>
-  <table cellspacing="0">
+  <table cellspacing="0" id="container">
     <thead>
     <tr>
     </tr>
     </thead>
-
     <tbody>
     </tbody>
   </table>
+  </div>
 </div>
+  <div class="dialog-container">
+    <div class="overlay">
+      <div class="dialog">
+        <div class="dialog-add">
+          <div class="dialog-title"> Add Sinh Viên</div>
+          <div class="dialog-content">
+            <input type="text" placeholder="Enter Employee Name" name="name" id="name" required/>
+            <input type="text" placeholder="Enter Employee Address" name="address" id="address" required/>
+            <input type="text" placeholder="Enter Employee Age" name="age" id="age" required/>
+          </div>
+          <div class="dialog-action">
+            <button onclick="onAdd()" class="save-btn">ADD</button>
+            <button onclick="closeDialog()" class="cancel-btn">CANCEL</button>
+          </div>
+        </div>
+<!--        //update-->
+        <div class="dialog-update">
+          <div class="dialog-title"> Update Sinh Viên</div>
+          <div class="dialog-content">
+            <input type="text" placeholder="Enter Employee Name" name="name"  required/>
+            <input type="text" placeholder="Enter Employee Address" name="address"  required/>
+            <input type="text" placeholder="Enter Employee Age" name="age"  required/>
+          </div>
+          <div class="dialog-action">
+            <button onclick="onSave()" class="save-btn">Update</button>
+            <button onclick="closeDialog()" class="cancel-btn">CANCEL</button>
+          </div>
+        </div>
+<!--        delete-->
+        <div class="dialog-delete">
+          <div class="dialog-title"> Delete Sinh Viên</div>
+          <div class="dialog-content">
+            Bạn có thực sự muốn xóa ?
+          </div>
+          <div class="dialog-action">
+            <button onclick="onDelete()" class="save-btn">Delete</button>
+            <button onclick="closeDialog()" class="cancel-btn">CANCEL</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
 <script>
-  // const headers = [
-  //   'id', 'name', 'address', 'age'
-  // ]
   const headers = [
     { name: 'id', text: 'Id', align: 'center' },
     { name: 'name', text: 'Ten' },
@@ -128,8 +167,31 @@
         if (header.name === 'action') {
           const editBtn = document.createElement('span')
           const delBtn = document.createElement('span')
-          editBtn.setAttribute('class', 'mdi mdi-pencil-outline edit-btn')
+          editBtn.setAttribute('class', 'mdi mdi-pencil-outline edit-btn' )
+          editBtn.addEventListener('click', () => {
+            document.querySelector('.dialog-container').style.display = 'block'
+            document.querySelector('.dialog-update').style.display = 'block'
+            document.querySelector('.dialog-add').style.display = 'none'
+            document.querySelector('.dialog-delete').style.display = 'none'
+
+            // Gán dữ liệu vào input update
+            document.querySelector('.dialog-update input[name="name"]').value = employee.name
+            document.querySelector('.dialog-update input[name="address"]').value = employee.address
+            document.querySelector('.dialog-update input[name="age"]').value = employee.age
+
+            // Gán id để dùng khi cập nhật
+            document.querySelector('.dialog-update').dataset.id = employee.id
+          })
           delBtn.setAttribute('class', 'mdi mdi-trash-can-outline del-btn')
+          delBtn.addEventListener('click', () => {
+            document.querySelector('.dialog-container').style.display = 'block'
+            document.querySelector('.dialog-delete').style.display = 'block'
+            document.querySelector('.dialog-add').style.display = 'none'
+            document.querySelector('.dialog-update').style.display = 'none'
+
+            // Lưu ID cần xóa vào dialog-delete
+            document.querySelector('.dialog-delete').dataset.id = employee.id
+          })
           cell.appendChild(editBtn)
           cell.appendChild(delBtn)
         }
@@ -148,24 +210,77 @@
   const inputE = document.querySelector('.container input[name="search"]')
   inputE.addEventListener('input', (e) => {
     const fillterEmployees = employees.filter(
-            employee =>employee.name.toLowerCase().includes(e.target.value)
+            employee =>employee.name.toLowerCase().includes(e.target.value.toLowerCase())
     )
     renderTable(fillterEmployees)
   })
   renderTable(employees)
+// dialog
+  const openDialog = document.querySelector('.dialog-container')
 
-//get add user
-  const openBtn = document.getElementById("open-dialog");
-  const closeBtn = document.getElementById("btn-close");
-  const dialog = document.getElementById("dialog-add");
-  openBtn.addEventListener("click", () =>{
-    dialog.showModal();
-  });
+//get MaxID
+const getMaxId= ()=>{
+    const ids= employees.map(employee => employee.id)
+  return Math.max(...ids)
+}
+//Add element
+  const onAdd =() =>{
+    const newEmployee={
+      id: getMaxId()+1,
+      name: document.querySelector('.dialog-add input[name="name"]').value,
+      address: document.querySelector('.dialog-add input[name="address"]').value,
+      age: document.querySelector('.dialog-add input[name="age"]').value,
+    }
+    employees.push(newEmployee)
+    renderTable(employees)
+    closeDialog()
+  }
+  //Update element
+  const onSave = () => {
+    const id = Number(document.querySelector('.dialog-update').dataset.id)
+    const index = employees.findIndex(emp => emp.id === id)
 
-  closeBtn.addEventListener("click", () => {
-    dialog.close();
-  });
+    if (index !== -1) {
+      employees[index].name = document.querySelector('.dialog-update input[name="name"]').value
+      employees[index].address = document.querySelector('.dialog-update input[name="address"]').value
+      employees[index].age = document.querySelector('.dialog-update input[name="age"]').value
+    }
 
+    renderTable(employees)
+    closeDialog()
+  }
+  //delete
+  const onDelete = () => {
+    const id = Number(document.querySelector('.dialog-delete').dataset.id)
+    const index = employees.findIndex(emp => emp.id === id)
+
+    if (index !== -1) {
+      employees.splice(index, 1) // Xóa phần tử khỏi mảng
+    }
+
+    renderTable(employees)
+    closeDialog()
+  }
+
+  //opendialog
+const onOpenDialog = () => {
+  document.querySelector('.dialog-container').style.display = 'block'
+  document.querySelector('.dialog-add').style.display = 'block'
+  document.querySelector('.dialog-update').style.display = 'none'
+  document.querySelector('.dialog-delete').style.display = 'none'
+
+  // // Reset input khi mở form add
+  // document.querySelector('.dialog-add input[name="name"]').value = ''
+  // document.querySelector('.dialog-add input[name="address"]').value = ''
+  // document.querySelector('.dialog-add input[name="age"]').value = ''
+}
+  //close dialog
+  const closeDialog = () => {
+    document.querySelector('.dialog-container').style.display = 'none'
+    document.querySelector('.dialog-add').style.display = 'none'
+    document.querySelector('.dialog-update').style.display = 'none'
+    document.querySelector('.dialog-delete').style.display = 'none'
+  }
 
 </script>
 
