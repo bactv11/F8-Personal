@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<style>
+  .calculate {
+    width: 300px;
+    height: 500px;
+    border: 1px solid #ccc;
+  }
+  .calculate-screen {
+    width: 270px;
+    height: 100px;
+    border: 1px solid #ccc;
+    margin: 15px auto;
+  }
+  .calculate-keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px
+  }
+  .calculate-button {
+    padding: 5px;
+    width: calc(20% - 2.5px);
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+<div class="calculate">
+  <div class="calculate-screen"></div>
+  <div class="calculate-keyboard">
+
+  </div>
+</div>
+
+<script type="module" src="caculator.js"></script>
+<script type="module" src="handleCal.js"></script>
+</body>
+</html>

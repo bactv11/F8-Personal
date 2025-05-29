@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .autocomplete{
+            width: 300px;
+            margin: auto;
+        }
+        .autocomplete input{
+            width: 100%;
+            padding: 12px;
+            font-size: 22px;
+        }
+        .autocomplete .dropdown{
+            padding: 12px;
+            font-size: 16px;
+            box-shadow: 0 0 5px #ccc;
+            overflow-y:scroll ;
+            max-height: 300px;
+        }
+        .dropdown-item{
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="autocomplete">
+        <input placeholder="province" type="text" name="" id="">
+        <div class="dropdown">
+            <div class="dropdown-item">Hà Nội</div>
+            <div class="dropdown-item">Hà Nam</div>
+            <div class="dropdown-item">Vĩnh Phúc</div>
+            <div class="dropdown-item">Bắc Ninh</div>
+            <div class="dropdown-item">Bắc Giang</div>
+            <div class="dropdown-item">Hưng Yên</div>
+            <div class="dropdown-item">Nam Định</div>
+            <div class="dropdown-item">Thanh Hóa</div>
+            <div class="dropdown-item">Nghệ An</div>
+            <div class="dropdown-item">Thái Bình</div>
+            <div class="dropdown-item">Huế</div>
+        </div>
+    </div>
+<script>
+    const items = [
+        "Ha Noi",
+        "Ha Nam",
+        "Vinh Phuc",
+        "Phu Tho",
+        "Bac Blinh",
+        "Bac Giang",
+        "Vinh Phuc",
+        "Phu Tho",
+        "Bac Blinh",
+        "Bac Giang"
+    ]
+    const renderDropdown = (item) =>{
+        const container = document.querySelector('.dropdown')
+        container.innerHTML = ''
+        item.forEach(item => {
+            const div = document.createElement('div')
+            div.className = 'dropdown-item'
+            div.textContent = item;
+            container.appendChild(div)
+        })
+    }
+    const resetBackground =() =>{
+        const itemsE = document.querySelectorAll('.dropdown-item')
+        itemsE.forEach(itemE => {
+            itemE.style.background= 'white'
+        })
+    }
+    const inputE= document.querySelector('input')
+    inputE.addEventListener('input', () =>{
+        //tìm và in ra
+        resetBackground()
+        const searchStr= inputE.value.toLowerCase()
+        const fillterItem=items.filter(item => item.toLowerCase().includes(searchStr.toLowerCase()))
+        renderDropdown(fillterItem)
+    })
+</script>
+</body>
+</html>
