@@ -1,210 +1,250 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport"-->
+<!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--    <title>Document</title>-->
+<!--  <style>-->
+<!--    .banner {-->
+<!--      width: 100%;-->
+<!--      max-width: 800px;-->
+<!--      height: 400px;-->
+<!--      margin: auto;-->
+<!--      position: relative;-->
+<!--      background-size: cover;-->
+<!--      background-position: center;-->
+<!--      border-radius: 10px;-->
+<!--      overflow: hidden;-->
+<!--    }-->
+
+<!--    button.prev,-->
+<!--    button.next {-->
+<!--      position: absolute;-->
+<!--      top: 50%;-->
+<!--      transform: translateY(-50%);-->
+<!--      font-size: 2rem;-->
+<!--      background-color: rgba(0,0,0,0.5);-->
+<!--      border: none;-->
+<!--      color: white;-->
+<!--      padding: 10px 15px;-->
+<!--      cursor: pointer;-->
+<!--      border-radius: 50%;-->
+<!--      z-index: 2;-->
+<!--    }-->
+
+<!--    button.prev { left: 10px; }-->
+<!--    button.next { right: 10px; }-->
+
+<!--    button:hover {-->
+<!--      background-color: rgba(0,0,0,0.7);-->
+<!--    }-->
+
+
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="banner">-->
+<!--  -->
+<!--  <button class="prev">❮</button>-->
+<!--  <button class="next">❯</button>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--  const images = [-->
+<!--    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d',-->
+<!--    'https://images.unsplash.com/photo-1503264116251-35a269479413',-->
+<!--    'https://images.unsplash.com/photo-1508057198894-247b23fe5ade',-->
+<!--    'https://images.unsplash.com/photo-1508923567004-3a6b8004f3d3',-->
+<!--    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d'-->
+<!--  ];-->
+
+<!--  let current = 0;-->
+<!--  const banner = document.querySelector('.banner');-->
+
+<!--  function updateBackground() {-->
+<!--    banner.style.backgroundImage = `url('${images[current]}')`;-->
+<!--  }-->
+
+<!--  function getRandomIndex(exclude) {-->
+<!--    let newIndex;-->
+<!--    do {-->
+<!--      newIndex = Math.floor(Math.random() * images.length);-->
+<!--    } while (newIndex === exclude);-->
+<!--    return newIndex;-->
+<!--  }-->
+
+<!--  document.querySelector('.prev').addEventListener('click', () => {-->
+<!--    current = getRandomIndex(current);-->
+<!--    updateBackground();-->
+<!--  });-->
+
+<!--  document.querySelector('.next').addEventListener('click', () => {-->
+<!--    current = getRandomIndex(current);-->
+<!--    updateBackground();-->
+<!--  });-->
+
+<!--  // Hiển thị ảnh đầu tiên-->
+<!--  updateBackground();-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
 <!doctype html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="
 https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
 " rel="stylesheet">
-    <title>Document</title>
+  <title>Slide show</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 100px auto;
+    }
+    .banner{
+      width: 600px;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+    .list-image{
+      display: flex;
+      transform: translateX(0);
+      transition: transform 0.5s;
+    }
+    .btn{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.5s;
+      display: flex;
+    }
+    .btn-left {
+      font-size: 30px;
+      margin-left: 30px;
+    }
+    .btn-right {
+      font-size: 30px;
+      margin-left: 480px;
+    }
+    button{
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .index-image{
+      position: absolute;
+      bottom: 10px;
+      display: flex;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .item-image{
+      padding: 10px;
+      margin: 5px;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+    }
+    .active{
+      background: #ccc;
+    }
+    button:hover{
+      background-color: rgba(255,255,255,0.5);
+    }
+    img{
+      width: 600px;
+      height: 500px;
+    }
+  </style>
 </head>
-
-<style>
-    #app{
-        display: flex;
-        gap: 10px;
-    }
-    .app-question{
-        width: 80%;
-    }
-    .app-level{
-        padding: 10px;
-        width: 20%;
-        border-radius: 10px;
-        border: 1px solid black;
-        background: #ccc;
-    }
-    .app-level li{
-        padding: 10px;
-        font-weight: 600;
-        font-size: 20px;
-    }
-    #time{
-        width: 40px;
-        height: 40px;
-        margin: 0 auto;
-    }
-    .option{
-
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        gap: 10px;
-    }
-    #money{
-        font-size: 20px;
-        font-weight: 600;
-        margin: 20px;
-    }
-
-    .support{
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 200px;
-    }
-    .support-question{
-        height: 40px;
-        gap: 10px;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        width: 25%;
-        border: none;
-        background: #efd8d8;
-        border-radius: 10px;
-        padding: 10px;
-        text-align: center;
-    }
-    .support-question:active{
-        background-color: #baa641;
-        user-select: none;
-    }
-    .question-option{
-        width: 100%;
-        text-align: center;
-    }
-    .question-title {
-        border: 1px solid #ccc;
-        padding: 32px;
-    }
-    .question-option {
-        margin-top: 5px;
-        border: 1px solid #ccc;
-        padding: 10px;
-    }
-    .check-btn {
-        margin: 50px auto;
-        width: 50%;
-        text-align: center;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 10px;
-        height: 40px;
-        justify-content: center;
-        align-items: center;
-        display: flex;
-    }
-    .check-btn:active {
-        background-color: #9ec2bb;
-        user-select: none;
-    }
-    li{
-        list-style: none;
-    }
-</style>
-
 <body>
-<div id="app">
-   <div class="app-question">
-       <div id="time">
-           <p>30</p>
-       </div>
-       <div id="money"> Số tiền:</div>
-       <div class="question">
-           <div class="question-title">How are you</div>
-           <div class="option">
-               <div class="question-option" value="a">A: OK</div>
-               <div class="question-option" value="b">B: hmm</div>
-               <div class="question-option" value="c">C: good</div>
-               <div class="question-option" value="d">D: i'm bang</div>
-           </div>
-       </div>
-       <div class="check-btn">Check</div>
-       <div class="support">
-           <div class="support-question"><span class="mdi mdi-fraction-one-half"></span> 50/50</div>
-           <div class="support-question"><span class="mdi mdi-phone-incoming-outgoing"></span> Gọi Điện Thoại Người Thân</div>
-           <div class="support-question"> <span class="mdi mdi-account-cowboy-hat"></span> Tư Vấn Chuyên Gia</div>
-           <div class="support-question"> <span class="mdi mdi-card-account-mail-outline"></span> Hỏi Khán Giả</div>
-       </div>
-   </div>
-    <div class="app-level">
-        <div class="prize-list">
-
-        </div>
+<div class="container">
+  <div class="banner">
+    <div class="list-image">
+      <img src="https://cdn.pixabay.com/photo/2022/06/21/09/53/ocean-7275511_960_720.jpg">
+      <img src="https://www.publicdomainpictures.net/pictures/50000/velka/flower-meadow-1371791084S3k.jpg">
+      <img src="http://s.hdnux.com/photos/01/30/10/14/23102253/3/1200x0.jpg">
+      <img src="https://hdqwalls.com/wallpapers/nature-hd-5k-qhd.jpg">
     </div>
-
+    <div class="btn">
+      <button class="btn-left"> <span class="mdi mdi-menu-left"></span></button>
+      <button class="btn-right"> <span class="mdi mdi-menu-right"></span></button>
+    </div>
+    <div class="index-image">
+      <div class="item-image index-0 active"></div>
+      <div class="item-image index-1"></div>
+      <div class="item-image index-2"></div>
+      <div class="item-image index-3"></div>
+    </div>
+  </div>
 </div>
 
 <script>
-    const prizeMap = {
-        1: 200,
-        2: 300,
-        3: 500,
-        4: 1000,
-        5: 2000,
-        6: 5000,
-        7: 10000,
-        8: 15000,
-        9: 25000,
-        10: 50000,
-        11: 75000,
-        12: 100000,
-        13: 150000,
-        14: 250000,
-        15: 500000
+  const listImage = document.querySelector(".list-image");
+  const img = document.getElementsByTagName("img")
+  //
+  const btnLeft = document.querySelector(".btn-left");
+  const btnRight = document.querySelector(".btn-right");
+  //
+  let current=0
+  const imageIndex = img.length
+  //
+  const renderSlide = () =>{
+    if (current === imageIndex-1){
+      current=0
+      let imgWidth = img[0].offsetWidth;
+      listImage.style.transform=`translateX(0px)`
+      document.querySelector('.active').classList.remove('active')
+      document.querySelector('.item-image'+ current).classList.add('active')
+    }else {
+      current++
+      //laasy vtri image đầu tiên
+      let imgWidth = img[0].offsetWidth;
+      //chuyển động
+      listImage.style.transform=`translateX(${imgWidth * -1 * current}px)`
+      document.querySelector('.active').classList.remove('active')
+      document.querySelector('.item-image'+ current).classList.add('active')
     }
-    const prizeList = document.querySelector(".prize-list");
-
-    const renderPrizeList = () => {
-        // Xóa nếu có nội dung cũ
-        prizeList.innerHTML = "";
-
-        // Lặp qua các phần tử (render từ cao xuống thấp nếu muốn giống "triệu phú")
-        const entries = Object.entries(prizeMap).sort((a, b) => b[0] - a[0]);
-
-        for (const [level, prize] of entries) {
-            const li = document.createElement("li");
-            li.innerText = `${level}: ${prize.toLocaleString()} VNĐ`;
-            li.setAttribute("data-level", level);
-            prizeList.appendChild(li);
-        }
-    };
-
-    renderPrizeList();
-
-    const highlightCurrentPrize = (level) => {
-        document.querySelectorAll(".prize-list li").forEach(li => {
-            if (li.getAttribute("data-level") === String(level)) {
-                li.style.backgroundColor = "yellow"; // hoặc dùng class
-            } else {
-                li.style.backgroundColor = "transparent";
-            }
-        });
-    };
-
-    highlightCurrentPrize(5)
-
-    const timeRef = document.getElementById('time')
-    let countdown = 30
-
-    const setTime = () => {
-        timeRef.innerText = --countdown
-
-        if (countdown === 0) {
-            clearInterval(itv)
-        }
+  }
+  let hanlderSlide = setInterval(renderSlide,4000)
+  btnRight.addEventListener("click",()=>{
+    clearInterval(hanlderSlide)
+    renderSlide()
+    hanlderSlide = setInterval(renderSlide,4000)
+  })
+  btnLeft.addEventListener("click",()=>{
+    clearInterval(hanlderSlide)
+    if (current === 0){
+      current=imageIndex-1
+      let imgWidth = img[0].offsetWidth;
+      listImage.style.transform=`translateX(${imgWidth * -1 * current}px)`;
+      document.querySelector('.active').classList.remove('active')
+      document.querySelector('.item-image'+ current).classList.add('active')
+    }else {
+      current--
+      //laasy vtri image đầu tiên
+      let imgWidth = img[0].offsetWidth;
+      //chuyển động
+      listImage.style.transform=`translateX(${imgWidth * -1 * current}px)`;
+      document.querySelector('.active').classList.remove('active')
+      document.querySelector('.item-image'+ current).classList.add('active')
     }
-
-    const itv = setInterval(setTime, 1000)
+    hanlderSlide = setInterval(renderSlide,3000)
+  })
 
 </script>
-
-<script type="module" src="referances.js"></script>
-<script type="module" src="const.js"></script>
-<script type="module" src="render.js"></script>
 </body>
 </html>
