@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="
+    https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css
+    " rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            margin:30px auto;
+            width: 1000px;
+        }
+        .formSearch{
+            padding:50px;
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+
+        }
+        .btnSearch{
+            height: 50px;
+            padding: 10px;
+            background: green;
+            border: none;
+            color: white;
+            border-radius: 5px;
+        }
+        .btnSearch:hover{
+            opacity: 0.7;
+        }
+        .formSearch input{
+            padding: 10px;
+            height: 50px;
+        }
+        .table{
+            text-align: center;
+        }
+        tr{
+            border-bottom: 1px solid #ccc;
+        }
+        .table td{
+           padding: 10px;
+        }
+        .search{
+            display: flex;
+            gap: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="formSearch">
+        <div class="search">
+            <input type="text" name="searchM" placeholder=" searchE">
+            <input type="text" name="searchT" placeholder=" Team">
+        </div>
+        <div class="btnCreate">
+            <button class="btnSearch">Create Schedule</button>
+        </div>
+    </div>
+    <table class="table"  width="100%" cellspacing="10"  >
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+        </tr>
+        </thead>
+        <tbody id="table-body">
+        <tr>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Teams
+    const teams = [
+        { id: 1, name: "Reactjs" },
+        { id: 2, name: "Expressjs" },
+        { id: 3, name: "Nestjs" }
+    ];
+
+    // Employees
+    const employees = [
+        { id: 1, name: "Nguyen Minh Viet", teamId: 1 },
+        { id: 2, name: "Tran Thuy Quynh", teamId: 2 },
+        { id: 3, name: "Tran Cong Tin", teamId: 1 },
+        { id: 4, name: "Nguyen Nam Tao", teamId: 2 },
+        { id: 5, name: "Bui Kong Minh", teamId: 3 }
+    ];
+
+    // Absence Times
+    const absences = [
+        { id: 1, employeeId: 1, date: "mon", time: "8:00-9:00" },
+        { id: 2, employeeId: 1, date: "tue", time: "16:00-17:00" },
+        { id: 3, employeeId: 3, date: "thu", time: "11:00-12:00" },
+        { id: 4, employeeId: 2, date: "wed", time: "11:00-12:00" },
+        { id: 5, employeeId: 5, date: "fri", time: "9:00-11:00" },
+        { id: 6, employeeId: 3, date: "mon", time: "8:00-9:00" }
+    ];
+
+    for (const employee of employees) {
+        // tim ra teams
+        const team = teams.find(team => team.id === employee.teamId);
+        employee.team = team.name
+        // tim ra absences
+        const monDuration = absences.find(absence => absence.employeeId === employee.id && absence.date === 'mon');
+        employee.mon = monDuration?.time || 'Full Day'
+        //
+        const tueDuration = absences.find(absence => absence.employeeId === employee.id && absence.date === 'tue');
+        employee.tue = tueDuration?.time || 'Full Day'
+        //
+        const thuDuration = absences.find(absence => absence.employeeId === employee.id && absence.date === 'thu');
+        employee.thu=thuDuration?.time || 'Full Day'
+        // //
+        const wedDuration = absences.find(absence => absence.employeeId === employee.id && absence.date === 'wed');
+        employee.wed=wedDuration?.time || 'Full Day'
+        // //
+        const friDuration = absences.find(absence => absence.employeeId === employee.id && absence.date === 'fri');
+        employee.fri=friDuration?.time || 'Full Day'
+    }
+
+
+    //search
+    // const searchEmployees = document.querySelector('.formSeach input[name="searchM"]');
+    // searchEmployees.addEventListener('input', (input) => {
+    //     input
+    //
+    // })
+
+    //tao bang
+    const tbody = document.querySelector("body tbody");
+    employees.forEach(employee => {
+        const tr = document.createElement("tr")
+        tr.innerHTML = `
+        <td>${employee.name}</td>
+        <td>${employee.team}</td>
+        <td>${employee.mon}</td>
+        <td>${employee.tue}</td>
+        <td>${employee.thu}</td>
+        <td>${employee.wed}</td>
+        <td>${employee.fri}</td>
+        `
+        tbody.appendChild(tr);
+    })
+</script>
+</body>
+</html>
