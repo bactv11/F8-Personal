@@ -137,18 +137,15 @@
     }
 
 
-    //search
-    // const searchEmployees = document.querySelector('.formSeach input[name="searchM"]');
-    // searchEmployees.addEventListener('input', (input) => {
-    //     input
-    //
-    // })
+
 
     //tao bang
-    const tbody = document.querySelector("body tbody");
-    employees.forEach(employee => {
-        const tr = document.createElement("tr")
-        tr.innerHTML = `
+    const render = (employees) =>{
+        const tbody = document.querySelector("body tbody");
+        tbody.innerHTML = '';
+        employees.forEach(employee => {
+            const tr = document.createElement("tr")
+            tr.innerHTML = `
         <td>${employee.name}</td>
         <td>${employee.team}</td>
         <td>${employee.mon}</td>
@@ -157,8 +154,9 @@
         <td>${employee.wed}</td>
         <td>${employee.fri}</td>
         `
-        tbody.appendChild(tr);
-    });
+            tbody.appendChild(tr);
+        });
+
 </script>
 </body>
 </html>

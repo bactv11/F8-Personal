@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "0": {
+        "id": "1",
+        "text": "a comment about post 1",
+        "postId": "1"
+      },
+      "1": {
+        "id": "2",
+        "text": "another comment about post 1",
+        "postId": "1"
+      },
+      "2": {
+        "id": "3",
+        "text": "vawn bac ma",
+        "postId": "2"
+      },
+      "id": "2"
+    },
+    {
+      "0": {
+        "id": "1",
+        "text": "a comment about post 1",
+        "postId": "1"
+      },
+      "1": {
+        "id": "2",
+        "text": "another comment about post 1",
+        "postId": "1"
+      },
+      "2": {
+        "id": "3",
+        "text": "vawn bac ma",
+        "postId": "1"
+      },
+      "id": "04a5"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employee": [
+    {
+      "id": "3",
+      "name": "2vanbac24"
+    },
+    {
+      "id": "1",
+      "name": "vanbac1w"
+    },
+    {
+      "id": "2",
+      "name": "vanbacs1w"
+    }
+  ]
+}
