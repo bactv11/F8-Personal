@@ -1,141 +1,194 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="vi">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Mini Web - Quản lý sản phẩm</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            padding: 20px;-->
+<!--        }-->
+
+<!--        ul {-->
+<!--            list-style: none;-->
+<!--            padding: 0;-->
+<!--        }-->
+
+<!--        li {-->
+<!--            display: flex;-->
+<!--            justify-content: space-between;-->
+<!--            margin-bottom: 8px;-->
+<!--            padding: 6px 10px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            border-radius: 4px;-->
+<!--        }-->
+
+<!--        button {-->
+<!--            margin-left: 5px;-->
+<!--        }-->
+
+<!--        /* Modal style */-->
+<!--        .modal {-->
+<!--            display: none;-->
+<!--            position: fixed;-->
+<!--            z-index: 100;-->
+<!--            left: 0; top: 0;-->
+<!--            width: 100%; height: 100%;-->
+<!--            background-color: rgba(0, 0, 0, 0.4);-->
+<!--        }-->
+
+<!--        .modal-content {-->
+<!--            background-color: #fff;-->
+<!--            margin: 100px auto;-->
+<!--            padding: 20px;-->
+<!--            width: 300px;-->
+<!--            border-radius: 6px;-->
+<!--            position: relative;-->
+<!--        }-->
+
+<!--        .modal-content input {-->
+<!--            width: 100%;-->
+<!--            padding: 8px;-->
+<!--            margin-top: 10px;-->
+<!--            margin-bottom: 10px;-->
+<!--        }-->
+
+<!--        .close {-->
+<!--            position: absolute;-->
+<!--            top: 10px; right: 12px;-->
+<!--            font-size: 20px;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+
+<!--        .error {-->
+<!--            color: red;-->
+<!--            font-size: 14px;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<h2>Danh sách sản phẩm</h2>-->
+<!--<button onclick="openAddModal()">➕ Thêm sản phẩm</button>-->
+<!--<ul id="productList"></ul>-->
+
+<!--&lt;!&ndash; Modal &ndash;&gt;-->
+<!--<div class="modal" id="addModal">-->
+<!--    <div class="modal-content">-->
+<!--        <span class="close" onclick="closeAddModal()">&times;</span>-->
+<!--        <h3>Thêm sản phẩm</h3>-->
+<!--        <input type="text" id="newProductName" placeholder="Nhập tên sản phẩm">-->
+<!--        <p id="errorText" class="error"></p>-->
+<!--        <button onclick="handleAddProduct()">Lưu</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--    let products = [];-->
+
+<!--    function openAddModal() {-->
+<!--        document.getElementById('addModal').style.display = 'block';-->
+<!--        document.getElementById('newProductName').value = '';-->
+<!--        document.getElementById('errorText').textContent = '';-->
+<!--        document.getElementById('newProductName').focus();-->
+<!--    }-->
+
+<!--    function closeAddModal() {-->
+<!--        document.getElementById('addModal').style.display = 'none';-->
+<!--    }-->
+
+<!--    function handleAddProduct() {-->
+<!--        const nameInput = document.getElementById('newProductName');-->
+<!--        const errorText = document.getElementById('errorText');-->
+<!--        const name = nameInput.value.trim();-->
+
+<!--        if (name === '') {-->
+<!--            errorText.textContent = 'Vui lòng nhập tên sản phẩm.';-->
+<!--            return;-->
+<!--        }-->
+
+<!--        const isDuplicate = products.some(p => p.toLowerCase() === name.toLowerCase());-->
+<!--        if (isDuplicate) {-->
+<!--            errorText.textContent = 'Sản phẩm đã tồn tại.';-->
+<!--            return;-->
+<!--        }-->
+
+<!--        products.push(name);-->
+<!--        renderProducts();-->
+<!--        closeAddModal();-->
+<!--    }-->
+
+<!--    function renderProducts() {-->
+<!--        const list = document.getElementById('productList');-->
+<!--        list.innerHTML = '';-->
+<!--        products.forEach((name, index) => {-->
+<!--            const li = document.createElement('li');-->
+<!--            li.innerHTML = `<strong>${index + 1}.</strong> ${name}`;-->
+<!--            list.appendChild(li);-->
+<!--        });-->
+<!--    }-->
+
+<!--    // Đóng modal nếu click ra ngoài-->
+<!--    window.onclick = function(event) {-->
+<!--        const modal = document.getElementById('addModal');-->
+<!--        if (event.target === modal) {-->
+<!--            closeAddModal();-->
+<!--        }-->
+<!--    };-->
+<!--</script>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mini Web - Quản lý sản phẩm</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            margin-left: 5px;
-        }
-
-        /* Modal style */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: 100px auto;
-            padding: 20px;
-            width: 300px;
-            border-radius: 6px;
-            position: relative;
-        }
-
-        .modal-content input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px; right: 12px;
-            font-size: 20px;
-            cursor: pointer;
-        }
-
-        .error {
-            color: red;
-            font-size: 14px;
-        }
-    </style>
+    <title>Fake Store API Demo</title>
 </head>
 <body>
-
-<h2>Danh sách sản phẩm</h2>
-<button onclick="openAddModal()">➕ Thêm sản phẩm</button>
-<ul id="productList"></ul>
-
-<!-- Modal -->
-<div class="modal" id="addModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeAddModal()">&times;</span>
-        <h3>Thêm sản phẩm</h3>
-        <input type="text" id="newProductName" placeholder="Nhập tên sản phẩm">
-        <p id="errorText" class="error"></p>
-        <button onclick="handleAddProduct()">Lưu</button>
-    </div>
-</div>
+<h1>Danh sách sản phẩm</h1>
+<div id="product-list"></div>
 
 <script>
-    let products = [];
+    fetch('https://fakestoreapi.com/products')
+        .then(res => res.json())
+        .then(products => {
+            const productList = document.getElementById('product-list');
 
-    function openAddModal() {
-        document.getElementById('addModal').style.display = 'block';
-        document.getElementById('newProductName').value = '';
-        document.getElementById('errorText').textContent = '';
-        document.getElementById('newProductName').focus();
-    }
+            products.forEach(product => {
+                // Tạo thẻ div cho mỗi sản phẩm
+                const productCard = document.createElement('div');
+                productCard.style.border = '1px solid #ccc';
+                productCard.style.padding = '10px';
+                productCard.style.marginBottom = '10px';
 
-    function closeAddModal() {
-        document.getElementById('addModal').style.display = 'none';
-    }
+                // Tên sản phẩm
+                const title = document.createElement('h2');
+                title.textContent = product.title;
 
-    function handleAddProduct() {
-        const nameInput = document.getElementById('newProductName');
-        const errorText = document.getElementById('errorText');
-        const name = nameInput.value.trim();
+                // Ảnh sản phẩm
+                const image = document.createElement('img');
+                image.src = product.image;
+                image.alt = product.title;
+                image.style.width = '100px';
 
-        if (name === '') {
-            errorText.textContent = 'Vui lòng nhập tên sản phẩm.';
-            return;
-        }
+                // Giá
+                const price = document.createElement('p');
+                price.textContent = `Giá: $${product.price}`;
 
-        const isDuplicate = products.some(p => p.toLowerCase() === name.toLowerCase());
-        if (isDuplicate) {
-            errorText.textContent = 'Sản phẩm đã tồn tại.';
-            return;
-        }
+                // Thêm các thành phần vào productCard
+                productCard.appendChild(title);
+                productCard.appendChild(image);
+                productCard.appendChild(price);
 
-        products.push(name);
-        renderProducts();
-        closeAddModal();
-    }
-
-    function renderProducts() {
-        const list = document.getElementById('productList');
-        list.innerHTML = '';
-        products.forEach((name, index) => {
-            const li = document.createElement('li');
-            li.innerHTML = `<strong>${index + 1}.</strong> ${name}`;
-            list.appendChild(li);
+                // Thêm productCard vào danh sách chính
+                productList.appendChild(productCard);
+            });
+        })
+        .catch(error => {
+            console.error('Lỗi khi lấy dữ liệu:', error);
         });
-    }
-
-    // Đóng modal nếu click ra ngoài
-    window.onclick = function(event) {
-        const modal = document.getElementById('addModal');
-        if (event.target === modal) {
-            closeAddModal();
-        }
-    };
 </script>
-
 </body>
 </html>
