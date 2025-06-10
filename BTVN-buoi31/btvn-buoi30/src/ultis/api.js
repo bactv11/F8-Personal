@@ -1,4 +1,4 @@
-const BaseUrl = "https://api-todolist-multiuser.onrender.com/Bac/todos"
+    const BaseUrl = "https://api-todolist-multiuser.onrender.com/Bac/todos"
 // get
 const methodGet = async (endPoint) => {
     try{
@@ -40,24 +40,9 @@ const methodPut = async (endpoint,body) => {
         console.log(error)
     }
 }
-// patch
-const methodPatch = async (endpoint,body) => {
-    try{
-        const response = await fetch(`${BaseUrl}/${endpoint}`,
-            {
-                method: "PATCH",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(body),
-            })
-        return await response.json()
-    }catch(error){
-        console.log(error)
-    }
-}
+
 //delete
-const methodDelete = async (endpoint,body) => {
+const methodDelete = async (endpoint) => {
     try {
         const response = await fetch(`${BaseUrl}/${endpoint}`,
             {
@@ -74,5 +59,5 @@ const methodDelete = async (endpoint,body) => {
 
 //export
 export {
-    methodGet,methodPost,methodPut,methodPatch,methodDelete
+    methodGet,methodPost,methodPut,methodDelete
 }

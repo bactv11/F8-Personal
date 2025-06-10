@@ -43,7 +43,7 @@ console.log(b.concat(c))
 /*
 * object
 * group value into a variable
-* array = [1,2,3,4] get value by index
+* array = [1,2,3,4] get value by index.js
 *          0 1 2 3
 * object get value by key
 *
