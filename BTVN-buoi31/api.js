@@ -1,4 +1,4 @@
-const baseUrl = 'https://8fty49z8qb.execute-api.ap-southeast-1.amazonaws.com/'
+const baseUrl = 'https://8fty49z8qb.execute-api.ap-southeast-1.amazonaws.com'
 
 const methodGetLogin = async (endPoint) => {
     const response = await fetch(`${baseUrl}/${endPoint}`,{
@@ -32,7 +32,7 @@ const methodPostLogin = async (endPoint,body) => {
 }
 const getNewToken = async (callback) => {
     const response = await fetch(
-        `${baseUrl}/`, {
+        `${baseUrl}/login/get_new_token`, {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'

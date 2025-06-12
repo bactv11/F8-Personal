@@ -15,6 +15,6 @@ loginBtn.addEventListener('click', async () => {
         email:email, password:password})
     localStorage.setItem('access', data.access)
     localStorage.setItem('refresh',data.refresh)
-    window.location.href="/home.html"
+    window.location.href="./home.html"
 })
 onMounted()
