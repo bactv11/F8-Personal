@@ -10,7 +10,7 @@ function CalculatorUI() {
         const b = parseFloat(num2);
 
         if (isNaN(a) || isNaN(b)) {
-            setResult('Vui lòng nhập số hợp lệ');
+            setResult('Chỉ có thể nhập vào số!');
             return;
         }
 
