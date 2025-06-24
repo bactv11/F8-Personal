@@ -1,0 +1,23 @@
+.screen{
+    width: 300px;
+    border: 1px solid #ccc;
+    height: 100px;
+    border-radius: 10px;
+}
+.key{
+    display: flex;
+    gap: 10px;
+}
+.btn{
+    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.btn:hover{
+    opacity: 0.8;
+}
