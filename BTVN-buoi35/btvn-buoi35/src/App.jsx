@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { post } from './utils/index.js';
+import {toast} from "react-toastify";
 
 const styles = {
     body: {
@@ -71,21 +73,48 @@ const styles = {
         textDecoration: 'none',
         color: '#666',
     },
+    error: {
+        color: '#EF5350',
+        fontSize: '14px',
+        marginTop: '10px',
+    }
 };
 
 const Login = () => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const validateForm = () => {
+        if (!email || !/^[a-zA-Z0-9._%+-]+@gmail\.com$/) {
+            setError('Email không hợp lệ');
+            return false;
+        }
+        if (!password ) {
+            setError('Không để trống phần này');
+            return false;
+        }
+        return true;
+    };
 
-        // Giả lập đăng nhập thành công
-        if (username === 'admin@gmail.com' && password === '12345678') {
-            navigate('/post');
-        } else {
-            alert('Sai tài khoản hoặc mật khẩu!');
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+
+        if (!validateForm()) return;
+
+        try {
+            const result = await post('login/', { email, password });
+            if (result && result.access && result.refresh) {
+                localStorage.setItem('access', result.access);
+                localStorage.setItem('refresh', result.refresh);
+                navigate('/post');
+            } else {
+                toast.error('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.');
+            }
+        } catch (error) {
+            toast.error('Có lỗi xảy ra. Vui lòng thử lại.');
         }
     };
 
@@ -94,21 +123,35 @@ const Login = () => {
             <form style={styles.form} onSubmit={handleSubmit}>
                 <h2 style={styles.title}>Welcome, User!</h2>
                 <p style={styles.paragraph}>Please log in</p>
+
                 <input
-                    type="text"
-                    placeholder="User Name"
+                    type="email"
+                    placeholder="Email"
                     style={styles.input}
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                 />
+
                 <input
                     type="password"
                     placeholder="Password"
                     style={styles.input}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength={6}
                 />
-                <button type="submit" style={styles.button}>Log In</button>
+
+                {error && <div style={styles.error}>{error}</div>}
+
+                <button
+                    type="submit"
+                    style={styles.button}
+                >
+                    Login
+                </button>
+
                 <div style={styles.links}>
                     <a href="#" style={styles.linkLeft}>Forgot password?</a>
                     <a href="#" style={styles.linkRight}>Sign up</a>
