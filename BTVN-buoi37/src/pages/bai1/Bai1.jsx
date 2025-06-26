@@ -10,21 +10,21 @@ const products = [
     { id: 4, name: 'Áo hoodie', price: 1200000, category: 'Áo', brand: 'Nike' },
 ];
 
-const App = () => {
+function App()  {
     const navigate = useNavigate();
     const [filterPrice, setFilterPrice] = useState('Tất cả');
     const [filterCategory, setFilterCategory] = useState('Tất cả');
     const [filterBrand, setFilterBrand] = useState('Tất cả');
 
-    const handlePriceChange = useCallback((e) => {
+    const onPriceChange = useCallback((e) => {
         setFilterPrice(e.target.value);
     }, []);
 
-    const handleCategoryChange = useCallback((e) => {
+    const onCategoryChange = useCallback((e) => {
         setFilterCategory(e.target.value);
     }, []);
 
-    const handleBrandChange = useCallback((e) => {
+    const onBrandChange = useCallback((e) => {
         setFilterBrand(e.target.value);
     }, []);
 
@@ -53,7 +53,7 @@ const App = () => {
             <div style={{ marginBottom: 20 }}>
                 <label>
                     Giá:
-                    <select value={filterPrice} onChange={handlePriceChange}>
+                    <select value={filterPrice} onChange={onPriceChange}>
                         <option value="Tất cả">Tất cả</option>
                         <option value="<500K">Dưới 500K</option>
                         <option value="500K-1M">500K - 1 triệu</option>
@@ -63,7 +63,7 @@ const App = () => {
 
                 <label style={{ marginLeft: 20 }}>
                     Loại:
-                    <select value={filterCategory} onChange={handleCategoryChange}>
+                    <select value={filterCategory} onChange={onCategoryChange}>
                         <option value="Tất cả">Tất cả</option>
                         <option value="Áo">Áo</option>
                         <option value="Quần">Quần</option>
@@ -73,7 +73,7 @@ const App = () => {
 
                 <label style={{ marginLeft: 20 }}>
                     Thương hiệu:
-                    <select value={filterBrand} onChange={handleBrandChange}>
+                    <select value={filterBrand} onChange={onBrandChange}>
                         <option value="Tất cả">Tất cả</option>
                         <option value="Nike">Nike</option>
                         <option value="Adidas">Adidas</option>
@@ -82,7 +82,7 @@ const App = () => {
                 </label>
             </div>
 
-            <h3>Danh sách sản phẩm:</h3>
+            <h3> Danh sách sản phẩm:</h3>
             {filteredProducts.map(product => (
                 <ProductItem key={product.id} product={product} />
             ))}

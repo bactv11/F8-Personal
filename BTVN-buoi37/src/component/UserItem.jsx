@@ -1,7 +1,7 @@
 import React from 'react';
 
 const UserItem = React.memo(({ user }) => {
-    console.log('🔄 Render UserItem:', user.name);
+    console.log(' Render UserItem:', user.name);
 
     return (
         <div style={{

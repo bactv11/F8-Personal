@@ -13,7 +13,7 @@ function App() {
     const navigate = useNavigate();
     const [point, setPoint] = useState(0);
 
-    const handleIncrease = () => {
+    const onIncrease = () => {
         setPoint(prev => prev + 1);
     };
 
@@ -27,7 +27,7 @@ function App() {
 
             <div style={{ marginTop: '20px' }}>
                 <p>Điểm hiện tại: <strong>{point}</strong></p>
-                <button onClick={handleIncrease}>Tăng điểm</button>
+                <button onClick={onIncrease}>Count</button>
             </div>
 
             <Button variant="contained" onClick={() => navigate('/bai1')} sx={{marginTop:10}}>

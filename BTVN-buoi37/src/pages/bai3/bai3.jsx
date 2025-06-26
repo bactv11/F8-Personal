@@ -3,7 +3,7 @@ import CartItem from '../../component/CartItem.jsx';
 import { useNavigate } from 'react-router-dom';
 import { Button, Box } from '@mui/material';
 
-function CartUI() {
+function App() {
     const navigate = useNavigate();
     const [cart, setCart] = useState([
         { id: 1, name: 'Áo thun', quantity: 1 },
@@ -11,7 +11,7 @@ function CartUI() {
         { id: 3, name: 'Nón lưỡi trai', quantity: 1 },
     ]);
 
-    const handleIncrease = useCallback((id) => {
+    const onIncrease = useCallback((id) => {
         setCart(prev =>
             prev.map(item =>
                 item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -19,7 +19,7 @@ function CartUI() {
         );
     }, []);
 
-    const handleDecrease = useCallback((id) => {
+    const onDecrease = useCallback((id) => {
         setCart(prev =>
             prev.map(item =>
                 item.id === id && item.quantity > 1
@@ -29,20 +29,20 @@ function CartUI() {
         );
     }, []);
 
-    const handleRemove = useCallback((id) => {
+    const onRemove = useCallback((id) => {
         setCart(prev => prev.filter(item => item.id !== id));
     }, []);
 
     return (
         <div style={{ padding: 20, maxWidth: 600, margin: 'auto' }}>
-            <h2 style={{ textAlign: 'center' }}>🛒 Giỏ hàng</h2>
+            <h2 style={{ textAlign: 'center' }}> Giỏ hàng</h2>
             {cart.map(item => (
                 <CartItem
                     key={item.id}
                     item={item}
-                    onIncrease={handleIncrease}
-                    onDecrease={handleDecrease}
-                    onRemove={handleRemove}
+                    onIncrease={onIncrease}
+                    onDecrease={onDecrease}
+                    onRemove={onRemove}
                 />
             ))}
             <Button variant="contained" onClick={() => navigate('/bai1')} sx={{marginTop:10}}>
@@ -55,5 +55,5 @@ function CartUI() {
     );
 }
 
-export default CartUI;
+export default App;
 
