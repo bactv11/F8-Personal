@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import TodoForm from './component/TodoForm';
-import TodoList from './component/TodoList';
+import TodoForm from './component/TodoForm.jsx';
+import TodoList from './component/TodoList.jsx';
+import { getTodos } from './utils/index.js';
 import './App.css';
-
-const API_URL = 'https://api-todolist-multiuser.onrender.com/Bac/todos';
 
 function TodoApp() {
     const [todos, setTodos] = useState([]);
+
     useEffect(() => {
         const fetchTodos = async () => {
-            try {
-                const res = await fetch(API_URL);
-                const data = await res.json();
-                setTodos(data);
-            } catch (err) {
-                console.error('Lỗi khi tải todo:', err);
-            }
+            const data = await getTodos();
+            setTodos(data);
         };
-
         fetchTodos();
     }, []);
 
@@ -31,3 +25,4 @@ function TodoApp() {
 }
 
 export default TodoApp;
+

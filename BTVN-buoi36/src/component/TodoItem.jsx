@@ -70,9 +70,9 @@ function TodoItem({ todo, setTodos }) {
             {editing ? (
                 <button className="edit-btn" onClick={handleEdit}>OK</button>
             ) : (
-                <button className="edit-btn" onClick={() => setEditing(true)}>✏️</button>
+                <button className="edit-btn" onClick={() => setEditing(true)}>Sửa</button>
             )}
-            <button className="del-btn" onClick={handleDelete}>🗑️</button>
+            <button className="del-btn" onClick={handleDelete}>Xóa</button>
         </div>
     );
 }
