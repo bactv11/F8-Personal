@@ -55,6 +55,10 @@ export default function App() {
     };
 
     const handleSubmit = async (data) => {
+        if (!data.name || !data.age || !data.address) {
+            alert('Vui lòng điền đầy đủ thông tin.');
+            return;
+        }
         if (dialogMode === 'add') {
             await addContact(data);
         } else {
