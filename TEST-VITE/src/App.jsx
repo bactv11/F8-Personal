@@ -22,6 +22,7 @@ export default function App() {
     const [confirmOpen, setConfirmOpen] = useState(false);
     const [deleteId, setDeleteId] = useState(null);
 
+    //get data
     const fetchContacts = async () => {
         const data = await getContacts();
         setContacts(data);
@@ -30,13 +31,13 @@ export default function App() {
     useEffect(() => {
         fetchContacts();
     }, []);
-
+//button add
     const handleAdd = () => {
         setCurrentContact({ name: '', age: '', address: '' });
         setDialogMode('add');
         setDialogOpen(true);
     };
-
+//button edit
     const handleEdit = (contact) => {
         setCurrentContact(contact);
         setDialogMode('edit');
@@ -53,7 +54,7 @@ export default function App() {
         fetchContacts();
         setConfirmOpen(false);
     };
-
+//sử lí add
     const handleSubmit = async (data) => {
         if (!data.name || !data.age || !data.address) {
             alert('Vui lòng điền đầy đủ thông tin.');
@@ -67,10 +68,11 @@ export default function App() {
         fetchContacts();
         setDialogOpen(false);
     };
-
+//tìm
     const filteredContacts = contacts.filter(c =>
         c.name?.toLowerCase().includes(search.toLowerCase())
     );
+
     return (
         <div style={{ padding: 20 }}>
             <h2>Danh bạ</h2>
@@ -85,7 +87,7 @@ export default function App() {
                     sx={{ width: 300 }}
                 />
                 <Button variant="contained" color="success" onClick={handleAdd}>
-                    + Thêm mới
+                    Thêm mới
                 </Button>
             </Stack>
 
