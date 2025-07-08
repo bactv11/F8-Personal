@@ -5,7 +5,6 @@ function ConfirmDialog({ open, title, content, onClose, onConfirm }) {
     return (
         <Dialog open={open} onClose={onClose}>
             <DialogTitle>{title}</DialogTitle>
-
             <DialogContent>
                 {content}
             </DialogContent>

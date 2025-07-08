@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const API_URL = 'https://api-todolist-multiuser.onrender.com/Bac/todos';
+const API_URL = 'https://api-todolist-multiuser.onrender.com/Bac/';
 
 function TodoItem({ todo, setTodos }) {
     const [editing, setEditing] = useState(false);
