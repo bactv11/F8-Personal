@@ -1,11 +1,11 @@
-import {createBrowserRouter} from "react-router";
+import {createBrowserRouter} from 'react-router'
 import Employees from "../pages/Employees/index.jsx";
-import Home from "../pages/Home/index.jsx";
+import App from "../App.jsx";
 
 const router = createBrowserRouter([
     {
-        path: "/home",
-        element: <Home/>
+        path: "/",
+        element: <App/>
     },
     {
         path: "/employees",
