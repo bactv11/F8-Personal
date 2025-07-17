@@ -6,16 +6,13 @@ import {useDispatch} from "react-redux";
 
 const ContactCard = ({contact, setEditingContact, setIsOpenForm}) => {
     const dispatch = useDispatch();
-    // Kết hợp firstName + lastName
     const fullName = `${contact.firstName} ${contact.lastName}`
 
-    // Hàm xử lý khi nhấn vào nút SỬA
     const onEdit = (contact) => {
         setEditingContact(contact)
         setIsOpenForm(true)
     }
 
-    // Hàm xử lý khi nhấn vào nút XOÁ
     const onYesDelete = (id) => {
         dispatch(deleteContact(id));
     }

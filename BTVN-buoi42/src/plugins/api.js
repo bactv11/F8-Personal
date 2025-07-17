@@ -8,7 +8,7 @@ const api = axios.create({
     }
 })
 
-// Các functions gọi API
+
 export const contactsAPI = {
 
     getAll: () => api.get('/Bac/contacts'),

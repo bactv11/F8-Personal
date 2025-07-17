@@ -4,25 +4,22 @@ import {fetchContacts, createContact, deleteContact, updateContact} from "../../
 const contactsSlice = createSlice({
     name: 'contacts',
     initialState: {
-        items: [],           // Quản lý mỗi liên hệ
-        loading: false,     // Theo dõi gọi API
-        error: null,        // Xử lý nếu có lỗi
-        searchTerm: ''      // Tìm kiếm theo từ khoá
+        items: [],
+        loading: false,
+        error: null,
+        searchTerm: ''
     },
     reducers: {
-        //Action:
         setSearchTerm: (state, action) => {
             state.searchTerm = action.payload;
         },
 
-        // Clear error:
         clearError: (state) => {
             state.error = null;
         }
     },
     extraReducers: (builder) => {
         builder
-            // Fetch contacts
             .addCase(fetchContacts.pending, (state) => {
                 state.loading = true;
                 state.error = null;
@@ -36,7 +33,6 @@ const contactsSlice = createSlice({
                 state.error = action.payload;
             })
 
-            // Create contact
             .addCase(createContact.pending, (state) => {
                 state.loading = true;
                 state.error = null;
@@ -49,8 +45,6 @@ const contactsSlice = createSlice({
                 state.loading = false;
                 state.error = action.payload;
             })
-
-            // Update contact
             .addCase(updateContact.pending, (state) => {
                 state.loading = true;
                 state.error = null;
@@ -67,7 +61,6 @@ const contactsSlice = createSlice({
                 state.error = action.payload;
             })
 
-            // Delete contact
             .addCase(deleteContact.pending, (state) => {
                 state.loading = true;
                 state.error = null;
