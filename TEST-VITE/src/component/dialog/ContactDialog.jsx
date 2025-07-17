@@ -25,7 +25,7 @@ export default function ContactDialog({ open, onClose, onSubmit, contact, mode }
 
     return (
         <Dialog open={open} onClose={onClose}>
-            <DialogTitle>{mode === 'add' ? 'Thêm mới' : 'Sửa'} liên hệ</DialogTitle>
+            <DialogTitle>{mode === 'add' ? 'Thêm mới' : 'Sửa'} title</DialogTitle>
             <DialogContent>
                 <TextField
                     label="Tên"

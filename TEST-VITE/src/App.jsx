@@ -77,7 +77,7 @@ export default function App() {
         <div style={{ padding: 20 }}>
             <h2>Danh bạ</h2>
 
-            <Stack direction="row" spacing={2} justifyContent="space-between" sx={{ mb: 2 }}>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <TextField
                     label="Tìm kiếm theo tên"
                     variant="outlined"
@@ -89,7 +89,7 @@ export default function App() {
                 <Button variant="contained" color="success" onClick={handleAdd}>
                     Thêm mới
                 </Button>
-            </Stack>
+            </div>
 
             <ContactTable
                 contacts={filteredContacts}
